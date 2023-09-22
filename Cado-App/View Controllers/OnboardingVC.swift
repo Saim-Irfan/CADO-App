@@ -26,7 +26,11 @@ class OnboardingVC: UIViewController {
     
     @IBAction func closeBtnTapped(_ sender: UIBarButtonItem) {
         imgCollectionView.isHidden = true
-        pageController.isHidden = true
+        
+        imgCollectionView.removeFromSuperview()
+        pageController.removeFromSuperview()
+        
+        //        pageController.isHidden = true
         
         sender.title = nil
         sender.image = nil

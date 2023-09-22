@@ -95,7 +95,7 @@
                                                     <color key="backgroundColor" white="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QWo-DK-0Jg">
-                                                    <rect key="frame" x="30" y="60" width="375" height="106"/>
+                                                    <rect key="frame" x="30" y="100" width="375" height="106"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hand Delivered" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6c-R7-6Io">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="38.5"/>
@@ -124,7 +124,7 @@
                                                 <constraint firstItem="QWo-DK-0Jg" firstAttribute="leading" secondItem="jPY-D8-c65" secondAttribute="leading" constant="30" id="kft-or-609"/>
                                                 <constraint firstItem="xo1-4j-kef" firstAttribute="leading" secondItem="jPY-D8-c65" secondAttribute="leading" id="l4m-4R-wLW"/>
                                                 <constraint firstAttribute="trailing" secondItem="QWo-DK-0Jg" secondAttribute="trailing" constant="30" id="mqW-k4-kZZ"/>
-                                                <constraint firstItem="QWo-DK-0Jg" firstAttribute="top" secondItem="jPY-D8-c65" secondAttribute="top" constant="60" id="rgW-X0-Xjq"/>
+                                                <constraint firstItem="QWo-DK-0Jg" firstAttribute="top" secondItem="jPY-D8-c65" secondAttribute="top" constant="100" id="rgW-X0-Xjq"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="435" height="856"/>
@@ -137,12 +137,12 @@
                                 </cells>
                             </collectionView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="B9k-zy-nW6">
-                                <rect key="frame" x="149.5" y="691" width="115.5" height="26"/>
+                                <rect key="frame" x="149.5" y="671" width="115.5" height="26"/>
                                 <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="currentPageIndicatorTintColor" red="0.97647058823529409" green="0.8784313725490196" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="RQP-qa-cyk">
-                                <rect key="frame" x="20" y="757" width="374" height="95"/>
+                                <rect key="frame" x="20" y="737" width="374" height="95"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mjE-qQ-ePx">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="31"/>
@@ -180,7 +180,7 @@
                             <constraint firstAttribute="bottom" secondItem="Lud-LG-XYL" secondAttribute="bottom" id="DhS-gA-2PR"/>
                             <constraint firstItem="Lud-LG-XYL" firstAttribute="leading" secondItem="RaL-G4-TUN" secondAttribute="leading" id="KtQ-lW-XLn"/>
                             <constraint firstItem="RQP-qa-cyk" firstAttribute="top" secondItem="B9k-zy-nW6" secondAttribute="bottom" constant="40" id="L7w-QJ-XJP"/>
-                            <constraint firstItem="Kn5-SV-i1g" firstAttribute="bottom" secondItem="RQP-qa-cyk" secondAttribute="bottom" constant="10" id="Qh9-bY-pJp"/>
+                            <constraint firstItem="Kn5-SV-i1g" firstAttribute="bottom" secondItem="RQP-qa-cyk" secondAttribute="bottom" constant="30" id="Qh9-bY-pJp"/>
                             <constraint firstItem="0lc-yc-sKO" firstAttribute="leading" secondItem="RaL-G4-TUN" secondAttribute="leading" id="URB-mG-wAH"/>
                             <constraint firstItem="Lud-LG-XYL" firstAttribute="top" secondItem="RaL-G4-TUN" secondAttribute="top" id="UuL-Rn-qXu"/>
                             <constraint firstAttribute="bottom" secondItem="0lc-yc-sKO" secondAttribute="bottom" id="XD5-6a-Fcf"/>
