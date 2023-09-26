@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dW0-v7-QsP">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,10 +12,10 @@
         <!--Navigation Controller-->
         <scene sceneID="bpp-cw-UOo">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dW0-v7-QsP" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="dW0-v7-QsP" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="TiL-VA-jns">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -32,27 +32,27 @@
             <objects>
                 <viewController id="jvt-2b-he3" customClass="OnboardingVC" customModule="Cado_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RaL-G4-TUN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lud-LG-XYL" userLabel="Hidden View">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hidden-image" translatesAutoresizingMaskIntoConstraints="NO" id="S8d-2Q-2du">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Q9h-pc-F0r">
-                                        <rect key="frame" x="114" y="265" width="186" height="226"/>
+                                        <rect key="frame" x="121.33333333333333" y="280" width="185.66666666666669" height="226"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app.gift" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="A5P-cT-VIJ">
-                                                <rect key="frame" x="0.0" y="1" width="186" height="147.5"/>
+                                                <rect key="frame" x="0.0" y="1.6666666666666572" width="185.66666666666666" height="147"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="150" id="nvd-4Y-pGZ"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CADO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ojj-iP-96l">
-                                                <rect key="frame" x="0.0" y="150" width="186" height="76"/>
+                                                <rect key="frame" x="0.0" y="150" width="185.66666666666666" height="76"/>
                                                 <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="64"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -71,7 +71,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0lc-yc-sKO">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="62g-nd-MTF">
                                     <size key="itemSize" width="435" height="856"/>
@@ -81,7 +81,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="OnboardingCollectionViewCell" id="Gif-Kg-cQa" customClass="OnboardingCollectionViewCell" customModule="Cado_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="20" width="435" height="856"/>
+                                        <rect key="frame" x="0.0" y="35" width="435" height="856"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jPY-D8-c65">
                                             <rect key="frame" x="0.0" y="0.0" width="435" height="856"/>
@@ -95,16 +95,16 @@
                                                     <color key="backgroundColor" white="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QWo-DK-0Jg">
-                                                    <rect key="frame" x="30" y="100" width="375" height="106"/>
+                                                    <rect key="frame" x="30" y="100" width="375" height="105.66666666666669"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hand Delivered" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6c-R7-6Io">
-                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="38.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="38.333333333333336"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We'll take care of everything from wrapping to delivery." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nST-Ub-Hhn">
-                                                            <rect key="frame" x="0.0" y="48.5" width="375" height="57.5"/>
+                                                            <rect key="frame" x="0.0" y="48.333333333333343" width="375" height="57.333333333333343"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -137,30 +137,36 @@
                                 </cells>
                             </collectionView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="B9k-zy-nW6">
-                                <rect key="frame" x="149.5" y="671" width="115.5" height="26"/>
+                                <rect key="frame" x="157.66666666666666" y="736" width="112.66666666666666" height="25"/>
                                 <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="currentPageIndicatorTintColor" red="0.97647058823529409" green="0.8784313725490196" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="RQP-qa-cyk">
-                                <rect key="frame" x="20" y="737" width="374" height="95"/>
+                                <rect key="frame" x="20" y="801" width="388" height="95"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mjE-qQ-ePx">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="31"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="388" height="31"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3i9-XO-YW4" customClass="PrimaryButton" customModule="Cado_App" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="177" height="31"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="184" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Register"/>
+                                                <connections>
+                                                    <action selector="registerBtnTapped:" destination="jvt-2b-he3" eventType="touchUpInside" id="8aA-Dh-RZl"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJG-0i-g1d" customClass="PrimaryButton" customModule="Cado_App" customModuleProvider="target">
-                                                <rect key="frame" x="197" y="0.0" width="177" height="31"/>
+                                                <rect key="frame" x="204" y="0.0" width="184" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Sign In"/>
+                                                <connections>
+                                                    <action selector="signInBtnTapped:" destination="jvt-2b-he3" eventType="touchUpInside" id="LT3-06-8FF"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gi0-aj-ROp" customClass="FBButton" customModule="Cado_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="51" width="374" height="44"/>
+                                        <rect key="frame" x="0.0" y="51" width="388" height="44"/>
                                         <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="xag-14-YlM"/>
@@ -180,7 +186,7 @@
                             <constraint firstAttribute="bottom" secondItem="Lud-LG-XYL" secondAttribute="bottom" id="DhS-gA-2PR"/>
                             <constraint firstItem="Lud-LG-XYL" firstAttribute="leading" secondItem="RaL-G4-TUN" secondAttribute="leading" id="KtQ-lW-XLn"/>
                             <constraint firstItem="RQP-qa-cyk" firstAttribute="top" secondItem="B9k-zy-nW6" secondAttribute="bottom" constant="40" id="L7w-QJ-XJP"/>
-                            <constraint firstItem="Kn5-SV-i1g" firstAttribute="bottom" secondItem="RQP-qa-cyk" secondAttribute="bottom" constant="30" id="Qh9-bY-pJp"/>
+                            <constraint firstAttribute="bottom" secondItem="RQP-qa-cyk" secondAttribute="bottom" constant="30" id="Qh9-bY-pJp"/>
                             <constraint firstItem="0lc-yc-sKO" firstAttribute="leading" secondItem="RaL-G4-TUN" secondAttribute="leading" id="URB-mG-wAH"/>
                             <constraint firstItem="Lud-LG-XYL" firstAttribute="top" secondItem="RaL-G4-TUN" secondAttribute="top" id="UuL-Rn-qXu"/>
                             <constraint firstAttribute="bottom" secondItem="0lc-yc-sKO" secondAttribute="bottom" id="XD5-6a-Fcf"/>
@@ -200,19 +206,542 @@
                     <connections>
                         <outlet property="imgCollectionView" destination="0lc-yc-sKO" id="Nq5-pQ-eAl"/>
                         <outlet property="pageController" destination="B9k-zy-nW6" id="gQF-Tq-N8S"/>
+                        <segue destination="eE1-bi-33z" kind="show" identifier="loginSegue" id="HZj-cc-Yb7"/>
+                        <segue destination="Dp4-GJ-pAV" kind="show" identifier="registerSegue" id="MxB-Y1-9OT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9mv-Sc-3x1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-355.07246376811599" y="-1165.1785714285713"/>
         </scene>
+        <!--Sign Up-->
+        <scene sceneID="Xoy-sa-xIN">
+            <objects>
+                <viewController storyboardIdentifier="registerVC" id="Dp4-GJ-pAV" customClass="RegisterVC" customModule="Cado_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9dB-jH-MEs">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vBw-J4-nw7">
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iZP-yy-EUn" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="428" height="549.66666666666663"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="agl-Uf-NGq">
+                                                <rect key="frame" x="20" y="20" width="388" height="438.33333333333331"/>
+                                                <subviews>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please check errors and try again" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uB9-hh-hBa">
+                                                        <rect key="frame" x="0.0" y="0.0" width="388" height="0.0"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" systemColor="systemRedColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VBx-N3-3QE" customClass="CustomTextField" customModule="Cado_App" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="388" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="name"/>
+                                                        <connections>
+                                                            <action selector="firstNameChanged:" destination="Dp4-GJ-pAV" eventType="editingChanged" id="o0j-CV-RGo"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Issue in first name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsi-R8-P5F">
+                                                        <rect key="frame" x="0.0" y="44" width="388" height="0.0"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <color key="textColor" systemColor="systemRedColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cwn-Ni-mX1" customClass="CustomTextField" customModule="Cado_App" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="54" width="388" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="name"/>
+                                                        <connections>
+                                                            <action selector="lastNameChanged:" destination="Dp4-GJ-pAV" eventType="editingChanged" id="jA5-ek-apd"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Issue in last name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bad-Xi-bgB">
+                                                        <rect key="frame" x="0.0" y="98" width="388" height="0.0"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <color key="textColor" systemColor="systemRedColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s91-iB-Qi8" customClass="CustomTextField" customModule="Cado_App" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="108" width="388" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="email"/>
+                                                        <connections>
+                                                            <action selector="emailChanged:" destination="Dp4-GJ-pAV" eventType="editingChanged" id="Q4L-Ee-grE"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Issue in email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aj4-hQ-0ib">
+                                                        <rect key="frame" x="0.0" y="152" width="388" height="0.0"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <color key="textColor" systemColor="systemRedColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2D3-B9-oDH" customClass="CustomTextField" customModule="Cado_App" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="162" width="388" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
+                                                        <connections>
+                                                            <action selector="passwordChanged:" destination="Dp4-GJ-pAV" eventType="editingChanged" id="AK0-Hn-sFv"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Issue in password" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ho7-uy-pmk">
+                                                        <rect key="frame" x="0.0" y="206" width="388" height="0.0"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <color key="textColor" systemColor="systemRedColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date Of Birth" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5UY-96-vIL" customClass="CustomTextField" customModule="Cado_App" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="216" width="388" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="dobChanged:" destination="Dp4-GJ-pAV" eventType="editingDidBegin" id="sVh-7T-01c"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="C0V-f2-95k">
+                                                        <rect key="frame" x="0.0" y="270" width="388" height="59.333333333333314"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yhN-UW-ZE8">
+                                                                <rect key="frame" x="0.0" y="0.0" width="388" height="19.333333333333332"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                <color key="textColor" systemColor="systemGrayColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="158-eO-OMg">
+                                                                <rect key="frame" x="0.0" y="24.333333333333314" width="388" height="35"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUG-jf-Wln" customClass="RadioButton" customModule="Cado_App" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
+                                                                        <color key="backgroundColor" red="0.97647058819999999" green="0.87843137250000003" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="35" id="4JD-1W-Cc2"/>
+                                                                            <constraint firstAttribute="height" constant="35" id="8Kq-xZ-9Cz"/>
+                                                                        </constraints>
+                                                                        <color key="tintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" cornerStyle="capsule"/>
+                                                                        <connections>
+                                                                            <action selector="femaleRadioTapped:" destination="Dp4-GJ-pAV" eventType="touchUpInside" id="InL-nB-axp"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Female" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMf-Oj-RNs">
+                                                                        <rect key="frame" x="45" y="0.0" width="55.333333333333343" height="35"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zqf-4G-Fb8" customClass="RadioButton" customModule="Cado_App" customModuleProvider="target">
+                                                                        <rect key="frame" x="110.33333333333334" y="0.0" width="35" height="35"/>
+                                                                        <color key="backgroundColor" red="0.97647058819999999" green="0.87843137250000003" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="35" id="Wkq-ak-h4F"/>
+                                                                            <constraint firstAttribute="width" constant="35" id="ym1-Wy-2br"/>
+                                                                        </constraints>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" cornerStyle="capsule"/>
+                                                                        <connections>
+                                                                            <action selector="maleRadioTapped:" destination="Dp4-GJ-pAV" eventType="touchUpInside" id="oAX-t3-Mgw"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Male" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRb-gK-fNM">
+                                                                        <rect key="frame" x="155.33333333333337" y="0.0" width="232.66666666666663" height="35"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Country" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JRw-zq-nUj" customClass="CustomTextField" customModule="Cado_App" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="349.33333333333331" width="388" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="countryChanged:" destination="Dp4-GJ-pAV" eventType="editingDidBegin" id="aeA-5J-vsS"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="RRg-fj-YeW">
+                                                        <rect key="frame" x="0.0" y="403.33333333333331" width="388" height="35"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kz3-ZR-iZj" customClass="RadioButton" customModule="Cado_App" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
+                                                                <color key="backgroundColor" red="0.97647058819999999" green="0.87843137250000003" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="35" id="SE6-dm-FIz"/>
+                                                                    <constraint firstAttribute="width" constant="35" id="gSP-Qy-h1A"/>
+                                                                </constraints>
+                                                                <color key="tintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" cornerStyle="capsule"/>
+                                                                <connections>
+                                                                    <action selector="termsRadioTapped:" destination="Dp4-GJ-pAV" eventType="touchUpInside" id="AT5-ON-8DA"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QpH-t7-MEW">
+                                                                <rect key="frame" x="40" y="0.0" width="348" height="35"/>
+                                                                <attributedString key="attributedText">
+                                                                    <fragment content="I agree to CADO's ">
+                                                                        <attributes>
+                                                                            <font key="NSFont" metaFont="system" size="17"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content="terms and conditions">
+                                                                        <attributes>
+                                                                            <font key="NSFont" metaFont="system" size="17"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                            <integer key="NSUnderline" value="1"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                </attributedString>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DFf-7G-SZx" customClass="PrimaryButton" customModule="Cado_App" customModuleProvider="target">
+                                                <rect key="frame" x="64.333333333333343" y="488.33333333333331" width="299.33333333333326" height="30.999999999999943"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Register"/>
+                                                <connections>
+                                                    <action selector="registerBtnTapped:" destination="Dp4-GJ-pAV" eventType="touchUpInside" id="8NV-lK-q5k"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dwz-BV-GU3">
+                                                <rect key="frame" x="88.666666666666671" y="529.33333333333337" width="250.66666666666663" height="20.333333333333371"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Already have an account? ">
+                                                        <attributes>
+                                                            <font key="NSFont" metaFont="system" size="17"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="Sign in">
+                                                        <attributes>
+                                                            <font key="NSFont" metaFont="system" size="17"/>
+                                                            <integer key="NSUnderline" value="1"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cnc-el-Em4" userLabel="Calender">
+                                                <rect key="frame" x="46" y="275" width="336" height="368.33333333333326"/>
+                                                <subviews>
+                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="w24-LM-BOc">
+                                                        <rect key="frame" x="0.0" y="44" width="336" height="324.33333333333331"/>
+                                                    </datePicker>
+                                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Kt-lJ-eli">
+                                                        <rect key="frame" x="0.0" y="0.0" width="336" height="44"/>
+                                                        <items>
+                                                            <barButtonItem systemItem="done" id="ymL-vk-gtS">
+                                                                <connections>
+                                                                    <action selector="dateDoneBtnTapped:" destination="Dp4-GJ-pAV" id="UFE-cL-IE9"/>
+                                                                </connections>
+                                                            </barButtonItem>
+                                                        </items>
+                                                    </toolbar>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="w24-LM-BOc" secondAttribute="trailing" id="SV5-6n-a2E"/>
+                                                    <constraint firstItem="2Kt-lJ-eli" firstAttribute="leading" secondItem="cnc-el-Em4" secondAttribute="leading" id="bhu-8p-reS"/>
+                                                    <constraint firstItem="2Kt-lJ-eli" firstAttribute="top" secondItem="cnc-el-Em4" secondAttribute="top" id="dqY-eA-Sv1"/>
+                                                    <constraint firstItem="w24-LM-BOc" firstAttribute="top" secondItem="2Kt-lJ-eli" secondAttribute="bottom" id="eOm-bZ-VTy"/>
+                                                    <constraint firstAttribute="bottom" secondItem="w24-LM-BOc" secondAttribute="bottom" id="jdF-jW-FGT"/>
+                                                    <constraint firstItem="w24-LM-BOc" firstAttribute="leading" secondItem="cnc-el-Em4" secondAttribute="leading" id="qNq-5h-1fG"/>
+                                                    <constraint firstAttribute="trailing" secondItem="2Kt-lJ-eli" secondAttribute="trailing" id="xRS-ZC-bBY"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="QTY-P1-CC1" userLabel="Country Table View">
+                                                <rect key="frame" x="20" y="403.33333333333331" width="388" height="139.99999999999994"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="140" id="aV0-XR-svl"/>
+                                                </constraints>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="countryCell" id="Bnq-zP-GeJ">
+                                                        <rect key="frame" x="0.0" y="44.666666030883789" width="388" height="43.666667938232422"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bnq-zP-GeJ" id="jLw-II-zan">
+                                                            <rect key="frame" x="0.0" y="0.0" width="388" height="43.666667938232422"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </tableViewCellContentView>
+                                                    </tableViewCell>
+                                                </prototypes>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </tableView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="Dwz-BV-GU3" secondAttribute="bottom" id="1GR-Eq-Oi1"/>
+                                            <constraint firstItem="JRw-zq-nUj" firstAttribute="bottom" secondItem="QTY-P1-CC1" secondAttribute="top" id="3IO-O5-5HN"/>
+                                            <constraint firstItem="QTY-P1-CC1" firstAttribute="leading" secondItem="JRw-zq-nUj" secondAttribute="leading" id="3lM-va-Q69"/>
+                                            <constraint firstItem="QTY-P1-CC1" firstAttribute="trailing" secondItem="JRw-zq-nUj" secondAttribute="trailing" id="J5d-89-B5N"/>
+                                            <constraint firstItem="agl-Uf-NGq" firstAttribute="leading" secondItem="iZP-yy-EUn" secondAttribute="leading" constant="20" id="Kvm-fb-vVo"/>
+                                            <constraint firstAttribute="trailing" secondItem="agl-Uf-NGq" secondAttribute="trailing" constant="20" id="Sjf-vR-3Pd"/>
+                                            <constraint firstItem="Dwz-BV-GU3" firstAttribute="centerX" secondItem="iZP-yy-EUn" secondAttribute="centerX" id="egB-ZT-ffl"/>
+                                            <constraint firstItem="Dwz-BV-GU3" firstAttribute="top" secondItem="DFf-7G-SZx" secondAttribute="bottom" constant="10" id="fj0-Wt-Ynw"/>
+                                            <constraint firstItem="cnc-el-Em4" firstAttribute="centerX" secondItem="iZP-yy-EUn" secondAttribute="centerX" id="hRO-JJ-pqI"/>
+                                            <constraint firstItem="DFf-7G-SZx" firstAttribute="top" secondItem="agl-Uf-NGq" secondAttribute="bottom" constant="30" id="jAl-6j-jGr"/>
+                                            <constraint firstItem="5UY-96-vIL" firstAttribute="bottom" secondItem="cnc-el-Em4" secondAttribute="top" constant="-5" id="mh3-fQ-0X9"/>
+                                            <constraint firstItem="cnc-el-Em4" firstAttribute="width" secondItem="iZP-yy-EUn" secondAttribute="width" multiplier="0.785047" id="nLw-gh-0Ho"/>
+                                            <constraint firstItem="agl-Uf-NGq" firstAttribute="top" secondItem="iZP-yy-EUn" secondAttribute="top" constant="20" id="vLT-ud-0aD"/>
+                                            <constraint firstItem="DFf-7G-SZx" firstAttribute="centerX" secondItem="iZP-yy-EUn" secondAttribute="centerX" id="ys3-Ct-MpT"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="iZP-yy-EUn" firstAttribute="trailing" secondItem="7Po-wu-U1c" secondAttribute="trailing" id="8Fh-kP-MGn"/>
+                                    <constraint firstItem="iZP-yy-EUn" firstAttribute="top" secondItem="7Po-wu-U1c" secondAttribute="top" id="JaI-zL-Eee"/>
+                                    <constraint firstItem="iZP-yy-EUn" firstAttribute="leading" secondItem="7Po-wu-U1c" secondAttribute="leading" id="ZjW-sL-0CG"/>
+                                    <constraint firstItem="iZP-yy-EUn" firstAttribute="width" secondItem="3f1-du-206" secondAttribute="width" id="udl-4R-1gg"/>
+                                    <constraint firstItem="iZP-yy-EUn" firstAttribute="bottom" secondItem="7Po-wu-U1c" secondAttribute="bottom" id="wqX-ff-V4i"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="7Po-wu-U1c"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="3f1-du-206"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="buz-cw-ra3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DFf-7G-SZx" firstAttribute="width" secondItem="9dB-jH-MEs" secondAttribute="width" multiplier="0.7" id="5jE-sS-nnq"/>
+                            <constraint firstItem="vBw-J4-nw7" firstAttribute="top" secondItem="9dB-jH-MEs" secondAttribute="top" id="BSx-SS-URH"/>
+                            <constraint firstAttribute="trailing" secondItem="vBw-J4-nw7" secondAttribute="trailing" id="GYb-dq-che"/>
+                            <constraint firstAttribute="bottom" secondItem="vBw-J4-nw7" secondAttribute="bottom" id="IOk-gb-Ot5"/>
+                            <constraint firstItem="vBw-J4-nw7" firstAttribute="leading" secondItem="9dB-jH-MEs" secondAttribute="leading" id="b5l-0o-J65"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Sign Up" id="ClY-Qq-xdl"/>
+                    <connections>
+                        <outlet property="calenderView" destination="cnc-el-Em4" id="Prc-Pa-HBC"/>
+                        <outlet property="countryTableView" destination="QTY-P1-CC1" id="Qhu-LY-GTW"/>
+                        <outlet property="countryTxtField" destination="JRw-zq-nUj" id="ccb-l2-5Mr"/>
+                        <outlet property="datePicker" destination="w24-LM-BOc" id="e2h-h7-CKM"/>
+                        <outlet property="dobTxtField" destination="5UY-96-vIL" id="qPb-kb-wWs"/>
+                        <outlet property="emailErrorLabel" destination="aj4-hQ-0ib" id="AaD-Zv-80I"/>
+                        <outlet property="emailTxtField" destination="s91-iB-Qi8" id="CcG-GO-0Of"/>
+                        <outlet property="femaleRadioBtn" destination="eUG-jf-Wln" id="6Yz-oZ-SZY"/>
+                        <outlet property="firstNameErrorLabel" destination="zsi-R8-P5F" id="6Wm-oK-gfb"/>
+                        <outlet property="firstNameTxtField" destination="VBx-N3-3QE" id="hqX-pY-cK9"/>
+                        <outlet property="lastNameErrorLabel" destination="bad-Xi-bgB" id="GhX-nk-nIt"/>
+                        <outlet property="lastNameTxtField" destination="cwn-Ni-mX1" id="ovT-Ud-d2I"/>
+                        <outlet property="mainErrorLabel" destination="uB9-hh-hBa" id="LTF-fN-3T8"/>
+                        <outlet property="maleRadioBtn" destination="zqf-4G-Fb8" id="TDp-ue-g5J"/>
+                        <outlet property="passwordErrorLabel" destination="Ho7-uy-pmk" id="D6V-Ce-Ynb"/>
+                        <outlet property="passwordTxtField" destination="2D3-B9-oDH" id="x4G-7Z-o4Q"/>
+                        <outlet property="registerBtn" destination="DFf-7G-SZx" id="jnn-Af-vcn"/>
+                        <outlet property="termsRadioBtn" destination="Kz3-ZR-iZj" id="vOf-Q7-JJ0"/>
+                        <outlet property="toSignInLbl" destination="Dwz-BV-GU3" id="wyG-e9-QKU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M3b-yQ-jvv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="644.85981308411215" y="-1492.2246220302377"/>
+        </scene>
+        <!--HomeVC-->
+        <scene sceneID="6rb-S8-T6V">
+            <objects>
+                <viewController storyboardIdentifier="homeVC" id="Uo0-il-WSj" customClass="HomeVC" customModule="Cado_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ehw-7Z-u2D">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mgm-Xj-dXJ">
+                                <rect key="frame" x="191.33333333333334" y="452.66666666666669" width="45.666666666666657" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="U8q-dn-0ot"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Mgm-Xj-dXJ" firstAttribute="centerY" secondItem="ehw-7Z-u2D" secondAttribute="centerY" id="co5-x6-LC0"/>
+                            <constraint firstItem="Mgm-Xj-dXJ" firstAttribute="centerX" secondItem="ehw-7Z-u2D" secondAttribute="centerX" id="mJ7-a7-cY5"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HOV-mh-VNE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1412" y="-802"/>
+        </scene>
+        <!--Sign In-->
+        <scene sceneID="WUW-L2-AGw">
+            <objects>
+                <viewController storyboardIdentifier="loginVC" id="eE1-bi-33z" customClass="LoginVC" customModule="Cado_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cwk-ha-7UN">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9ko-kV-KBe">
+                                <rect key="frame" x="20" y="118" width="388" height="139"/>
+                                <subviews>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="euk-QR-fWb">
+                                        <rect key="frame" x="0.0" y="0.0" width="388" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemRedColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="We6-uL-lAn" customClass="CustomTextField" customModule="Cado_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="388" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="email"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rxg-iC-p9c" customClass="CustomTextField" customModule="Cado_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="54" width="388" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCk-xw-4k2" customClass="PrimaryButton" customModule="Cado_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="108" width="388" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Sign In"/>
+                                        <connections>
+                                            <action selector="signInBtnTapped:" destination="eE1-bi-33z" eventType="touchUpInside" id="y9K-bF-Wlz"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fBC-Ue-U9G">
+                                <rect key="frame" x="122.33333333333333" y="287" width="183.66666666666669" height="45.666666666666686"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dont have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vap-zk-6M2">
+                                        <rect key="frame" x="0.0" y="0.0" width="183.66666666666666" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4H-3Y-gVq">
+                                        <rect key="frame" x="0.0" y="25.333333333333314" width="183.66666666666666" height="20.333333333333329"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="You can create one here">
+                                                <attributes>
+                                                    <font key="NSFont" metaFont="system" size="17"/>
+                                                    <integer key="NSUnderline" value="1"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1fg-TM-i60"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9ko-kV-KBe" firstAttribute="leading" secondItem="cwk-ha-7UN" secondAttribute="leading" constant="20" id="R2g-Ck-Y4Y"/>
+                            <constraint firstItem="fBC-Ue-U9G" firstAttribute="centerX" secondItem="cwk-ha-7UN" secondAttribute="centerX" id="bw0-1i-qlh"/>
+                            <constraint firstAttribute="trailing" secondItem="9ko-kV-KBe" secondAttribute="trailing" constant="20" id="dwW-8X-RQA"/>
+                            <constraint firstItem="fBC-Ue-U9G" firstAttribute="top" secondItem="9ko-kV-KBe" secondAttribute="bottom" constant="30" id="hUd-1H-ZSa"/>
+                            <constraint firstItem="9ko-kV-KBe" firstAttribute="top" secondItem="1fg-TM-i60" secondAttribute="top" constant="30" id="vWF-9t-14n"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Sign In" id="nlV-fC-6ll"/>
+                    <connections>
+                        <outlet property="emailTxtField" destination="We6-uL-lAn" id="UPq-l5-ylF"/>
+                        <outlet property="mainErrorLbl" destination="euk-QR-fWb" id="tu2-DR-FrR"/>
+                        <outlet property="passwordTxtField" destination="rxg-iC-p9c" id="Vir-JG-gOL"/>
+                        <outlet property="takeToRegisterLbl" destination="r4H-3Y-gVq" id="1Lc-Fx-hdE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aui-kf-oVd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="645" y="-801"/>
+        </scene>
+        <!--Forgot PasswordVC-->
+        <scene sceneID="jZN-Ez-78E">
+            <objects>
+                <viewController storyboardIdentifier="forgotPasswordVC" id="npA-nN-Guv" customClass="ForgotPasswordVC" customModule="Cado_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Uyp-4k-0mu">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock" catalog="system" highlightedImage="lock.doc" translatesAutoresizingMaskIntoConstraints="NO" id="dM5-4x-oSz">
+                                <rect key="frame" x="20" y="75" width="50" height="48"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Uzc-Mm-Zf1"/>
+                                    <constraint firstAttribute="height" constant="50" id="nHP-lD-9AG"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="FtK-NL-qX5">
+                                <rect key="frame" x="20" y="134" width="388" height="179"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot your password?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TyY-vH-yyp">
+                                        <rect key="frame" x="0.0" y="0.0" width="388" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your email below to recieve your password reset instructions" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHr-zl-jQj">
+                                        <rect key="frame" x="0.0" y="40.333333333333343" width="388" height="33.666666666666657"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" systemColor="systemGrayColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="caE-wD-hEa" customClass="CustomTextField" customModule="Cado_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="94" width="388" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="email"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jTs-ue-8gT" customClass="PrimaryButton" customModule="Cado_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="148" width="388" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Send Reset Instructions"/>
+                                        <connections>
+                                            <action selector="sendEmailBtnTapped:" destination="npA-nN-Guv" eventType="touchUpInside" id="SYC-4p-wru"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tyV-uQ-fMb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dM5-4x-oSz" firstAttribute="top" secondItem="tyV-uQ-fMb" secondAttribute="top" constant="30" id="Cdy-GX-JP4"/>
+                            <constraint firstItem="FtK-NL-qX5" firstAttribute="leading" secondItem="Uyp-4k-0mu" secondAttribute="leading" constant="20" id="KDD-ze-1cg"/>
+                            <constraint firstItem="dM5-4x-oSz" firstAttribute="leading" secondItem="Uyp-4k-0mu" secondAttribute="leading" constant="20" id="L1z-Rg-P58"/>
+                            <constraint firstItem="FtK-NL-qX5" firstAttribute="top" secondItem="dM5-4x-oSz" secondAttribute="bottom" constant="10" id="Zr4-yd-Qgf"/>
+                            <constraint firstAttribute="trailing" secondItem="FtK-NL-qX5" secondAttribute="trailing" constant="20" id="fYf-6O-lVf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailTxtField" destination="caE-wD-hEa" id="Ukr-7w-uw6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qYI-OQ-l4V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="645" y="-105"/>
+        </scene>
     </scenes>
     <resources>
         <image name="app.gift" catalog="system" width="128" height="114"/>
         <image name="hidden-image" width="1920" height="2880"/>
+        <image name="lock" catalog="system" width="128" height="128"/>
+        <image name="lock.doc" catalog="system" width="115" height="128"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
