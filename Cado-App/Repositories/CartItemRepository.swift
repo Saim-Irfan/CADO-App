@@ -8,18 +8,18 @@
 import Foundation
 
 struct CartItemRepository: RepositoryProtocol {
-  private var cartItems: [CartItem] = []
+  private static var cartItems: [CartItem] = []
     
     mutating func create(record: CartItem) {
-        cartItems.append(record)
+        CartItemRepository.cartItems.append(record)
     }
     
     func getAll() -> [CartItem] {
-        return cartItems
+        return CartItemRepository.cartItems
     }
     
     func get(byIdentifier id: Int) -> CartItem? {
-        return cartItems.first { cartItem in
+        return CartItemRepository.cartItems.first { cartItem in
             cartItem.id == id
         }
     }

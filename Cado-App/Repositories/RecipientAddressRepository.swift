@@ -8,18 +8,18 @@
 import Foundation
 
 struct RecipientAddressRepository: RepositoryProtocol {
-  private var addresses: [RecipientAddress] = []
+  private static var addresses: [RecipientAddress] = []
     
     mutating func create(record: RecipientAddress) {
-        addresses.append(record)
+        RecipientAddressRepository.addresses.append(record)
     }
     
     func getAll() -> [RecipientAddress] {
-        return addresses
+        return RecipientAddressRepository.addresses
     }
     
     func get(byIdentifier id: Int) -> RecipientAddress? {
-        return addresses.first { address in
+        return RecipientAddressRepository.addresses.first { address in
             address.id == id
         }
     }

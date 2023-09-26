@@ -8,18 +8,18 @@
 import Foundation
 
 struct OrderRepository: RepositoryProtocol {
-  private var orders: [Order] = []
+  private static var orders: [Order] = []
     
     mutating func create(record: Order) {
-        orders.append(record)
+        OrderRepository.orders.append(record)
     }
     
     func getAll() -> [Order] {
-        return orders
+        return OrderRepository.orders
     }
     
     func get(byIdentifier id: Int) -> Order? {
-        return orders.first { order in
+        return OrderRepository.orders.first { order in
             order.id == id
         }
     }

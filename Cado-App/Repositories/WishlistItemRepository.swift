@@ -8,18 +8,18 @@
 import Foundation
 
 struct WishlistItemRepository: RepositoryProtocol {
-  private var wishlistItems: [WishlistItem] = []
+  private static var wishlistItems: [WishlistItem] = []
     
     mutating func create(record: WishlistItem) {
-        wishlistItems.append(record)
+        WishlistItemRepository.wishlistItems.append(record)
     }
     
     func getAll() -> [WishlistItem] {
-        return wishlistItems
+        return WishlistItemRepository.wishlistItems
     }
     
     func get(byIdentifier id: Int) -> WishlistItem? {
-        return wishlistItems.first { wishlistItem in
+        return WishlistItemRepository.wishlistItems.first { wishlistItem in
             wishlistItem.id == id
         }
     }

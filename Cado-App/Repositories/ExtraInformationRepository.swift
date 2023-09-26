@@ -8,18 +8,18 @@
 import Foundation
 
 struct ExtraInformationRepository: RepositoryProtocol {
-  private var extraInformationList: [ExtraInformation] = []
+  private static var extraInformationList: [ExtraInformation] = []
     
     mutating func create(record: ExtraInformation) {
-        extraInformationList.append(record)
+        ExtraInformationRepository.extraInformationList.append(record)
     }
     
     func getAll() -> [ExtraInformation] {
-        return extraInformationList
+        return ExtraInformationRepository.extraInformationList
     }
     
     func get(byIdentifier id: Int) -> ExtraInformation? {
-        return extraInformationList.first { extraInformation in
+        return ExtraInformationRepository.extraInformationList.first { extraInformation in
             extraInformation.id == id
         }
     }

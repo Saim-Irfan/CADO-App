@@ -8,18 +8,18 @@
 import Foundation
 
 struct ProductAttributeRepository: RepositoryProtocol {
-  private var productAttributes: [ProductAttribute] = []
+  private static var productAttributes: [ProductAttribute] = []
     
     mutating func create(record: ProductAttribute) {
-        productAttributes.append(record)
+        ProductAttributeRepository.productAttributes.append(record)
     }
     
     func getAll() -> [ProductAttribute] {
-        return productAttributes
+        return ProductAttributeRepository.productAttributes
     }
     
     func get(byIdentifier id: Int) -> ProductAttribute? {
-        return productAttributes.first { productAttribute in
+        return ProductAttributeRepository.productAttributes.first { productAttribute in
             productAttribute.id == id
         }
     }

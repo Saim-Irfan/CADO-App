@@ -8,18 +8,18 @@
 import Foundation
 
 struct UserRepository: RepositoryProtocol {
-    private var users: [User] = []
+    private static var users: [User] = []
     
     mutating func create(record: User) {
-        users.append(record)
+        UserRepository.users.append(record)
     }
     
     func getAll() -> [User] {
-        return users
+        return UserRepository.users
     }
     
     func get(byIdentifier id: Int) -> User? {
-        return users.first { user in
+        return UserRepository.users.first { user in
             user.id == id
         }
     }
@@ -31,11 +31,11 @@ struct UserRepository: RepositoryProtocol {
     }
     
     mutating func delete(byIdentifier id: Int) -> Bool {
-        guard let indexOfUserToDelete = users.firstIndex (where: { user in
+        guard let indexOfUserToDelete = UserRepository.users.firstIndex (where: { user in
             user.id == id
         }) else { return false }
         
-        users.remove(at: indexOfUserToDelete)
+        UserRepository.users.remove(at: indexOfUserToDelete)
         
         return true
     }
