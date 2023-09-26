@@ -87,13 +87,13 @@ class LoginVC: UIViewController {
         
         mainErrorLbl.hideLabel()
         
-        let homeVC = storyboard?.instantiateViewController(withIdentifier: HomeVC.storyboardIdentifier) as! HomeVC
+        let mainTabBarVC = storyboard?.instantiateViewController(withIdentifier: "mainTabBarVC") as! UITabBarController
         guard var viewControllerList = navigationController?.viewControllers else {
             return
         }
         
         viewControllerList.removeLast()
-        viewControllerList.append(homeVC)
+        viewControllerList.append(mainTabBarVC)
         
         navigationController?.setViewControllers(viewControllerList, animated: true)
     }
