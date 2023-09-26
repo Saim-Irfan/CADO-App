@@ -25,7 +25,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y9K-QK-zi3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1304.3478260869567" y="-1164.5089285714284"/>
+            <point key="canvasLocation" x="-1563" y="-1166"/>
         </scene>
         <!--OnboardingVC-->
         <scene sceneID="ag6-jJ-vpq">
@@ -212,7 +212,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9mv-Sc-3x1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-355.07246376811599" y="-1165.1785714285713"/>
+            <point key="canvasLocation" x="-259" y="-1165"/>
         </scene>
         <!--Sign Up-->
         <scene sceneID="Xoy-sa-xIN">
@@ -550,9 +550,62 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M3b-yQ-jvv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="644.85981308411215" y="-1492.2246220302377"/>
+            <point key="canvasLocation" x="645" y="-1820"/>
         </scene>
-        <!--HomeVC-->
+        <!--Wishlist-->
+        <scene sceneID="bxr-bU-69D">
+            <objects>
+                <viewController id="gkw-mx-pXh" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ILx-ek-tYC">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="WpW-JW-Q5c"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Wishlist" image="heart.fill" catalog="system" id="Lg8-mI-ZYI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vgL-f6-naE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3425" y="-1587"/>
+        </scene>
+        <!--Orders-->
+        <scene sceneID="3hJ-cT-Fkp">
+            <objects>
+                <viewController id="9a4-09-y3c" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="97p-NY-uLM">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="IKO-1h-cAj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Orders" image="list.bullet.rectangle.portrait.fill" catalog="system" id="BKn-hj-eBm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xZP-50-V1n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3425" y="-808"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="cSC-2G-AH9">
+            <objects>
+                <tabBarController storyboardIdentifier="mainTabBarVC" id="30N-xF-nOQ" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="czG-ib-nPy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Uo0-il-WSj" kind="relationship" relationship="viewControllers" id="gdt-iQ-U3Z"/>
+                        <segue destination="gkw-mx-pXh" kind="relationship" relationship="viewControllers" id="s8e-zS-zQB"/>
+                        <segue destination="9a4-09-y3c" kind="relationship" relationship="viewControllers" id="Z1W-Rt-3nb"/>
+                        <segue destination="0Fy-O6-nK9" kind="relationship" relationship="viewControllers" id="ORy-SQ-dsa"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t0c-9e-czR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1691" y="-1186"/>
+        </scene>
+        <!--Home-->
         <scene sceneID="6rb-S8-T6V">
             <objects>
                 <viewController storyboardIdentifier="homeVC" id="Uo0-il-WSj" customClass="HomeVC" customModule="Cado_App" customModuleProvider="target" sceneMemberID="viewController">
@@ -560,24 +613,73 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mgm-Xj-dXJ">
-                                <rect key="frame" x="191.33333333333334" y="452.66666666666669" width="45.666666666666657" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yJX-LA-g9U">
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cSY-Lg-OML">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="xp1-fr-f3q">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="nU5-VN-dS4">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="5r2-Pj-Tea">
+                                        <rect key="frame" x="150" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="9Kc-W3-by7">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="AFD-aw-P2B">
+                                        <rect key="frame" x="300" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="b2W-wL-qAe">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="U8q-dn-0ot"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Mgm-Xj-dXJ" firstAttribute="centerY" secondItem="ehw-7Z-u2D" secondAttribute="centerY" id="co5-x6-LC0"/>
-                            <constraint firstItem="Mgm-Xj-dXJ" firstAttribute="centerX" secondItem="ehw-7Z-u2D" secondAttribute="centerX" id="mJ7-a7-cY5"/>
+                            <constraint firstAttribute="trailing" secondItem="yJX-LA-g9U" secondAttribute="trailing" id="GLn-IN-Aiq"/>
+                            <constraint firstAttribute="bottom" secondItem="yJX-LA-g9U" secondAttribute="bottom" id="bE0-9T-LTQ"/>
+                            <constraint firstItem="yJX-LA-g9U" firstAttribute="top" secondItem="ehw-7Z-u2D" secondAttribute="top" id="doX-em-G91"/>
+                            <constraint firstItem="yJX-LA-g9U" firstAttribute="leading" secondItem="ehw-7Z-u2D" secondAttribute="leading" id="jlH-VG-dU1"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="c8A-Va-lWa"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HOV-mh-VNE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1412" y="-802"/>
+            <point key="canvasLocation" x="3425" y="-2318"/>
+        </scene>
+        <!--Cart-->
+        <scene sceneID="9Qc-FW-awU">
+            <objects>
+                <viewController id="0Fy-O6-nK9" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="48J-QS-Ivv">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="z7U-zz-wFI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Cart" image="cart.fill" catalog="system" id="wQZ-Ab-drb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i5M-pd-o10" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3425" y="99"/>
         </scene>
         <!--Sign In-->
         <scene sceneID="WUW-L2-AGw">
@@ -660,7 +762,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aui-kf-oVd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="645" y="-801"/>
+            <point key="canvasLocation" x="645" y="-1166"/>
         </scene>
         <!--Forgot PasswordVC-->
         <scene sceneID="jZN-Ez-78E">
@@ -725,12 +827,16 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qYI-OQ-l4V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="645" y="-105"/>
+            <point key="canvasLocation" x="645" y="-511"/>
         </scene>
     </scenes>
     <resources>
         <image name="app.gift" catalog="system" width="128" height="114"/>
+        <image name="cart.fill" catalog="system" width="128" height="102"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="hidden-image" width="1920" height="2880"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="list.bullet.rectangle.portrait.fill" catalog="system" width="115" height="128"/>
         <image name="lock" catalog="system" width="128" height="128"/>
         <image name="lock.doc" catalog="system" width="115" height="128"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
