@@ -16,4 +16,14 @@ class PrimaryButton: UIButton {
         
         tintColor = .black
     }
+    
+    func setDisabled() {
+        isEnabled = false
+        layer.opacity = 0.4
+    }
+    
+    func setEnabled() {
+        isEnabled = true
+        layer.opacity = 1.0
+    }
 }
