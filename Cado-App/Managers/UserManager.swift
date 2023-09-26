@@ -36,4 +36,12 @@ class UserManager {
         }
         return true
     }
+    
+    func findBy(email: String) -> User? {
+        let userList = userRepository.getAll()
+        return userList.first { user in
+            print(user.email)
+            return user.email == email
+        }
+    }
 }
