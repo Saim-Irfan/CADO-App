@@ -17,6 +17,10 @@ class OnboardingVC: UIViewController {
     @IBOutlet var imgCollectionView: UICollectionView!
     @IBOutlet var pageController: UIPageControl!
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.backgroundColor = .clear
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         imgCollectionView.delegate = self
@@ -25,16 +29,28 @@ class OnboardingVC: UIViewController {
     }
     
     @IBAction func closeBtnTapped(_ sender: UIBarButtonItem) {
-        imgCollectionView.isHidden = true
-        
         imgCollectionView.removeFromSuperview()
         pageController.removeFromSuperview()
-        
-        //        pageController.isHidden = true
-        
+                
         sender.title = nil
         sender.image = nil
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        navigationItem.backButtonTitle = ""
+        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.backgroundColor = UIColor(red: 249/255, green: 224/255, blue: 30/255, alpha: 1.0)
+    }
+    
+    
+    @IBAction func registerBtnTapped(_ sender: Any) {
+        performSegue(withIdentifier: "registerSegue", sender: nil)
+    }
+    
+    @IBAction func signInBtnTapped(_ sender: Any) {
+        performSegue(withIdentifier: "loginSegue", sender: nil)
+    }
+    
 }
 
 extension OnboardingVC: UICollectionViewDataSource {
