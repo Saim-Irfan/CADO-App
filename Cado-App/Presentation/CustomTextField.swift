@@ -16,6 +16,7 @@ class CustomTextField: UITextField {
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray]
         )
         
+        rightViewMode = .always
         borderStyle = .roundedRect
         layer.cornerRadius = 5.0
     }
@@ -36,7 +37,6 @@ class CustomTextField: UITextField {
         let imageView = UIImageView(image: UIImage(systemName: "checkmark"))
         imageView.tintColor = UIColor(red: 249/255, green: 224/255, blue: 30/255, alpha: 1.0)
         
-        rightViewMode = .always
         rightView = imageView
     }
 }
