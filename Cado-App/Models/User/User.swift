@@ -8,6 +8,8 @@
 import Foundation
 
 class User {
+    private static var availableUserId = 1
+    
     let id:          Int
     let firstName:   String
     let lastName:    String
@@ -16,11 +18,9 @@ class User {
     let dateOfBirth: Date
     let gender:      Gender
     let country:     String
-    let cartId:      Int
-    let wishlisId:   Int
     
-    init(id: Int, firstName: String, lastName: String, email: String, password: String, dob: Date, gender: Gender, country: String, cartId: Int, wishlistId: Int) {
-        self.id          = id
+    init(firstName: String, lastName: String, email: String, password: String, dob: Date, gender: Gender, country: String) {
+        self.id          = Cado_App.User.availableUserId
         self.firstName   = firstName
         self.lastName    = lastName
         self.email       = email
@@ -28,8 +28,8 @@ class User {
         self.dateOfBirth = dob
         self.gender      = gender
         self.country     = country
-        self.cartId      = cartId
-        self.wishlisId   = wishlistId
+        
+        User.availableUserId += 1
     }
 }
 

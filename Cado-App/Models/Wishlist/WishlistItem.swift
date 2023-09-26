@@ -10,12 +10,12 @@ import Foundation
 
 class WishlistItem {
     let id:         Int
-    let wishlistId: Int
+    let userId:     Int
     let productId:  Int
 
-    init(id: Int, wishlistId: Int, productId: Int) {
+    init(id: Int, userId: Int, productId: Int) {
         self.id         = id
-        self.wishlistId = wishlistId
+        self.userId     = userId
         self.productId  = productId
     }
 }

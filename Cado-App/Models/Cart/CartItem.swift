@@ -9,13 +9,13 @@ import Foundation
 
 class CartItem {
     let id:         Int
-    let cartId:     Int
+    let userId:     Int
     let productId:  Int
     let quantity:   Int
 
-    init(id: Int, cartId: Int, productId: Int, quantity: Int) {
+    init(id: Int, userId: Int, productId: Int, quantity: Int) {
         self.id         = id
-        self.cartId     = cartId
+        self.userId     = userId
         self.productId  = productId
         self.quantity   = quantity
     }
