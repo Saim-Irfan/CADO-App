@@ -16,18 +16,18 @@ class FBButton: UIButton {
         
         heightAnchor.constraint(equalToConstant: 44.0).isActive = true
         
-//        contentHorizontalAlignment = .left
+        //        contentHorizontalAlignment = .left
         
-//        let imageWidth = configuration?.image?.size.width ?? 0
-//        let titleWidth = titleLabel?.intrinsicContentSize.width ?? 0
-//
-//        imageView?.contentMode = .scaleAspectFit
-//
-//        let spacing = CGFloat(10) // Adjust the desired spacing
-//
-//        let leftInset = (bounds.width - (imageWidth + spacing + titleWidth)) / 2
-//
-//        configuration?.imagePadding = leftInset
+        //        let imageWidth = configuration?.image?.size.width ?? 0
+        //        let titleWidth = titleLabel?.intrinsicContentSize.width ?? 0
+        //
+        //        imageView?.contentMode = .scaleAspectFit
+        //
+        //        let spacing = CGFloat(10) // Adjust the desired spacing
+        //
+        //        let leftInset = (bounds.width - (imageWidth + spacing + titleWidth)) / 2
+        //
+        //        configuration?.imagePadding = leftInset
     }
     
     func setColors() {
