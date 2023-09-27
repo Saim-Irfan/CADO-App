@@ -8,7 +8,25 @@
 import Foundation
 
 struct ProductRepository: RepositoryProtocol {
-  private static var products: [Product] = []
+    private static var products: [Product] = [
+        Product(id: 1,
+                name: "Mirzam",
+                imageUrl: "https://www.theluxediary.com/wp-content/uploads/2018/05/SmallDatesBox-e1525267997869.jpg",
+                description: "This is a good choclate. Please Enjoy :)",
+                shortDescription: "Dark Choclates Date",
+                price: 52,
+                quantity: 10,
+                shippingDays: 3),
+        
+        Product(id: 2,
+                name: "Mother's Day Bouqet",
+                imageUrl: "https://www.flowerchimp.sg/cdn/shop/files/Hot-Romance-a2_800x.jpg?v=1685089930",
+                description: "Gift your mother's a lovely gift",
+                shortDescription: "A Bouqet of Flowers",
+                price: 10,
+                quantity: 50,
+                shippingDays: 1),
+    ]
     
     mutating func create(record: Product) {
         ProductRepository.products.append(record)

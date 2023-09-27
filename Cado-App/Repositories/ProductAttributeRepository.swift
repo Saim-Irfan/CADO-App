@@ -8,7 +8,11 @@
 import Foundation
 
 struct ProductAttributeRepository: RepositoryProtocol {
-  private static var productAttributes: [ProductAttribute] = []
+  private static var productAttributes: [ProductAttribute] = [
+        ProductAttribute(id: 1,
+                         productId: 1,
+                         name: "Size")
+  ]
     
     mutating func create(record: ProductAttribute) {
         ProductAttributeRepository.productAttributes.append(record)
