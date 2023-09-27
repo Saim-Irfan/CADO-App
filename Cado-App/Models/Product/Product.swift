@@ -10,6 +10,7 @@ import Foundation
 class Product {
     let id:                 Int
     let name:               String
+    let imageUrl:           String
     let description:        String
     let shortDescription:   String
     let price:              Double
@@ -17,9 +18,10 @@ class Product {
     let shippingDays:       Int
     
     
-    init(id: Int, name: String, description: String, shortDescription: String, price: Double, quantity: Int, shippingDays: Int) {
+    init(id: Int, name: String, imageUrl: String, description: String, shortDescription: String, price: Double, quantity: Int, shippingDays: Int) {
         self.id                 = id
         self.name               = name
+        self.imageUrl           = imageUrl
         self.description        = description
         self.shortDescription   = shortDescription
         self.price              = price
