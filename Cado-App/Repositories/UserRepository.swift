@@ -8,7 +8,15 @@
 import Foundation
 
 struct UserRepository: RepositoryProtocol {
-    private static var users: [User] = []
+    private static var users: [User] = [
+        User(firstName: "Saim",
+             lastName: "Irfan",
+             email: "samfan95@gmail.com",
+             password: "Qwerty123456",
+             dob: Date.now,
+             gender: .male,
+             country: "Pakistan")
+    ]
     
     mutating func create(record: User) {
         UserRepository.users.append(record)
