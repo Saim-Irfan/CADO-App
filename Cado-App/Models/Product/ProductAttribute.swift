@@ -9,14 +9,13 @@ import Foundation
 
 class ProductAttribute {
     let id:         Int
+    let productId:   Int
     let name:       String
-    let value:      Int
-    let quantity:   Int
-
-    init(id: Int, name: String, value: Int, quantity: Int) {
-        self.id         = id
-        self.name       = name
-        self.value      = value
-        self.quantity   = quantity
+    
+    
+    init(id: Int, productId: Int, name: String) {
+        self.id             = id
+        self.productId      = productId
+        self.name           = name
     }
 }
