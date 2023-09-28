@@ -87,6 +87,8 @@ class LoginVC: UIViewController {
         
         mainErrorLbl.hideLabel()
         
+        LoggedUser.loginUser(userId: userWithEmail.id)
+        
         let mainTabBarVC = storyboard?.instantiateViewController(withIdentifier: "mainTabBarVC") as! UITabBarController
         guard var viewControllerList = navigationController?.viewControllers else {
             return
