@@ -162,6 +162,12 @@ class ProductDetailVC: UIViewController {
         let currentUserId = LoggedUser.getLoggedInUserId()!
         
         cartManager.addToCart(userId: currentUserId, productId: productId, quantity: Int(quantityTextField.text!)!)
+        
+        let alert = UIAlertController(title: "Product Added", message: "You have added this item to cart", preferredStyle: .alert)
+        let okButton = UIAlertAction(title: "Ok", style: .default)
+        alert.addAction(okButton)
+
+        present(alert, animated: true)
     }
 }
 
