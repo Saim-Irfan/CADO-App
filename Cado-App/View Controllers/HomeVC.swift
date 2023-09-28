@@ -82,7 +82,7 @@ class HomeVC: UIViewController {
                     productList.append(product)
                 }
                 
-                cell.configure(productList: productList)
+                cell.configure(productList: productList, parent: self)
                 
                 return cell
             }
