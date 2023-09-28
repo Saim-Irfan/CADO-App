@@ -993,7 +993,7 @@
                                                     <constraint firstAttribute="width" constant="30" id="CSj-M7-YrC"/>
                                                 </constraints>
                                             </imageView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="joy-gT-h1c">
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="joy-gT-h1c" userLabel="Add to cart stack">
                                                 <rect key="frame" x="10" y="531.66666666666663" width="408" height="44"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRf-UQ-EUd" customClass="PrimaryButton" customModule="Cado_App" customModuleProvider="target">
@@ -1177,10 +1177,10 @@
                                                 </constraints>
                                             </stackView>
                                             <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="YPN-Us-FnM" userLabel="Quantity Table View">
-                                                <rect key="frame" x="10" y="506.66666666666674" width="408" height="140"/>
+                                                <rect key="frame" x="10" y="506.66666666666674" width="408" height="115"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="140" id="S8w-6u-Qc7"/>
+                                                    <constraint firstAttribute="height" constant="115" id="S8w-6u-Qc7"/>
                                                 </constraints>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="quantityCell" id="lcO-ua-VMC">
@@ -1280,6 +1280,7 @@
                     </view>
                     <size key="freeformSize" width="428" height="1400"/>
                     <connections>
+                        <outlet property="addToCartBtn" destination="bRf-UQ-EUd" id="CFx-DH-Bc5"/>
                         <outlet property="descriptionLbl" destination="Ha6-oZ-A8z" id="5wz-W9-iuA"/>
                         <outlet property="leftScrollImg" destination="vL6-Ea-sX8" id="CSJ-sm-ODq"/>
                         <outlet property="mainImgView" destination="ce4-j2-dOF" id="GHB-Qe-9Lu"/>

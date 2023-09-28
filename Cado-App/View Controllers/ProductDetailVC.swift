@@ -21,6 +21,9 @@ class ProductDetailVC: UIViewController {
     @IBOutlet var quantityTableView: UITableView!
     
     
+    @IBOutlet var addToCartBtn: PrimaryButton!
+    
+    
     @IBOutlet var productScrollCollectionView: UICollectionView!
     
     
@@ -45,6 +48,7 @@ class ProductDetailVC: UIViewController {
         
         self.productList = productManager.getAll()
         self.product = productManager.get(byId: productId)!
+        setCartBtnEnableStatus()
         
         mainImgView.loadImage(url: URL(string: product.imageUrl)!)
         productNameLbl.text = product.name
@@ -55,6 +59,7 @@ class ProductDetailVC: UIViewController {
         quantityTableView.dataSource    = self
         quantityTableView.delegate      = self
         quantityTableView.layer.borderWidth = 1.0
+        quantityTableView.showsHorizontalScrollIndicator = true
         
         configureProductScrollLayout()
         
@@ -105,6 +110,15 @@ class ProductDetailVC: UIViewController {
         
         rightScrollImg.addGestureRecognizer(rightArrowTap)
         leftScrollImg.addGestureRecognizer(leftArrowTap)
+    }
+    
+    func setCartBtnEnableStatus() {
+        if quantityTextField.text!.isEmpty {
+            addToCartBtn.setDisabled()
+        }
+        else {
+            addToCartBtn.setEnabled()
+        }
     }
     
     @objc func handleRightArrowTap() {
@@ -163,6 +177,8 @@ extension ProductDetailVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         quantityTextField.text = "\(indexPath.row + 1)"
         quantityTableView.isHidden = true
+        
+        setCartBtnEnableStatus()
     }
 }
 
