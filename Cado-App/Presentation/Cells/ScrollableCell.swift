@@ -16,9 +16,11 @@ class ScrollableCell: UICollectionViewCell {
     @IBOutlet var mainCollectionView: UICollectionView!
     
     @IBOutlet var pageControl: UIPageControl!
+
+    private var parent: UIViewController!
     
     private var itemsPerPage = 2
-    
+
     private var productList: [Product]!
     
     
@@ -34,8 +36,9 @@ class ScrollableCell: UICollectionViewCell {
         configureLayout()
     }
     
-    func configure(productList: [Product]) {
+    func configure(productList: [Product], parent: UIViewController) {
         self.productList = productList
+        self.parent = parent
         
         let productCount = productList.count
         var totalPagesNeeded = Int(ceil(Double(productCount / itemsPerPage)))
@@ -138,5 +141,14 @@ extension ScrollableCell: UICollectionViewDelegate {
         let pageNumber = Int(ceil(Double(itemIndex / itemsPerPage)))
         
         pageControl.currentPage = pageNumber
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let product = productList[indexPath.row]
+        
+        
+        let productDetailVC = parent.storyboard?.instantiateViewController(withIdentifier: ProductDetailVC.storyboardIdentifier) as! ProductDetailVC
+        productDetailVC.productId = product.id
+        parent.navigationController?.pushViewController(productDetailVC, animated: true)
     }
 }
