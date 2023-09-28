@@ -10,11 +10,11 @@ import UIKit
 class ProductDetailVC: UIViewController {
     static let storyboardIdentifier = "productDetailVC"
     
-    @IBOutlet var mainImgView: UIImageView!
-    @IBOutlet var productNameLbl: UILabel!
-    @IBOutlet var shortDescriptionLbl: UILabel!
-    @IBOutlet var priceLbl: UILabel!
-    @IBOutlet var descriptionLbl: UILabel!
+    @IBOutlet var mainImgView:          UIImageView!
+    @IBOutlet var productNameLbl:       UILabel!
+    @IBOutlet var shortDescriptionLbl:  UILabel!
+    @IBOutlet var priceLbl:             UILabel!
+    @IBOutlet var descriptionLbl:       UILabel!
     
     
     @IBOutlet var quantityTextField: UITextField!
@@ -27,15 +27,16 @@ class ProductDetailVC: UIViewController {
     @IBOutlet var productScrollCollectionView: UICollectionView!
     
     
-    @IBOutlet var leftScrollImg: UIImageView!
-    @IBOutlet var rightScrollImg: UIImageView!
-    @IBOutlet var pageControl: UIPageControl!
+    @IBOutlet var leftScrollImg:    UIImageView!
+    @IBOutlet var rightScrollImg:   UIImageView!
+    @IBOutlet var pageControl:      UIPageControl!
     
     
     var productId: Int!
     
-    private let productManager = ProductManager()
-    private let extraInformationManager = ExtraInformationManager()
+    private let productManager  = ProductManager()
+    private let cartManager     = CartItemManager()
+    
     
     private var product: Product!
     private var productList: [Product] = []
@@ -157,6 +158,13 @@ class ProductDetailVC: UIViewController {
         quantityTableView.isHidden = false
     }
     
+    @IBAction func addToCartBtnTapped(_ sender: PrimaryButton) {
+        let currentUserId = LoggedUser.getLoggedInUserId()!
+        
+        let newCartItem = CartItem(userId: currentUserId, productId: productId, quantity: Int(quantityTextField.text!)!)
+        
+        cartManager.create(newCartItem)
+    }
 }
 
 extension ProductDetailVC: UITableViewDataSource {
