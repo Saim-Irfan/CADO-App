@@ -712,9 +712,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="Uo0-il-WSj" kind="relationship" relationship="viewControllers" id="gdt-iQ-U3Z"/>
-                        <segue destination="gkw-mx-pXh" kind="relationship" relationship="viewControllers" id="s8e-zS-zQB"/>
-                        <segue destination="9a4-09-y3c" kind="relationship" relationship="viewControllers" id="Z1W-Rt-3nb"/>
                         <segue destination="0Fy-O6-nK9" kind="relationship" relationship="viewControllers" id="ORy-SQ-dsa"/>
+                        <segue destination="9a4-09-y3c" kind="relationship" relationship="viewControllers" id="Z1W-Rt-3nb"/>
+                        <segue destination="gkw-mx-pXh" kind="relationship" relationship="viewControllers" id="s8e-zS-zQB"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t0c-9e-czR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
