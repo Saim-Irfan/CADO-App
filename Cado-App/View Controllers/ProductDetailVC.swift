@@ -161,9 +161,7 @@ class ProductDetailVC: UIViewController {
     @IBAction func addToCartBtnTapped(_ sender: PrimaryButton) {
         let currentUserId = LoggedUser.getLoggedInUserId()!
         
-        let newCartItem = CartItem(userId: currentUserId, productId: productId, quantity: Int(quantityTextField.text!)!)
-        
-        cartManager.create(newCartItem)
+        cartManager.addToCart(userId: currentUserId, productId: productId, quantity: Int(quantityTextField.text!)!)
     }
 }
 
