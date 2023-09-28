@@ -8,16 +8,20 @@
 import Foundation
 
 class CartItem {
+    private static var availableCartItemId = 1
+    
     let id:         Int
     let userId:     Int
     let productId:  Int
     let quantity:   Int
 
-    init(id: Int, userId: Int, productId: Int, quantity: Int) {
-        self.id         = id
+    init(userId: Int, productId: Int, quantity: Int) {
+        self.id         = CartItem.availableCartItemId
         self.userId     = userId
         self.productId  = productId
         self.quantity   = quantity
+        
+        CartItem.availableCartItemId += 1
     }
 }
 
