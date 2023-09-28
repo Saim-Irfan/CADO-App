@@ -13,6 +13,8 @@ class CartVC: UIViewController {
     @IBOutlet var totalItemLbl: UILabel!
     @IBOutlet var cartItemTableView: UITableView!
     
+    @IBOutlet var totalPriceLabel: UILabel!
+    
     private let productManager = ProductManager()
     private let cartItemManager = CartItemManager()
     
@@ -24,8 +26,18 @@ class CartVC: UIViewController {
         
         totalItemLbl.text = "\(cartItems.count) items"
         
+//        totalPriceLabel.text = "0.00 AED"
+        var totalPrice: Double = 0.0
+        for cartItem in cartItems {
+            let product = productManager.get(byId: cartItem.productId)!
+            totalPrice += product.price
+        }
+        
+        totalPriceLabel.text = "\(totalPrice) AED"
+        
+        
+        setTableViewDesign()
         cartItemTableView.reloadData()
-        setTableViewBorder()
     }
 
     override func viewDidLoad() {
@@ -34,11 +46,13 @@ class CartVC: UIViewController {
         cartItemTableView.dataSource    = self
     }
     
-    func setTableViewBorder() {
+    func setTableViewDesign() {
         if cartItems.isEmpty {
+            cartItemTableView.isHidden = true
             cartItemTableView.layer.borderWidth = 0.0
         }
         else {
+            cartItemTableView.isHidden = false
             cartItemTableView.layer.borderWidth = 0.5
         }
     }
