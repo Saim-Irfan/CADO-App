@@ -1000,6 +1000,9 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="288" height="44"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Add To Cart"/>
+                                                        <connections>
+                                                            <action selector="addToCartBtnTapped:" destination="mEV-ip-eFR" eventType="touchUpInside" id="Ghm-Km-qFU"/>
+                                                        </connections>
                                                     </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tray.and.arrow.up" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Jdf-gC-4de">
                                                         <rect key="frame" x="318" y="-1.3333333333333321" width="30" height="45"/>
