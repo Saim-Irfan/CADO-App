@@ -161,8 +161,6 @@ extension ProductDetailVC: UITableViewDataSource {
 
 extension ProductDetailVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Pressed")
-        
         quantityTextField.text = "\(indexPath.row + 1)"
         quantityTableView.isHidden = true
     }
