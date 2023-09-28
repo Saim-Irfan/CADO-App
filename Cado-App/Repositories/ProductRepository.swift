@@ -12,7 +12,7 @@ struct ProductRepository: RepositoryProtocol {
         Product(id: 1,
                 name: "Mirzam",
                 imageUrl: "https://www.theluxediary.com/wp-content/uploads/2018/05/SmallDatesBox-e1525267997869.jpg",
-                description: "This is a good choclate. Please Enjoy :)",
+                description: "This is a good choclate. Please Enjoy :). This is a good choclate. Please Enjoy :). This is a good choclate. Please Enjoy :). This is a good choclate. Please Enjoy :). This is a good choclate. Please Enjoy :). This is a good choclate. Please Enjoy :). This is a good choclate. Please Enjoy :). This is a good choclate. Please Enjoy :). This is a good choclate. Please Enjoy :).",
                 shortDescription: "Dark Choclates Date",
                 price: 52,
                 quantity: 10,
