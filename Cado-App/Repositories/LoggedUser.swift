@@ -12,15 +12,15 @@ import Foundation
 struct LoggedUser {
     private static var loggedInUserId: Int?
     
-    func loginUser(userId: Int) {
+    static func loginUser(userId: Int) {
         LoggedUser.loggedInUserId = userId
     }
     
-    func getLoggedInUserId() -> Int? {
+    static func getLoggedInUserId() -> Int? {
         LoggedUser.loggedInUserId
     }
     
-    func logoutUser() {
+    static func logoutUser() {
         LoggedUser.loggedInUserId = nil
     }
 }
