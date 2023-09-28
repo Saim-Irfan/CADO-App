@@ -23,14 +23,13 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        configureSearchBar()
+        
+        tabBarController?.navigationItem.title = "Home"
         
         loadHomePageData()
         
         configureDatasource()
         applySnapshot()
-        
         configureLayout()
     }
     
@@ -39,17 +38,6 @@ class HomeVC: UIViewController {
         let data = json.data(using: .utf8)!
         
         sectionList = try! JSONDecoder().decode([Section].self, from: data)
-    }
-    
-    func configureSearchBar() {
-        searchController.loadViewIfNeeded()
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search..."
-        
-        tabBarController?.navigationItem.hidesSearchBarWhenScrolling = false
-        tabBarController?.navigationItem.searchController = searchController
-        
-        tabBarController?.navigationItem.titleView = nil
     }
     
     func configureDatasource() {
