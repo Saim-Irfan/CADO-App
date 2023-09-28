@@ -13,7 +13,7 @@ class CartItem {
     let id:         Int
     let userId:     Int
     let productId:  Int
-    let quantity:   Int
+    var quantity:   Int
 
     init(userId: Int, productId: Int, quantity: Int) {
         self.id         = CartItem.availableCartItemId
