@@ -23,6 +23,8 @@ class CartVC: UIViewController {
     
     private var cartItems: [CartItem] = []
     
+    private var totalPrice = 0.0
+    
     override func viewDidAppear(_ animated: Bool) {
         tabBarController?.navigationItem.title = "Cart"
         
@@ -72,14 +74,26 @@ class CartVC: UIViewController {
     func setTotalPrice() {
         totalItemLbl.text = "\(cartItems.count) items"
         
-        var totalPrice: Double = 0.0
+        self.totalPrice = 0.0
+        
         for cartItem in cartItems {
             let product = productManager.get(byId: cartItem.productId)!
-            totalPrice += (product.price * Double(cartItem.quantity))
+            self.totalPrice += (product.price * Double(cartItem.quantity))
         }
         
-        totalPriceLabel.text = "\(totalPrice) AED"
+        totalPriceLabel.text = "\(self.totalPrice) AED"
     }
+    
+    
+    
+    @IBAction func proceedToCheckoutBtnTapped(_ sender: Any) {
+        let checkoutVC = storyboard?.instantiateViewController(withIdentifier: CheckoutVC.storyboardIdentifier) as! CheckoutVC
+        
+        checkoutVC.totalPrice = self.totalPrice
+        
+        navigationController?.pushViewController(checkoutVC, animated: true)
+    }
+    
 }
 
 extension CartVC: UITableViewDataSource {
