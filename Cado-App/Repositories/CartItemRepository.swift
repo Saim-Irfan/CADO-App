@@ -31,6 +31,10 @@ struct CartItemRepository: RepositoryProtocol {
     }
     
     mutating func delete(byIdentifier id: Int) -> Bool {
+        CartItemRepository.cartItems.removeAll { cartItem in
+            cartItem.id == id
+        }
+        
         return true
     }
     
