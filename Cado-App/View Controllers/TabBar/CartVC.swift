@@ -30,7 +30,7 @@ class CartVC: UIViewController {
         var totalPrice: Double = 0.0
         for cartItem in cartItems {
             let product = productManager.get(byId: cartItem.productId)!
-            totalPrice += product.price
+            totalPrice += (product.price * Double(cartItem.quantity))
         }
         
         totalPriceLabel.text = "\(totalPrice) AED"
