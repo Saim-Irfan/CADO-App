@@ -18,6 +18,14 @@ class RecipientAddressManager {
         recipientAddressRepository.getAll()
     }
     
+    func getAll(byUserId userId: Int) -> [RecipientAddress] {
+        let recipientAddressList = getAll()
+        
+        return recipientAddressList.filter { recipientAddress in
+            return recipientAddress.userId == userId
+        }
+    }
+    
     func get(byId id: Int) -> RecipientAddress? {
         recipientAddressRepository.get(byIdentifier: id)
     }
