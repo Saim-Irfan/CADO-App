@@ -9,8 +9,7 @@ import Foundation
 
 struct RecipientAddressRepository: RepositoryProtocol {
   private static var addresses: [RecipientAddress] = [
-        RecipientAddress(id:            1,
-                         userId:        1,
+        RecipientAddress(userId:        1,
                          firstName:     "Moiz",
                          lastName:      "Ali",
                          mobileNumber:  "03102573772",
@@ -19,8 +18,7 @@ struct RecipientAddressRepository: RepositoryProtocol {
                          city:          "Abu Dhabi",
                          instruction:   ""),
         
-        RecipientAddress(id:            2,
-                         userId:        1,
+        RecipientAddress(userId:        1,
                          firstName:     "Inshal",
                          lastName:      "Ayaz",
                          mobileNumber:  "03102573772",
