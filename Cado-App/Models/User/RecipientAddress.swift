@@ -8,6 +8,8 @@
 import Foundation
 
 class RecipientAddress {
+    private static var availableRecipientAddressId = 1
+    
     let id:           Int
     let userId:       Int
     let firstName:    String
@@ -18,8 +20,8 @@ class RecipientAddress {
     let city:         String
     let instruction:  String
 
-    init(id: Int, userId: Int, firstName: String, lastName: String, mobileNumber: String, street: String, residence: String, city: String, instruction: String) {
-        self.id           = id
+    init(userId: Int, firstName: String, lastName: String, mobileNumber: String, street: String, residence: String, city: String, instruction: String) {
+        self.id           = RecipientAddress.availableRecipientAddressId
         self.userId       = userId
         self.firstName    = firstName
         self.lastName     = lastName
@@ -28,5 +30,7 @@ class RecipientAddress {
         self.residence    = residence
         self.city         = city
         self.instruction  = instruction
+        
+        RecipientAddress.availableRecipientAddressId += 1
     }
 }
