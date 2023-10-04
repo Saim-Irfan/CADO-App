@@ -19,9 +19,18 @@ class CartItemCell: UITableViewCell {
     
     @IBOutlet var quantityTxtField: UITextField!
     
+    var cartItemId: Int!
+    
+    var deleteBtnCallback: ((Int) -> ())!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        
         // Initialization code
+    }
+    
+    @IBAction func deleteBtnTapped(_ sender: UIButton) {
+        self.deleteBtnCallback(cartItemId)
     }
 }
