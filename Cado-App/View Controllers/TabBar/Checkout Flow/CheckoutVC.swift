@@ -19,6 +19,9 @@ class CheckoutVC: UIViewController {
     @IBOutlet var orderSummaryDetailStackViewHeight: NSLayoutConstraint!
     
     
+    @IBOutlet var proceedToPurchaseBtn: PrimaryButton!
+    
+    
     @IBOutlet var totalPriceLbl: UILabel!
     
     private let addressManager = RecipientAddressManager()
@@ -30,15 +33,22 @@ class CheckoutVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         navigationItem.title = "Checkout"
+        
+        configureRecipientAddress()
+        configureAddressStackView()
+//        setUpAddressFunctionality()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureRecipientAddress()
-        configureAddressStackView()
+        proceedToPurchaseBtn.setDisabled()
         configureOrderSummarySection()
     }
+    
+//    func setUpAddressFunctionality() {
+//
+//    }
     
     func configureRecipientAddress() {
         let loggedInUserId = LoggedUser.getLoggedInUserId()!
@@ -55,9 +65,9 @@ class CheckoutVC: UIViewController {
             label.heightAnchor.constraint(equalToConstant: 44.0).isActive = true
             label.text = "You have not added any address!"
             label.textColor = .systemRed
-            
+
             addressStackView.addArrangedSubview(label)
-            
+
             mainStackViewHeight += 44.0
         }
         
@@ -78,6 +88,8 @@ class CheckoutVC: UIViewController {
                 
                 self.selectedAddressIndex = addressIndex
                 addressView.radioBtn.setAsEnabled()
+                
+                self.proceedToPurchaseBtn.setEnabled()
             }
             
             addressStackView.addArrangedSubview(addressView)
@@ -110,6 +122,11 @@ class CheckoutVC: UIViewController {
         }, completion: nil)
     }
     
+    @IBAction func addnewAddressBtnTapped(_ sender: UIButton) {
+        let newAddressVC = storyboard?.instantiateViewController(withIdentifier: AddAddressVC.storyboardIdentifier) as! AddAddressVC
+        
+        navigationController?.pushViewController(newAddressVC, animated: true)
+    }
     
     @IBAction func proceedToPurchaseBtnTapped(_ sender: UIButton) {
         let purchaseVC = storyboard?.instantiateViewController(withIdentifier: PurchaseVC.storyboardIdentifier) as! PurchaseVC
