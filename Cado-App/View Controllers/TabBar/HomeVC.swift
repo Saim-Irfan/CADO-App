@@ -21,10 +21,12 @@ class HomeVC: UIViewController {
     private var datasource: Datasource!
     private var sectionList: [Section] = []
     
+    override func viewDidAppear(_ animated: Bool) {
+        tabBarController?.navigationItem.title = "Home"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tabBarController?.navigationItem.title = "Home"
         
         loadHomePageData()
         
