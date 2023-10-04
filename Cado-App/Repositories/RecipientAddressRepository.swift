@@ -8,7 +8,27 @@
 import Foundation
 
 struct RecipientAddressRepository: RepositoryProtocol {
-  private static var addresses: [RecipientAddress] = []
+  private static var addresses: [RecipientAddress] = [
+        RecipientAddress(id:            1,
+                         userId:        1,
+                         firstName:     "Moiz",
+                         lastName:      "Ali",
+                         mobileNumber:  "03102573772",
+                         street:        "234 Sheikh Zayed Street",
+                         residence:     "Sheikh Zayed Residence",
+                         city:          "Abu Dhabi",
+                         instruction:   ""),
+        
+        RecipientAddress(id:            2,
+                         userId:        1,
+                         firstName:     "Inshal",
+                         lastName:      "Ayaz",
+                         mobileNumber:  "03102573772",
+                         street:        "234 Sheikh Zayed Street",
+                         residence:     "Sheikh Zayed Residence",
+                         city:          "Abu Dhabi",
+                         instruction:   "Place on the stairs"),
+  ]
     
     mutating func create(record: RecipientAddress) {
         RecipientAddressRepository.addresses.append(record)
