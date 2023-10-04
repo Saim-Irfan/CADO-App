@@ -28,6 +28,9 @@ class CheckoutVC: UIViewController {
     
     var totalPrice = 0.0
     
+    override func viewDidAppear(_ animated: Bool) {
+        navigationItem.title = "Checkout"
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,23 +98,22 @@ class CheckoutVC: UIViewController {
     }
     
     @objc func toggleSummaryDropDown() {
-        if (orderSummaryDetailStackView.isHidden) {
-            
-            self.orderSummaryDetailStackView.isHidden = false
+        if (orderSummaryDetailStackViewHeight.constant == 0.0) {
             orderSummaryDetailStackViewHeight.constant = 44.0
-            
-            UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveLinear, animations: {
-                self.orderSummaryDetailStackView.layoutIfNeeded()
-            }, completion: nil)
         }
         else {
-            orderSummaryDetailStackView.isHidden = true
             orderSummaryDetailStackViewHeight.constant = 0.0
         }
+        
+        UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveLinear, animations: {
+            self.orderSummaryDetailStackView.layoutIfNeeded()
+        }, completion: nil)
     }
     
     
     @IBAction func proceedToPurchaseBtnTapped(_ sender: UIButton) {
+        let purchaseVC = storyboard?.instantiateViewController(withIdentifier: PurchaseVC.storyboardIdentifier) as! PurchaseVC
+        navigationController?.pushViewController(purchaseVC, animated: true)
     }
     
 }
