@@ -18,7 +18,7 @@ extension UIImageView {
             }
             
             DispatchQueue.main.async {
-                self.image = UIImage(data: data)!
+                self.image = UIImage(data: data) ?? UIImage(systemName: "network")
             }
         }.resume()
     }
