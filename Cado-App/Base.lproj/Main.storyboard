@@ -1413,7 +1413,7 @@
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cartItemCell" rowHeight="140" id="PNR-Hc-hE2" customClass="CartItemCell" customModule="Cado_App" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="44.666666030883789" width="408" height="140"/>
                                                         <autoresizingMask key="autoresizingMask"/>
-                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PNR-Hc-hE2" id="MYf-cZ-Slh">
+                                                        <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PNR-Hc-hE2" id="MYf-cZ-Slh">
                                                             <rect key="frame" x="0.0" y="0.0" width="408" height="140"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
@@ -1449,7 +1449,7 @@
                                                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z61-x4-hxh">
                                                                                     <rect key="frame" x="0.0" y="91" width="238" height="44"/>
                                                                                     <subviews>
-                                                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="45P-vl-ZxL">
+                                                                                        <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="45P-vl-ZxL">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="95.333333333333329" height="44"/>
                                                                                             <constraints>
                                                                                                 <constraint firstAttribute="height" constant="44" id="X2i-Vs-B1t"/>
@@ -1472,6 +1472,9 @@
                                                                                                     </fragment>
                                                                                                 </attributedString>
                                                                                             </buttonConfiguration>
+                                                                                            <connections>
+                                                                                                <action selector="deleteBtnTapped:" destination="PNR-Hc-hE2" eventType="touchUpInside" id="Dhp-FX-3Gj"/>
+                                                                                            </connections>
                                                                                         </button>
                                                                                     </subviews>
                                                                                     <constraints>
@@ -1482,12 +1485,42 @@
                                                                         </stackView>
                                                                     </subviews>
                                                                 </stackView>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.down" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1Si-dw-SQd">
+                                                                    <rect key="frame" x="240.33333333333334" y="109.33333333333333" width="20.000000000000028" height="17.666666666666671"/>
+                                                                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="20" id="Ae8-Yc-W8x"/>
+                                                                        <constraint firstAttribute="height" constant="20" id="zfR-sT-flE"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Bt9-DB-BM0" userLabel="Quantity Table View">
+                                                                    <rect key="frame" x="170" y="140" width="95.333333333333314" height="0.0"/>
+                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" id="xFp-uH-7Fg"/>
+                                                                    </constraints>
+                                                                    <prototypes>
+                                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="quantityCell" id="Txf-L6-jMt">
+                                                                            <rect key="frame" x="0.0" y="44.666666030883789" width="95.333333333333314" height="44"/>
+                                                                            <autoresizingMask key="autoresizingMask"/>
+                                                                            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Txf-L6-jMt" id="dxv-bH-0dc">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="95.333333333333314" height="44"/>
+                                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                            </tableViewCellContentView>
+                                                                        </tableViewCell>
+                                                                    </prototypes>
+                                                                </tableView>
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstAttribute="trailing" secondItem="1Ch-pm-QX5" secondAttribute="trailing" id="1vu-0w-eLw"/>
                                                                 <constraint firstAttribute="bottom" secondItem="1Ch-pm-QX5" secondAttribute="bottom" id="FUh-xk-W1p"/>
+                                                                <constraint firstItem="1Si-dw-SQd" firstAttribute="centerY" secondItem="45P-vl-ZxL" secondAttribute="centerY" id="M5O-TP-viF"/>
+                                                                <constraint firstItem="1Si-dw-SQd" firstAttribute="trailing" secondItem="45P-vl-ZxL" secondAttribute="trailing" constant="-5" id="OD4-Iy-vxh"/>
                                                                 <constraint firstItem="1Ch-pm-QX5" firstAttribute="top" secondItem="MYf-cZ-Slh" secondAttribute="top" constant="5" id="ZhG-GE-cdb"/>
+                                                                <constraint firstItem="Bt9-DB-BM0" firstAttribute="leading" secondItem="45P-vl-ZxL" secondAttribute="leading" id="a8N-n4-PVy"/>
+                                                                <constraint firstItem="Bt9-DB-BM0" firstAttribute="top" secondItem="45P-vl-ZxL" secondAttribute="bottom" id="d06-eK-LbK"/>
                                                                 <constraint firstItem="1Ch-pm-QX5" firstAttribute="leading" secondItem="MYf-cZ-Slh" secondAttribute="leading" id="fKs-Lw-OeP"/>
+                                                                <constraint firstItem="Bt9-DB-BM0" firstAttribute="trailing" secondItem="45P-vl-ZxL" secondAttribute="trailing" id="u4L-mq-6bw"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
                                                         <connections>
@@ -1550,16 +1583,16 @@
                                                 <color key="textColor" systemColor="systemGrayColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3J3-rN-vzp">
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3J3-rN-vzp">
                                                 <rect key="frame" x="10" y="621.66666666666663" width="408" height="44"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAO-IX-O2b" customClass="PrimaryButton" customModule="Cado_App" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="204" height="44"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="199" height="44"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Yes"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="84m-uO-ii3" customClass="PrimaryButton" customModule="Cado_App" customModuleProvider="target">
-                                                        <rect key="frame" x="204" y="0.0" width="204" height="44"/>
+                                                        <rect key="frame" x="209" y="0.0" width="199" height="44"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="No"/>
                                                     </button>
@@ -1696,6 +1729,8 @@
                     <size key="freeformSize" width="428" height="1400"/>
                     <connections>
                         <outlet property="cartItemTableView" destination="t83-py-Vh5" id="lGl-fX-hXp"/>
+                        <outlet property="proceedToCheckoutBtn" destination="ydS-XN-nQD" id="RgS-L3-lb6"/>
+                        <outlet property="tableViewHeightConstraint" destination="8Ah-w6-wDd" id="sPG-b7-CRl"/>
                         <outlet property="totalItemLbl" destination="ku5-yF-j3n" id="iNG-Ut-MDS"/>
                         <outlet property="totalPriceLabel" destination="HkJ-gj-nhw" id="Qrw-xm-MAQ"/>
                     </connections>
