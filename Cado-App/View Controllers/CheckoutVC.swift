@@ -32,9 +32,17 @@ class CheckoutVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureRecipientAddress()
+        configureAddressStackView()
+        configureOrderSummarySection()
+    }
+    
+    func configureRecipientAddress() {
         let loggedInUserId = LoggedUser.getLoggedInUserId()!
         self.recipientAddressList = addressManager.getAll(byUserId: loggedInUserId)
-        
+    }
+    
+    func configureAddressStackView() {
         let stackItemHeight = 80.0
         var mainStackViewHeight = 0.0
         
@@ -75,8 +83,9 @@ class CheckoutVC: UIViewController {
         }
         
         addressStackViewHeight.constant = mainStackViewHeight
-        
-        
+    }
+    
+    func configureOrderSummarySection() {
         orderSummaryStackView.isUserInteractionEnabled = true
         let orderSummaryTapped = UITapGestureRecognizer(target: self, action: #selector(toggleSummaryDropDown))
         
