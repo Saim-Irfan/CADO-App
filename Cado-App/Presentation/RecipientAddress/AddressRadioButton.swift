@@ -8,6 +8,8 @@
 import UIKit
 
 class AddressRadioButton: UIButton {
+    private(set) var isChosen = false
+    
     override func awakeFromNib() {
         configuration?.title = ""
                 
@@ -21,9 +23,11 @@ class AddressRadioButton: UIButton {
     
     func setAsEnabled() {
         backgroundColor = UIColor(red: 249/255, green: 224/255, blue: 30/255, alpha: 1.0)
+        isChosen = true
     }
     
     func setAsDisabled() {
         backgroundColor = .clear
+        isChosen = false
     }
 }
