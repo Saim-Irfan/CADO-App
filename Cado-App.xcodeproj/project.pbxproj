@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		344D1EE42ACD4EB9000981D0 /* RecipientAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344D1EE32ACD4EB9000981D0 /* RecipientAddressView.swift */; };
+		344D1EE62ACD4EC8000981D0 /* RecipientAddressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 344D1EE52ACD4EC8000981D0 /* RecipientAddressView.xib */; };
+		344D1EE92ACD5024000981D0 /* AddressRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344D1EE82ACD5024000981D0 /* AddressRadioButton.swift */; };
+		344D1EEB2ACD5681000981D0 /* CheckoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344D1EEA2ACD5681000981D0 /* CheckoutVC.swift */; };
+		344D1EED2ACD9249000981D0 /* PurchaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344D1EEC2ACD9249000981D0 /* PurchaseVC.swift */; };
+		344D1EF02ACD9900000981D0 /* AddAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344D1EEF2ACD9900000981D0 /* AddAddressVC.swift */; };
 		3470BBDD2ABC7519006F1130 /* RepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3470BBDC2ABC7519006F1130 /* RepositoryProtocol.swift */; };
 		3470BBDF2ABC79B0006F1130 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3470BBDE2ABC79B0006F1130 /* User.swift */; };
 		3470BBE12ABC7B5E006F1130 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3470BBE02ABC7B5E006F1130 /* Product.swift */; };
@@ -43,6 +49,7 @@
 		349548B12AC5C40E00643FFD /* LoggedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349548B02AC5C40E00643FFD /* LoggedUser.swift */; };
 		349548B32AC5CFD100643FFD /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349548B22AC5CFD100643FFD /* CartVC.swift */; };
 		349548B72AC5D71600643FFD /* CartItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349548B62AC5D71600643FFD /* CartItemCell.swift */; };
+		34ADA7EE2ACEC4AA007C6E76 /* ConfirmationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADA7ED2ACEC4AA007C6E76 /* ConfirmationVC.swift */; };
 		34B44EBB2AC4377000FDD7E3 /* AttributeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B44EBA2AC4377000FDD7E3 /* AttributeItem.swift */; };
 		34B44EBD2AC4381A00FDD7E3 /* AttributeItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B44EBC2AC4381A00FDD7E3 /* AttributeItemRepository.swift */; };
 		34B44EBF2AC438A500FDD7E3 /* AttributeItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B44EBE2AC438A500FDD7E3 /* AttributeItemManager.swift */; };
@@ -73,6 +80,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		344D1EE32ACD4EB9000981D0 /* RecipientAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipientAddressView.swift; sourceTree = "<group>"; };
+		344D1EE52ACD4EC8000981D0 /* RecipientAddressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipientAddressView.xib; sourceTree = "<group>"; };
+		344D1EE82ACD5024000981D0 /* AddressRadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressRadioButton.swift; sourceTree = "<group>"; };
+		344D1EEA2ACD5681000981D0 /* CheckoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutVC.swift; sourceTree = "<group>"; };
+		344D1EEC2ACD9249000981D0 /* PurchaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseVC.swift; sourceTree = "<group>"; };
+		344D1EEF2ACD9900000981D0 /* AddAddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAddressVC.swift; sourceTree = "<group>"; };
 		3470BBDC2ABC7519006F1130 /* RepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryProtocol.swift; sourceTree = "<group>"; };
 		3470BBDE2ABC79B0006F1130 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3470BBE02ABC7B5E006F1130 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -111,6 +124,7 @@
 		349548B02AC5C40E00643FFD /* LoggedUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedUser.swift; sourceTree = "<group>"; };
 		349548B22AC5CFD100643FFD /* CartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
 		349548B62AC5D71600643FFD /* CartItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemCell.swift; sourceTree = "<group>"; };
+		34ADA7ED2ACEC4AA007C6E76 /* ConfirmationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationVC.swift; sourceTree = "<group>"; };
 		34B44EBA2AC4377000FDD7E3 /* AttributeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeItem.swift; sourceTree = "<group>"; };
 		34B44EBC2AC4381A00FDD7E3 /* AttributeItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeItemRepository.swift; sourceTree = "<group>"; };
 		34B44EBE2AC438A500FDD7E3 /* AttributeItemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeItemManager.swift; sourceTree = "<group>"; };
@@ -151,6 +165,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		344D1EE72ACD4FEB000981D0 /* RecipientAddress */ = {
+			isa = PBXGroup;
+			children = (
+				344D1EE82ACD5024000981D0 /* AddressRadioButton.swift */,
+				344D1EE32ACD4EB9000981D0 /* RecipientAddressView.swift */,
+				344D1EE52ACD4EC8000981D0 /* RecipientAddressView.xib */,
+			);
+			path = RecipientAddress;
+			sourceTree = "<group>";
+		};
+		344D1EEE2ACD98BA000981D0 /* Checkout Flow */ = {
+			isa = PBXGroup;
+			children = (
+				349548B22AC5CFD100643FFD /* CartVC.swift */,
+				344D1EEA2ACD5681000981D0 /* CheckoutVC.swift */,
+				344D1EEC2ACD9249000981D0 /* PurchaseVC.swift */,
+				34ADA7ED2ACEC4AA007C6E76 /* ConfirmationVC.swift */,
+			);
+			path = "Checkout Flow";
+			sourceTree = "<group>";
+		};
 		3470BBD82ABC74E6006F1130 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,7 +362,7 @@
 			isa = PBXGroup;
 			children = (
 				34826F132AC2F0C100838939 /* HomeVC.swift */,
-				349548B22AC5CFD100643FFD /* CartVC.swift */,
+				344D1EEE2ACD98BA000981D0 /* Checkout Flow */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -366,6 +401,7 @@
 				349548AF2AC5C34600643FFD /* TabBar */,
 				349548AA2AC58E6400643FFD /* Authentication */,
 				349548AB2AC58E9300643FFD /* ProductDetailVC.swift */,
+				344D1EEF2ACD9900000981D0 /* AddAddressVC.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -378,6 +414,7 @@
 				34B4952B2ABD7EBB00A427E5 /* FBButton.swift */,
 				34B495332ABDDEB300A427E5 /* CustomTextField.swift */,
 				347D682A2AC198F400B790CF /* RadioButton.swift */,
+				344D1EE72ACD4FEB000981D0 /* RecipientAddress */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -443,6 +480,7 @@
 				34B44ED72AC47F8100FDD7E3 /* HeaderCollectionReusableView.xib in Resources */,
 				347F49942ABB328B0020F3DD /* LaunchScreen.storyboard in Resources */,
 				347F49912ABB328B0020F3DD /* Assets.xcassets in Resources */,
+				344D1EE62ACD4EC8000981D0 /* RecipientAddressView.xib in Resources */,
 				347F498F2ABB32890020F3DD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,6 +495,7 @@
 				3470BBEF2ABC8345006F1130 /* RecipientAddress.swift in Sources */,
 				34826F142AC2F0C100838939 /* HomeVC.swift in Sources */,
 				347F498C2ABB32890020F3DD /* OnboardingVC.swift in Sources */,
+				344D1EED2ACD9249000981D0 /* PurchaseVC.swift in Sources */,
 				3470BC002ABC8BC8006F1130 /* ProductAttributeRepository.swift in Sources */,
 				3470BBF32ABC84CE006F1130 /* OrderItem.swift in Sources */,
 				34B56C452ABC97180070E912 /* ExtraInformationManager.swift in Sources */,
@@ -471,8 +510,10 @@
 				349548AC2AC58E9300643FFD /* ProductDetailVC.swift in Sources */,
 				3470BC082ABC8EA1006F1130 /* OrderItemRepository.swift in Sources */,
 				3470BBE52ABC7CE0006F1130 /* CartItem.swift in Sources */,
+				344D1EE42ACD4EB9000981D0 /* RecipientAddressView.swift in Sources */,
 				3470BBED2ABC8304006F1130 /* WishlistItem.swift in Sources */,
 				34B4952C2ABD7EBB00A427E5 /* FBButton.swift in Sources */,
+				344D1EF02ACD9900000981D0 /* AddAddressVC.swift in Sources */,
 				347F49882ABB32890020F3DD /* AppDelegate.swift in Sources */,
 				3470BBF12ABC843A006F1130 /* Order.swift in Sources */,
 				3470BBE72ABC7D6F006F1130 /* ProductAttribute.swift in Sources */,
@@ -491,6 +532,7 @@
 				349548B72AC5D71600643FFD /* CartItemCell.swift in Sources */,
 				34B495342ABDDEB300A427E5 /* CustomTextField.swift in Sources */,
 				34B4952A2ABD6E5700A427E5 /* PrimaryButton.swift in Sources */,
+				34ADA7EE2ACEC4AA007C6E76 /* ConfirmationVC.swift in Sources */,
 				34B44ECE2AC44B3800FDD7E3 /* ProductItem.swift in Sources */,
 				347F498A2ABB32890020F3DD /* SceneDelegate.swift in Sources */,
 				34B56C4D2ABC99710070E912 /* WishlistItemManager.swift in Sources */,
@@ -499,11 +541,13 @@
 				349548B12AC5C40E00643FFD /* LoggedUser.swift in Sources */,
 				34B44EC52AC4419900FDD7E3 /* JsonData.swift in Sources */,
 				3470BBFA2ABC8612006F1130 /* UserRepository.swift in Sources */,
+				344D1EE92ACD5024000981D0 /* AddressRadioButton.swift in Sources */,
 				34B44EBB2AC4377000FDD7E3 /* AttributeItem.swift in Sources */,
 				34B44EC12AC4412000FDD7E3 /* InnerCell.swift in Sources */,
 				3470BC042ABC8CAA006F1130 /* CartItemRepository.swift in Sources */,
 				34B44ECA2AC447C200FDD7E3 /* SectionItem.swift in Sources */,
 				3470BBE12ABC7B5E006F1130 /* Product.swift in Sources */,
+				344D1EEB2ACD5681000981D0 /* CheckoutVC.swift in Sources */,
 				34B44ECC2AC4482200FDD7E3 /* BannerItem.swift in Sources */,
 				34826F192AC32B5D00838939 /* BigBannerCell.swift in Sources */,
 				3470BC022ABC8C3F006F1130 /* ExtraInformationRepository.swift in Sources */,
