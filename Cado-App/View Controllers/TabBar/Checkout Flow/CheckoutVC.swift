@@ -117,8 +117,8 @@ class CheckoutVC: UIViewController {
             orderSummaryDetailStackViewHeight.constant = 0.0
         }
         
-        UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveLinear, animations: {
-            self.orderSummaryDetailStackView.layoutIfNeeded()
+        UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {
+            self.view.layoutIfNeeded()
         }, completion: nil)
     }
     
@@ -130,6 +130,9 @@ class CheckoutVC: UIViewController {
     
     @IBAction func proceedToPurchaseBtnTapped(_ sender: UIButton) {
         let purchaseVC = storyboard?.instantiateViewController(withIdentifier: PurchaseVC.storyboardIdentifier) as! PurchaseVC
+        
+        purchaseVC.totalPrice = totalPrice
+        
         navigationController?.pushViewController(purchaseVC, animated: true)
     }
     
