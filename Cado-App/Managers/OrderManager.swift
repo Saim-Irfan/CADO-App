@@ -18,6 +18,14 @@ class OrderManager {
         orderRepository.getAll()
     }
     
+    func getAll(byUserId userId: Int) -> [Order] {
+        let orderList = getAll()
+        
+        return orderList.filter { order in
+            return order.userId == userId
+        }
+    }
+    
     func get(byId id: Int) -> Order? {
         orderRepository.get(byIdentifier: id)
     }
