@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OrderItemView" customModule="Cado_App" customModuleProvider="target">
+            <connections>
+                <outlet property="mainImgView" destination="plQ-cE-kjG" id="eUH-RH-P9v"/>
+                <outlet property="priceLbl" destination="JhO-HX-hAX" id="KDx-Fv-ZtB"/>
+                <outlet property="productNameLbl" destination="osL-BZ-9St" id="zk3-bf-WLz"/>
+                <outlet property="quantityLbl" destination="1Ld-Qy-zk3" id="TRG-T4-zs5"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="3XK-93-0aU">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="plQ-cE-kjG">
+                            <rect key="frame" x="0.0" y="0.0" width="124" height="100"/>
+                        </imageView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="lkY-iO-7Wv">
+                            <rect key="frame" x="129" y="0.0" width="285" height="100"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9dv-se-1do">
+                                    <rect key="frame" x="0.0" y="0.0" width="285" height="41"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mirzam Luxury Choclate askdhkjashd" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osL-BZ-9St">
+                                            <rect key="frame" x="0.0" y="0.0" width="199.5" height="41"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AED 50.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JhO-HX-hAX">
+                                            <rect key="frame" x="199.5" y="0.0" width="85.5" height="41"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" systemColor="systemGrayColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="JhO-HX-hAX" firstAttribute="width" secondItem="9dv-se-1do" secondAttribute="width" multiplier="0.3" id="nUr-6K-Bky"/>
+                                    </constraints>
+                                </stackView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quantity" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ld-Qy-zk3">
+                                    <rect key="frame" x="0.0" y="79.5" width="285" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="plQ-cE-kjG" firstAttribute="width" secondItem="3XK-93-0aU" secondAttribute="width" multiplier="0.3" id="RsP-E2-rrh"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <constraints>
+                <constraint firstItem="3XK-93-0aU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="3Sh-NW-o4g"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="3XK-93-0aU" secondAttribute="bottom" id="Yod-Yh-eBp"/>
+                <constraint firstItem="3XK-93-0aU" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="eIO-ld-IrI"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="3XK-93-0aU" secondAttribute="trailing" id="hdm-pd-CkK"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="137.68115942028987" y="50.892857142857139"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
