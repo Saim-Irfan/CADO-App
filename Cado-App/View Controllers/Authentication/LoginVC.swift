@@ -90,14 +90,8 @@ class LoginVC: UIViewController {
         LoggedUser.loginUser(userId: userWithEmail.id)
         
         let mainTabBarVC = storyboard?.instantiateViewController(withIdentifier: "mainTabBarVC") as! UITabBarController
-        guard var viewControllerList = navigationController?.viewControllers else {
-            return
-        }
         
-        viewControllerList.removeLast()
-        viewControllerList.append(mainTabBarVC)
-        
-        navigationController?.setViewControllers(viewControllerList, animated: true)
+        navigationController?.setViewControllers([mainTabBarVC], animated: true)
     }
 }
 
