@@ -48,6 +48,44 @@ class PurchaseVC: UIViewController {
         completePurchaseBtn.setDisabled()
     }
     
+    func createOrder() {
+        let loggedInUserId = LoggedUser.getLoggedInUserId()!
+        
+        let currentDate = Date.now
+        var dateComponent = DateComponents()
+        dateComponent.setValue(3, for: .day)
+        let deliveryDate = Calendar.current.date(byAdding: dateComponent, to: currentDate)!
+        
+        let newOrder = Order(userId: loggedInUserId, date: currentDate, status: .inProgress, totalPrice: totalPrice, deliveryDate: deliveryDate)
+        
+        orderManager.create(newOrder)
+        
+        let cartItemListOfUser = cartItemManager.getAll(byUserId: loggedInUserId)
+        
+        for cartItem in cartItemListOfUser {
+            let product = productManager.get(byId: cartItem.productId)!
+            
+            let newOrderItem = OrderItem(orderId: newOrder.id, productId: cartItem.productId, quantity: cartItem.quantity, price: product.price)
+            orderItemManager.create(newOrderItem)
+        }
+    }
+    
+    func updateProductsQuantities() {
+        let loggedInUserId = LoggedUser.getLoggedInUserId()!
+        let cartItemListOfUser = cartItemManager.getAll(byUserId: loggedInUserId)
+        
+        for cartItem in cartItemListOfUser {
+            let product = productManager.get(byId: cartItem.productId)!
+            productManager.updateQuantity(of: product.id, to: product.quantity - cartItem.quantity)
+        }
+    }
+    
+    
+    func removeItemsFromCart() {
+        let loggedInUserId = LoggedUser.getLoggedInUserId()!
+        cartItemManager.emptyCart(of: loggedInUserId)
+    }
+    
     @objc func orderSummaryStackViewTapped() {
         if orderSummaryDetailHeight.constant == 0.0 {
             orderSummaryDetailHeight.constant = 44.0
@@ -86,25 +124,22 @@ class PurchaseVC: UIViewController {
     }
     
     @IBAction func purchaseBtnTapped(_ sender: PrimaryButton) {
-        let loggedInUserId = LoggedUser.getLoggedInUserId()!
+        createOrder()
+        updateProductsQuantities()
+        removeItemsFromCart()
         
-        let currentDate = Date.now
-        var dateComponent = DateComponents()
-        dateComponent.setValue(3, for: .day)
-        let deliveryDate = Calendar.current.date(byAdding: dateComponent, to: currentDate)!
-        
-        let newOrder = Order(userId: loggedInUserId, date: currentDate, status: .inProgress, totalPrice: totalPrice, deliveryDate: deliveryDate)
-        
-        orderManager.create(newOrder)
-        
-        let cartItemListOfUser = cartItemManager.getAll(byUserId: loggedInUserId)
-        
-        for cartItem in cartItemListOfUser {
-            let product = productManager.get(byId: cartItem.productId)!
-            
-            let newOrderItem = OrderItem(orderId: newOrder.id, productId: cartItem.productId, quantity: cartItem.quantity, price: product.price)
-            
-            orderItemManager.create(newOrderItem)
+        guard let mainTabBarVC = navigationController?.viewControllers.first(where: { viewController in
+            viewController is UITabBarController
+        }) as? UITabBarController else {
+            return
         }
+        
+        mainTabBarVC.selectedIndex = 0
+        
+        let confirmationVC = storyboard?.instantiateViewController(withIdentifier: ConfirmationVC.storyboardIdentifier) as! ConfirmationVC
+        
+        let viewControllerList = [mainTabBarVC, confirmationVC]
+        
+        navigationController?.setViewControllers(viewControllerList, animated: true)
     }
 }
