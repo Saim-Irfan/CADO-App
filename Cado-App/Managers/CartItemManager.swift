@@ -63,4 +63,12 @@ class CartItemManager {
         
         cartItem.quantity += quantity
     }
+    
+    func emptyCart(of userId: Int) {
+        let cartItemList = getAll(byUserId: userId)
+        
+        for cartItem in cartItemList {
+            delete(byId: cartItem.id)
+        }
+    }
 }
