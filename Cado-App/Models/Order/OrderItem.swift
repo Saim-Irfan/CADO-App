@@ -8,15 +8,21 @@
 import Foundation
 
 class OrderItem {
+    private static var availableOrderItemId = 1
+    
     let id:         Int
     let orderId:    Int
-    let quantity:   Int
     let productId:  Int
+    let quantity:   Int
+    let price:      Double
 
-    init(id: Int, orderId: Int, quantity: Int, productId: Int) {
-        self.id         = id
+    init(orderId: Int, productId: Int, quantity: Int, price: Double) {
+        self.id         = OrderItem.availableOrderItemId
         self.orderId    = orderId
-        self.quantity   = quantity
         self.productId  = productId
+        self.quantity   = quantity
+        self.price      = price
+        
+        OrderItem.availableOrderItemId += 1
     }
 }
