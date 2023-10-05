@@ -155,7 +155,14 @@ class ProductDetailVC: UIViewController {
     
     @IBAction func quantityBeginEditing(_ sender: UITextField) {
         sender.endEditing(true)
-        quantityTableView.isHidden = false
+        
+        if quantityTableView.isHidden {
+            quantityTableView.isHidden = false
+        }
+        else {
+            quantityTableView.isHidden = true
+        }
+        
     }
     
     @IBAction func addToCartBtnTapped(_ sender: PrimaryButton) {
