@@ -42,8 +42,14 @@ struct ProductRepository: RepositoryProtocol {
         }
     }
     
-    func update(record updatedUser: Product) -> Bool {
-        // No work needed here
+    func update(record updatedProduct: Product) -> Bool {
+        guard let updatedProductIndex = ProductRepository.products.firstIndex(where: { product in
+            product.id == updatedProduct.id
+        }) else {
+            return false
+        }
+        
+        ProductRepository.products[updatedProductIndex] = updatedProduct
         
         return true
     }

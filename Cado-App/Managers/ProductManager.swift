@@ -29,4 +29,12 @@ class ProductManager {
     func delete(byId id: Int) -> Bool {
         productRepository.delete(byIdentifier: id)
     }
+    
+    func updateQuantity(of productId: Int, to value: Int) {
+        let product = get(byId: productId)!
+        
+        let updatedProduct = Product(id: productId, name: product.name, imageUrl: product.imageUrl, description: product.description, shortDescription: product.shortDescription, price: product.price, quantity: value, shippingDays: product.shippingDays)
+        
+        update(updatedProduct)
+    }
 }

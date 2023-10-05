@@ -14,7 +14,7 @@ class Product {
     let description:        String
     let shortDescription:   String
     let price:              Double
-    let quantity:           Int
+    var quantity:           Int
     let shippingDays:       Int
     
     
