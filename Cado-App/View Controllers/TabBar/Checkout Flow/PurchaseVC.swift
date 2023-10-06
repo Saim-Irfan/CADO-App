@@ -134,7 +134,7 @@ class PurchaseVC: UIViewController {
             return
         }
         
-        mainTabBarVC.selectedIndex = 0
+        mainTabBarVC.selectedIndex = HomeVC.tabbarIndex
         
         let confirmationVC = storyboard?.instantiateViewController(withIdentifier: ConfirmationVC.storyboardIdentifier) as! ConfirmationVC
         
