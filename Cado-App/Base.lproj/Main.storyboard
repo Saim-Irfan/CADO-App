@@ -1634,6 +1634,7 @@
                     <tabBarItem key="tabBarItem" title="Orders" image="list.bullet.rectangle.portrait.fill" catalog="system" id="BKn-hj-eBm"/>
                     <connections>
                         <outlet property="orderHistoryTblView" destination="6HF-aS-hQe" id="YDj-eG-5yy"/>
+                        <outlet property="startShoppingLbl" destination="wlo-Y4-9li" id="JO1-52-w9K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xZP-50-V1n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

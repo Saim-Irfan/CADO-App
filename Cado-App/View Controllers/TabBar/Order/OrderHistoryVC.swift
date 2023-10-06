@@ -13,6 +13,9 @@ class OrderHistoryVC: UIViewController {
     typealias Datasource = UITableViewDiffableDataSource<Int, Int>
     typealias Snapshot = NSDiffableDataSourceSnapshot<Int, Int>
 
+    
+    @IBOutlet var startShoppingLbl: UILabel!
+    
     @IBOutlet var orderHistoryTblView: UITableView!
     
     private let orderManager = OrderManager()
@@ -44,6 +47,10 @@ class OrderHistoryVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(changeToHomePage))
+        startShoppingLbl.isUserInteractionEnabled = true
+        startShoppingLbl.addGestureRecognizer(tapGesture)
         
         orderHistoryTblView.delegate    = self
     }
@@ -103,6 +110,10 @@ class OrderHistoryVC: UIViewController {
         
         tabBarController?.navigationItem.hidesSearchBarWhenScrolling = false
         tabBarController?.navigationItem.searchController = searchController
+    }
+    
+    @objc func changeToHomePage() {
+        tabBarController?.selectedIndex = HomeVC.tabbarIndex
     }
 }
 
