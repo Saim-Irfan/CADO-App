@@ -20,12 +20,8 @@ extension UILabel {
         self.text = text
     }
     
-    @objc func hideLabel() {
+    func hideLabel() {
         isHidden = true
         text = ""
-    }
-    
-    func hideLabelAfter(seconds: Double) {
-        Timer.scheduledTimer(timeInterval: seconds, target: self, selector: #selector(hideLabel), userInfo: nil, repeats: false)
     }
 }
