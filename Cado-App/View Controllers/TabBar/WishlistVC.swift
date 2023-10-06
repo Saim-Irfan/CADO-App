@@ -20,15 +20,15 @@ class WishlistVC: UIViewController {
     private let productManager          = ProductManager()
     private let cartItemManager         = CartItemManager()
     
-    private var wishlistItem: [WishlistItem] = []
+    private var wishlistItemList: [WishlistItem] = []
     
     
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.navigationItem.title = "Wishlist"
         
-        self.wishlistItem = wishlistItemManager.getAll(byUserId: WishlistVC.loggedInUserId)
+        self.wishlistItemList = wishlistItemManager.getAll(byUserId: WishlistVC.loggedInUserId)
         
-        if self.wishlistItem.isEmpty {
+        if self.wishlistItemList.isEmpty {
             mainView.isHidden = true
         }
         else {
@@ -36,7 +36,7 @@ class WishlistVC: UIViewController {
             wishlistTblView.reloadData()
         }
         
-        totalItemLbl.text = "\(wishlistItem.count) items"
+        totalItemLbl.text = "\(wishlistItemList.count) items"
     }
     
     override func viewDidLoad() {
@@ -49,13 +49,13 @@ class WishlistVC: UIViewController {
 
 extension WishlistVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        wishlistItem.count
+        wishlistItemList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: WishlistTblCell.reuseIdentifier) as! WishlistTblCell
         
-        let wishlistItem = wishlistItem[indexPath.row]
+        let wishlistItem = wishlistItemList[indexPath.row]
         let product = productManager.get(byId: wishlistItem.productId)!
         
         cell.mainImg                    .loadImage(url: URL(string: product.imageUrl)!)
@@ -81,5 +81,13 @@ extension WishlistVC: UITableViewDataSource {
 extension WishlistVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         170.0
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let wishlistItem = wishlistItemList[indexPath.row]
+        
+        let productDetailVC = storyboard?.instantiateViewController(withIdentifier: ProductDetailVC.storyboardIdentifier) as! ProductDetailVC
+        productDetailVC.productId = wishlistItem.productId
+        navigationController?.pushViewController(productDetailVC, animated: true)
     }
 }
