@@ -37,4 +37,24 @@ class WishlistItemManager {
     func delete(byId id: Int) -> Bool {
         wishlistItemRepository.delete(byIdentifier: id)
     }
+    
+    func remove(productId: Int, for userId: Int) {
+        let wishlistItemList = getAll(byUserId: userId)
+        
+        guard let wishlistItem = wishlistItemList.first(where: { wishlistItem in
+            wishlistItem.productId == productId
+        }) else {
+            return
+        }
+        
+        delete(byId: wishlistItem.id)
+    }
+    
+    func checkIfExists(productId: Int,for userId: Int) -> Bool {
+        let wishlistItemList = getAll(byUserId: userId)
+        
+        return wishlistItemList.contains { wishlistItem in
+            wishlistItem.productId == productId
+        }
+    }
 }
