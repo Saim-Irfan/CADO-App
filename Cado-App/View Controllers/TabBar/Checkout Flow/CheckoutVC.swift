@@ -31,12 +31,11 @@ class CheckoutVC: UIViewController {
     
     var totalPrice = 0.0
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         navigationItem.title = "Checkout"
         
         configureRecipientAddress()
         configureAddressStackView()
-//        setUpAddressFunctionality()
     }
     
     override func viewDidLoad() {
@@ -45,10 +44,6 @@ class CheckoutVC: UIViewController {
         proceedToPurchaseBtn.setDisabled()
         configureOrderSummarySection()
     }
-    
-//    func setUpAddressFunctionality() {
-//
-//    }
     
     func configureRecipientAddress() {
         let loggedInUserId = LoggedUser.getLoggedInUserId()!
@@ -65,9 +60,9 @@ class CheckoutVC: UIViewController {
             label.heightAnchor.constraint(equalToConstant: 44.0).isActive = true
             label.text = "You have not added any address!"
             label.textColor = .systemRed
-
+            
             addressStackView.addArrangedSubview(label)
-
+            
             mainStackViewHeight += 44.0
         }
         
@@ -93,7 +88,7 @@ class CheckoutVC: UIViewController {
             }
             
             addressStackView.addArrangedSubview(addressView)
-        
+            
             mainStackViewHeight += stackItemHeight
         }
         
