@@ -9,7 +9,7 @@ import UIKit
 
 class CartVC: UIViewController {
     static let storyboardIdentifier = "cartVC"
-    static let tabbarIndex = 1
+    static let tabbarIndex = 3
     
     @IBOutlet var totalItemLbl: UILabel!
     @IBOutlet var cartItemTableView: UITableView!

@@ -8,7 +8,7 @@
 import UIKit
 
 class OrderHistoryVC: UIViewController {
-    static let tabbarIndex = 2
+    static let tabbarIndex = 3
     
     typealias Datasource = UITableViewDiffableDataSource<Int, Int>
     typealias Snapshot = NSDiffableDataSourceSnapshot<Int, Int>
