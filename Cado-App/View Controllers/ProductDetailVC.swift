@@ -9,6 +9,7 @@ import UIKit
 
 class ProductDetailVC: UIViewController {
     static let storyboardIdentifier = "productDetailVC"
+    static let loggedInUserId = LoggedUser.getLoggedInUserId()!
     
     @IBOutlet var mainImgView:          UIImageView!
     @IBOutlet var productNameLbl:       UILabel!
@@ -22,6 +23,7 @@ class ProductDetailVC: UIViewController {
     
     
     @IBOutlet var addToCartBtn: PrimaryButton!
+    @IBOutlet var wishlistImgView: UIImageView!
     
     
     @IBOutlet var productScrollCollectionView: UICollectionView!
@@ -34,8 +36,9 @@ class ProductDetailVC: UIViewController {
     
     var productId: Int!
     
-    private let productManager  = ProductManager()
-    private let cartManager     = CartItemManager()
+    private let productManager      = ProductManager()
+    private let cartManager         = CartItemManager()
+    private let wishlistItemManager = WishlistItemManager()
     
     
     private var product: Product!
@@ -43,12 +46,12 @@ class ProductDetailVC: UIViewController {
     
     private var itemsPerPage = 2
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.productList = productManager.getAll()
         self.product = productManager.get(byId: productId)!
+        
         setCartBtnEnableStatus()
         
         mainImgView.loadImage(url: URL(string: product.imageUrl)!)
@@ -56,18 +59,37 @@ class ProductDetailVC: UIViewController {
         shortDescriptionLbl.text = product.shortDescription
         priceLbl.text = "DHS \(product.price)"
         descriptionLbl.text = product.description
+        
+        configureQuantityTblView()
          
-        quantityTableView.dataSource    = self
-        quantityTableView.delegate      = self
-        quantityTableView.layer.borderWidth = 1.0
-        quantityTableView.showsHorizontalScrollIndicator = true
+        configureWishlistImage()
+                
+        let wishlistTapGesture = UITapGestureRecognizer(target: self, action: #selector(toggleWishlist))
+        wishlistImgView.isUserInteractionEnabled = true
+        wishlistImgView.addGestureRecognizer(wishlistTapGesture)
         
         configureProductScrollLayout()
-        
+        configureProductScroll()
         productScrollCollectionView.dataSource  = self
         productScrollCollectionView.delegate    = self
+    }
+    
+    func configureQuantityTblView() {
+        quantityTableView.dataSource                        = self
+        quantityTableView.delegate                          = self
+        quantityTableView.layer.borderWidth                 = 1.0
+        quantityTableView.showsHorizontalScrollIndicator    = true
+    }
+    
+    func configureWishlistImage() {
+        let isAddedToWishlist = wishlistItemManager.checkIfExists(productId: productId, for: ProductDetailVC.loggedInUserId)
         
-        configureScroll()
+        if (isAddedToWishlist) {
+            wishlistImgView.tintColor = .yellow
+        }
+        else {
+            wishlistImgView.tintColor = .gray
+        }
     }
     
     func configureProductScrollLayout() {
@@ -86,7 +108,7 @@ class ProductDetailVC: UIViewController {
         productScrollCollectionView.setCollectionViewLayout(layout, animated: true)
     }
     
-    func configureScroll() {
+    func configureProductScroll() {
         let productCount = productList.count
         var totalPagesNeeded = Int(ceil(Double(productCount / itemsPerPage)))
         
@@ -120,6 +142,20 @@ class ProductDetailVC: UIViewController {
         else {
             addToCartBtn.setEnabled()
         }
+    }
+    
+    @objc func toggleWishlist() {
+        let isAddedToWishlist = wishlistItemManager.checkIfExists(productId: productId, for: ProductDetailVC.loggedInUserId)
+        
+        if isAddedToWishlist {
+            wishlistItemManager.remove(productId: productId, for: ProductDetailVC.loggedInUserId)
+        }
+        else {
+            let newWishlistItem = WishlistItem(userId: ProductDetailVC.loggedInUserId, productId: productId)
+            wishlistItemManager.create(newWishlistItem)
+        }
+        
+        configureWishlistImage()
     }
     
     @objc func handleRightArrowTap() {
