@@ -8,6 +8,7 @@
 import UIKit
 
 class OrderHistoryVC: UIViewController {
+    static let tabbarIndex = 2
 
     @IBOutlet var orderHistoryTblView: UITableView!
     

@@ -9,6 +9,7 @@ import UIKit
 
 class HomeVC: UIViewController {
     static let storyboardIdentifier = "homeVC"
+    static let tabbarIndex = 0
     
     typealias Datasource = UICollectionViewDiffableDataSource<Int, SectionItem>
     typealias Snapshot = NSDiffableDataSourceSnapshot<Int, SectionItem>

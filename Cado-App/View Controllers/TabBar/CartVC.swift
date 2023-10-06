@@ -9,6 +9,7 @@ import UIKit
 
 class CartVC: UIViewController {
     static let storyboardIdentifier = "cartVC"
+    static let tabbarIndex = 1
     
     @IBOutlet var totalItemLbl: UILabel!
     @IBOutlet var cartItemTableView: UITableView!
