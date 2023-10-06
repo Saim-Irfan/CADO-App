@@ -17,7 +17,6 @@ class HomeVC: UIViewController {
     @IBOutlet var homeCollectionView: UICollectionView!
     
     private let productManager = ProductManager()
-    private let searchController = UISearchController()
     
     private var datasource: Datasource!
     private var sectionList: [Section] = []
@@ -163,7 +162,7 @@ class HomeVC: UIViewController {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.3))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalWidth(0.6))
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
         
         let section = NSCollectionLayoutSection(group: group)
