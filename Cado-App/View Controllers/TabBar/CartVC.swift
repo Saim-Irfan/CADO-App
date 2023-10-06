@@ -26,7 +26,7 @@ class CartVC: UIViewController {
     
     private var totalPrice = 0.0
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         tabBarController?.navigationItem.title = "Cart"
         
         configureScreen()
@@ -36,6 +36,7 @@ class CartVC: UIViewController {
         super.viewDidLoad()
 
         cartItemTableView.dataSource    = self
+        cartItemTableView.delegate      = self
     }
     
     func configureScreen() {
@@ -102,15 +103,12 @@ extension CartVC: UITableViewDataSource {
         cartItems.count
     }
     
-    
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CartItemCell.identifier) as! CartItemCell
         
         let cartItem = cartItems[indexPath.row]
         let product = productManager.get(byId: cartItem.productId)!
-        
-        
+         
         cell.mainImgView.loadImage(url: URL(string: product.imageUrl)!)
         cell.nameLbl.text = product.name
         cell.shortDescriptionLbl.text = product.shortDescription
@@ -122,7 +120,16 @@ extension CartVC: UITableViewDataSource {
             self.configureScreen()
         }
         
-        
         return cell
+    }
+}
+
+extension CartVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cartItem = cartItems[indexPath.row]
+        
+        let productDetailVC = storyboard?.instantiateViewController(withIdentifier: ProductDetailVC.storyboardIdentifier) as! ProductDetailVC
+        productDetailVC.productId = cartItem.productId
+        navigationController?.pushViewController(productDetailVC, animated: true)
     }
 }
