@@ -9,14 +9,18 @@
 import Foundation
 
 class WishlistItem {
+    private static var availableWishListitemId = 1
+    
     let id:         Int
     let userId:     Int
     let productId:  Int
 
-    init(id: Int, userId: Int, productId: Int) {
-        self.id         = id
+    init(userId: Int, productId: Int) {
+        self.id         = WishlistItem.availableWishListitemId
         self.userId     = userId
         self.productId  = productId
+        
+        WishlistItem.availableWishListitemId += 1
     }
 }
 

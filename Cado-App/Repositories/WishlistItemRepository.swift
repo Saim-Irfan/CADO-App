@@ -8,7 +8,10 @@
 import Foundation
 
 struct WishlistItemRepository: RepositoryProtocol {
-  private static var wishlistItems: [WishlistItem] = []
+  private static var wishlistItems: [WishlistItem] = [
+        WishlistItem(userId: 1,
+                     productId: 1)
+  ]
     
     mutating func create(record: WishlistItem) {
         WishlistItemRepository.wishlistItems.append(record)
