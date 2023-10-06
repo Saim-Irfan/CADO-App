@@ -9,12 +9,18 @@ import UIKit
 
 class OrderHistoryVC: UIViewController {
     static let tabbarIndex = 2
+    
+    typealias Datasource = UITableViewDiffableDataSource<Int, Int>
+    typealias Snapshot = NSDiffableDataSourceSnapshot<Int, Int>
 
     @IBOutlet var orderHistoryTblView: UITableView!
     
     private let orderManager = OrderManager()
+    private let searchController = UISearchController()
     
+    private var datasource: Datasource!
     private var orderList: [Order] = []
+    private var filteredOrderList: [Order] = []
     
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.navigationItem.title = "Orders"
@@ -27,6 +33,10 @@ class OrderHistoryVC: UIViewController {
         }
         else {
             orderHistoryTblView.isHidden = false
+            
+            setupSearchBar()
+            configureDatasource()
+            applySnapshot(orderList)
             orderHistoryTblView.reloadData()
         }
 
@@ -34,31 +44,85 @@ class OrderHistoryVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
-        orderHistoryTblView.dataSource  = self
+        
         orderHistoryTblView.delegate    = self
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        tabBarController?.navigationItem.searchController = nil
+    }
+    
+    func configureDatasource() {
+        datasource = Datasource(tableView: orderHistoryTblView, cellProvider: { tableView, indexPath, orderId in
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: OrderHistoryTblCell.storyboardIdentifier) as! OrderHistoryTblCell
+            guard let order = self.orderList.first (where: { order in
+                order.id == orderId
+            }) else {
+                return UITableViewCell()
+            }
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "d MMM yyyy"
+            
+            let formattedDate = dateFormatter.string(from: order.date)
+            
+            cell.orderIdLbl.text = "Order #\(order.id)"
+            cell.orderDateLbl.text = formattedDate
+            cell.orderStatusLbl.text = order.status.rawValue
+            
+            return cell
+        })
+    }
+    
+    func applySnapshot(_ orderList: [Order]) {
+        var snapshot = Snapshot()
+        
+        let sectionIdentifierList = Array(0..<orderList.count)
+        snapshot.appendSections(sectionIdentifierList)
+        
+        for sectionIndex in sectionIdentifierList {
+            snapshot.appendItems([orderList[sectionIndex].id], toSection: sectionIndex)
+        }
+        
+        datasource.apply(snapshot)
+    }
+    
+    func setupSearchBar() {
+        searchController.loadViewIfNeeded()
+        searchController.searchResultsUpdater = self
+        
+        
+        let offset = UIOffset(horizontal: (searchController.searchBar.frame.width - 200) / 2, vertical: 0)
+        searchController.searchBar.setPositionAdjustment(offset, for: .search)
+        
+        searchController.searchBar.searchTextField.backgroundColor = .white
+        
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search your orders"
+        
+        tabBarController?.navigationItem.hidesSearchBarWhenScrolling = false
+        tabBarController?.navigationItem.searchController = searchController
     }
 }
 
-extension OrderHistoryVC: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        orderList.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: OrderHistoryTblCell.storyboardIdentifier) as! OrderHistoryTblCell
-        let order = orderList[indexPath.row]
+
+extension OrderHistoryVC: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let searchText = searchController.searchBar.text else {
+            return
+        }
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "d MMM yyyy"
-        
-        let formattedDate = dateFormatter.string(from: order.date)
-        
-        cell.orderIdLbl.text = "Order #\(order.id)"
-        cell.orderDateLbl.text = formattedDate
-        cell.orderStatusLbl.text = order.status.rawValue
-        
-        return cell
+        if searchText.isEmpty {
+            applySnapshot(orderList)
+        }
+        else {
+            let filteredFollowerList = orderList.filter {
+                return $0.id.description.contains(searchText.lowercased())
+            }
+            
+            applySnapshot(filteredFollowerList)
+        }
     }
 }
 
