@@ -8,18 +8,7 @@
 import Foundation
 
 struct OrderRepository: RepositoryProtocol {
-  private static var orders: [Order] = [
-        Order(userId: 1,
-              date: Date.now,
-              status: .inProgress,
-              totalPrice: 100.0,
-              deliveryDate: Date.now),
-        Order(userId: 1,
-              date: Date.now,
-              status: .inProgress,
-              totalPrice: 100.0,
-              deliveryDate: Date.now),
-  ]
+  private static var orders: [Order] = []
     
     mutating func create(record: Order) {
         OrderRepository.orders.append(record)
