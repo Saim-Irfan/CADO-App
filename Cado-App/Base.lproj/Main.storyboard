@@ -1012,7 +1012,7 @@
                                                             <constraint firstAttribute="width" constant="30" id="w5V-Ge-r1X"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="SPr-R9-msc">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="SPr-R9-msc">
                                                         <rect key="frame" x="378" y="2" width="30" height="41"/>
                                                         <color key="tintColor" systemColor="systemGray2Color"/>
                                                         <constraints>
@@ -1296,6 +1296,7 @@
                         <outlet property="quantityTextField" destination="R82-54-QZm" id="gbL-vS-VfI"/>
                         <outlet property="rightScrollImg" destination="NUt-Fu-zYq" id="mYn-du-RAy"/>
                         <outlet property="shortDescriptionLbl" destination="urF-6v-q1i" id="Z7V-Wm-npw"/>
+                        <outlet property="wishlistImgView" destination="SPr-R9-msc" id="2gk-UY-S7s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FIJ-Wr-mOG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
