@@ -8,10 +8,7 @@
 import Foundation
 
 struct WishlistItemRepository: RepositoryProtocol {
-  private static var wishlistItems: [WishlistItem] = [
-        WishlistItem(userId: 1,
-                     productId: 1)
-  ]
+  private static var wishlistItems: [WishlistItem] = []
     
     mutating func create(record: WishlistItem) {
         WishlistItemRepository.wishlistItems.append(record)
@@ -34,6 +31,10 @@ struct WishlistItemRepository: RepositoryProtocol {
     }
     
     mutating func delete(byIdentifier id: Int) -> Bool {
+        WishlistItemRepository.wishlistItems.removeAll { wishlistItem in
+            return wishlistItem.id == id
+        }
+        
         return true
     }
     
