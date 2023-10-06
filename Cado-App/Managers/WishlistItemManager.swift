@@ -18,6 +18,14 @@ class WishlistItemManager {
         wishlistItemRepository.getAll()
     }
     
+    func getAll(byUserId userId: Int) -> [WishlistItem] {
+        let wishlistItemList = getAll()
+        
+        return wishlistItemList.filter { wishlistItem in
+            return wishlistItem.userId == userId
+        }
+    }
+    
     func get(byId id: Int) -> WishlistItem? {
         wishlistItemRepository.get(byIdentifier: id)
     }
