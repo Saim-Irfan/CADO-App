@@ -1488,6 +1488,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Wishlist" image="heart.fill" catalog="system" id="Lg8-mI-ZYI"/>
                     <connections>
+                        <outlet property="browseGiftLbl" destination="q0d-Em-Kod" id="saj-4v-9zA"/>
                         <outlet property="mainView" destination="7yx-8e-5Md" id="W45-PT-e63"/>
                         <outlet property="totalItemLbl" destination="IBR-1H-9zJ" id="pn1-7l-bA9"/>
                         <outlet property="wishlistTblView" destination="RD4-s9-pDB" id="N36-ic-9Ys"/>

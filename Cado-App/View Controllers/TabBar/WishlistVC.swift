@@ -10,6 +10,9 @@ import UIKit
 class WishlistVC: UIViewController {
     static let loggedInUserId = LoggedUser.getLoggedInUserId()!
     
+    
+    @IBOutlet var browseGiftLbl: UILabel!
+    
     @IBOutlet var mainView: UIView!
     
     @IBOutlet var totalItemLbl: UILabel!
@@ -41,9 +44,17 @@ class WishlistVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(changeToHomePage))
+        browseGiftLbl.isUserInteractionEnabled = true
+        browseGiftLbl.addGestureRecognizer(tapGesture)
 
         wishlistTblView.dataSource = self
         wishlistTblView.delegate = self
+    }
+    
+    @objc func changeToHomePage() {
+        tabBarController?.selectedIndex = HomeVC.tabbarIndex
     }
 }
 
