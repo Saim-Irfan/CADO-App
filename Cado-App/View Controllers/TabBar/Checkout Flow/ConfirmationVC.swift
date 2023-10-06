@@ -61,7 +61,7 @@ class ConfirmationVC: UIViewController {
             return
         }
         
-        mainTabBarVC.selectedIndex = CartVC.tabbarIndex
+        mainTabBarVC.selectedIndex = OrderHistoryVC.tabbarIndex
         viewControllerList.removeLast()
         
         navigationController?.setViewControllers([mainTabBarVC], animated: true)
