@@ -9,7 +9,6 @@ import UIKit
 
 class ProductDetailVC: UIViewController {
     static let storyboardIdentifier = "productDetailVC"
-    static let loggedInUserId = LoggedUser.getLoggedInUserId()!
     
     @IBOutlet var mainImgView:          UIImageView!
     @IBOutlet var productNameLbl:       UILabel!
@@ -39,6 +38,7 @@ class ProductDetailVC: UIViewController {
     private let productManager      = ProductManager()
     private let cartManager         = CartItemManager()
     private let wishlistItemManager = WishlistItemManager()
+    private let loggedInUserId = LoggedUser.getLoggedInUserId()!
     
     
     private var product: Product!
@@ -82,7 +82,7 @@ class ProductDetailVC: UIViewController {
     }
     
     func configureWishlistImage() {
-        let isAddedToWishlist = wishlistItemManager.checkIfExists(productId: productId, for: ProductDetailVC.loggedInUserId)
+        let isAddedToWishlist = wishlistItemManager.checkIfExists(productId: productId, for: loggedInUserId)
         
         if (isAddedToWishlist) {
             wishlistImgView.tintColor = .yellow
@@ -145,13 +145,13 @@ class ProductDetailVC: UIViewController {
     }
     
     @objc func toggleWishlist() {
-        let isAddedToWishlist = wishlistItemManager.checkIfExists(productId: productId, for: ProductDetailVC.loggedInUserId)
+        let isAddedToWishlist = wishlistItemManager.checkIfExists(productId: productId, for: loggedInUserId)
         
         if isAddedToWishlist {
-            wishlistItemManager.remove(productId: productId, for: ProductDetailVC.loggedInUserId)
+            wishlistItemManager.remove(productId: productId, for: loggedInUserId)
         }
         else {
-            let newWishlistItem = WishlistItem(userId: ProductDetailVC.loggedInUserId, productId: productId)
+            let newWishlistItem = WishlistItem(userId: loggedInUserId, productId: productId)
             wishlistItemManager.create(newWishlistItem)
         }
         
