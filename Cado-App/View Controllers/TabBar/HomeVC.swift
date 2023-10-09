@@ -23,6 +23,9 @@ class HomeVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         tabBarController?.navigationItem.title = "Home"
+        
+        let logoutBtn = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logout))
+        tabBarController?.navigationItem.leftBarButtonItem = logoutBtn
     }
     
     override func viewDidLoad() {
@@ -175,5 +178,11 @@ class HomeVC: UIViewController {
         let headerElement: NSCollectionLayoutBoundarySupplementaryItem = .init(layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalWidth(0.15)), elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
         
         return headerElement
+    }
+    
+    @objc func logout() {
+        let onboardingVC = storyboard?.instantiateViewController(withIdentifier: OnboardingVC.storyboardIdentifier) as! OnboardingVC
+        
+        navigationController?.setViewControllers([onboardingVC], animated: true)
     }
 }
