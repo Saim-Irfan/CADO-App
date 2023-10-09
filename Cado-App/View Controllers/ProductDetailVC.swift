@@ -49,7 +49,7 @@ class ProductDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.productList = productManager.getAll()
+        self.productList = productManager.getInStockAvailable()
         self.product = productManager.get(byId: productId)!
         
         setCartBtnEnableStatus()
@@ -239,7 +239,7 @@ extension ProductDetailVC: UITableViewDelegate {
 
 extension ProductDetailVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        productManager.getAll().count
+        productManager.getInStockAvailable().count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

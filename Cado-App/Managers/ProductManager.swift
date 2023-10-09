@@ -18,6 +18,19 @@ class ProductManager {
         productRepository.getAll()
     }
     
+    func getInStockAvailable() -> [Product] {
+        let productList = getAll()
+        var availableProductList = [Product]()
+        
+        for product in productList {
+            if product.quantity > 0 {
+                availableProductList.append(product)
+            }
+        }
+        
+        return availableProductList
+    }
+    
     func get(byId id: Int) -> Product? {
         productRepository.get(byIdentifier: id)
     }

@@ -24,7 +24,7 @@ class ProductListingVC: UIViewController, UICollectionViewDelegate {
     private var datasource: Datasource!
     
     override func viewWillAppear(_ animated: Bool) {
-        self.productList    = productManager.getAll()
+        self.productList    = productManager.getInStockAvailable()
         filteredProductList = productList
         
         tabBarController?.navigationItem.title = "Search Product"
