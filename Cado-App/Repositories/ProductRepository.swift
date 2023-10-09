@@ -20,8 +20,8 @@ struct ProductRepository: RepositoryProtocol {
         
         Product(id: 2,
                 name: "Mother's Day Bouqet",
-                imageUrl: "https://www.flowerchimp.sg/cdn/shop/files/Hot-Romance-a2_800x.jpg?v=1685089930",
-                description: "Gift your mother's a lovely gift",
+                imageUrl: "https://thumbs.dreamstime.com/b/rose-flowers-bouquet-isolated-27274345.jpg",
+                description: "Gift your mother a lovely gift",
                 shortDescription: "A Bouqet of Flowers",
                 price: 10,
                 quantity: 50,
