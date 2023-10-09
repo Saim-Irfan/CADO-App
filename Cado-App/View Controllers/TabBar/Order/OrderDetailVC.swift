@@ -43,7 +43,7 @@ class OrderDetailVC: UIViewController {
         
         orderDateLbl.text   = formattedDate
         orderIdLbl.text     = order.id.description
-        orderTotalLbl.text  = "AED \(order.totalPrice)"
+        orderPriceLbl.text  = "AED \(order.totalPrice)"
         
         let orderItemList = orderItemManger.getAll(byOrderId: orderId)
         
