@@ -18,11 +18,14 @@ class ProductListingVC: UIViewController, UICollectionViewDelegate {
     private let productManager = ProductManager()
     private let searchController = UISearchController()
     
-    private var productList: [Product] = []
+    private var productList         : [Product] = []
+    private var filteredProductList : [Product] = []
+    
     private var datasource: Datasource!
     
     override func viewWillAppear(_ animated: Bool) {
-        self.productList = productManager.getAll()
+        self.productList    = productManager.getAll()
+        filteredProductList = productList
         
         tabBarController?.navigationItem.title = "Search Product"
         
@@ -33,7 +36,7 @@ class ProductListingVC: UIViewController, UICollectionViewDelegate {
         }
         else {
             configureDatasource()
-            applySnapshot(productList)
+            applySnapshot()
         }
     }
     
@@ -67,13 +70,13 @@ class ProductListingVC: UIViewController, UICollectionViewDelegate {
         })
     }
     
-    func applySnapshot(_ productList: [Product]) {
+    func applySnapshot() {
         var snapshot = Snapshot()
         
         snapshot.appendSections([0])
         
         var productIdList: [Int] = []
-        for product in productList {
+        for product in filteredProductList {
             productIdList.append(product.id)
         }
         
@@ -105,7 +108,7 @@ extension ProductListingVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let productVC = storyboard?.instantiateViewController(withIdentifier: ProductDetailVC.storyboardIdentifier) as! ProductDetailVC
         
-        productVC.productId = productList[indexPath.row].id
+        productVC.productId = filteredProductList[indexPath.row].id
         
         navigationController?.pushViewController(productVC, animated: true)
     }
@@ -133,14 +136,15 @@ extension ProductListingVC: UISearchResultsUpdating {
         }
         
         if searchText.isEmpty {
-            applySnapshot(productList)
+            filteredProductList = productList
+            applySnapshot()
         }
         else {
-            let filteredProductList = productList.filter {
+            self.filteredProductList = filteredProductList.filter {
                 return $0.name.lowercased().contains(searchText.lowercased())
             }
             
-            applySnapshot(filteredProductList)
+            applySnapshot()
         }
     }
 }
