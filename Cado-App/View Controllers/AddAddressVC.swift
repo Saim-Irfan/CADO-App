@@ -60,8 +60,6 @@ class AddAddressVC: UIViewController {
     
     
     func validateFields() -> Bool {
-        var areFieldsValidated = true
-        
         firstNameTxtField.setAsValid()
         lastNameTxtField.setAsValid()
         mobileTxtField.setAsValid()
@@ -71,35 +69,35 @@ class AddAddressVC: UIViewController {
         
         if firstNameTxtField.text!.isEmpty {
             firstNameTxtField.setAsInvalid()
-            areFieldsValidated = false
+            return false
         }
         
         if lastNameTxtField.text!.isEmpty {
             lastNameTxtField.setAsInvalid()
-            areFieldsValidated = false
+            return false
         }
         
         if mobileTxtField.text!.isEmpty {
             mobileTxtField.setAsInvalid()
-            areFieldsValidated = false
+            return false
         }
         
         if streetNameTxtField.text!.isEmpty {
             streetNameTxtField.setAsInvalid()
-            areFieldsValidated = false
+            return false
         }
         
         if residenceTxtField.text!.isEmpty {
             residenceTxtField.setAsInvalid()
-            areFieldsValidated = false
+            return false
         }
         
         if cityTxtField.text!.isEmpty {
             cityTxtField.setAsInvalid()
-            areFieldsValidated = false
+            return false
         }
 
-        return areFieldsValidated
+        return true
     }
     
 }
