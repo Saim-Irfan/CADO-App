@@ -8,9 +8,6 @@
 import UIKit
 
 class WishlistVC: UIViewController {
-    static let loggedInUserId = LoggedUser.getLoggedInUserId()!
-    
-    
     @IBOutlet var browseGiftLbl: UILabel!
     
     @IBOutlet var mainView: UIView!
@@ -22,6 +19,7 @@ class WishlistVC: UIViewController {
     private let wishlistItemManager     = WishlistItemManager()
     private let productManager          = ProductManager()
     private let cartItemManager         = CartItemManager()
+    private let loggedInUserId = LoggedUser.getLoggedInUserId()!
     
     private var wishlistItemList: [WishlistItem] = []
     
@@ -29,7 +27,7 @@ class WishlistVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.navigationItem.title = "Wishlist"
         
-        self.wishlistItemList = wishlistItemManager.getAll(byUserId: WishlistVC.loggedInUserId)
+        self.wishlistItemList = wishlistItemManager.getAll(byUserId: loggedInUserId)
         
         if self.wishlistItemList.isEmpty {
             mainView.isHidden = true
@@ -75,7 +73,7 @@ extension WishlistVC: UITableViewDataSource {
         
         cell.productId                  = product.id
         cell.addToCartCallback          = { productId in
-            self.cartItemManager.addToCart(userId: WishlistVC.loggedInUserId, productId: productId, quantity: 1)
+            self.cartItemManager.addToCart(userId: self.loggedInUserId, productId: productId, quantity: 1)
             
             let alert = UIAlertController(title: "Added To Cart", message: "The following product has been added to the cart", preferredStyle: .alert)
             let alertAction = UIAlertAction(title: "Ok", style: .default)
