@@ -42,9 +42,9 @@ class CartVC: UIViewController {
     func configureScreen() {
         configureCart()
         setTotalPrice()
-                
-        setTableViewDesign()
         cartItemTableView.reloadData()
+        
+        setTableViewDesign()
     }
     
     func setTableViewDesign() {
@@ -55,15 +55,13 @@ class CartVC: UIViewController {
             proceedToCheckoutBtn.setDisabled()
         }
         else {
-            if cartItems.count < 2 {
-                tableViewHeightConstraint.constant = 150.0
-            }
-            else {
-                tableViewHeightConstraint.constant = 300.0
-            }
             
+            let rowHeight = cartItemTableView.delegate!.tableView!(cartItemTableView, heightForRowAt: IndexPath(row: 0, section: 0))
+            
+            tableViewHeightConstraint.constant = rowHeight * CGFloat(cartItems.count)
+                        
             cartItemTableView.isHidden = false
-            cartItemTableView.layer.borderWidth = 0.5
+            
             proceedToCheckoutBtn.setEnabled()
         }
     }
