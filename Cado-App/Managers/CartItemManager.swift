@@ -52,6 +52,20 @@ class CartItemManager {
         return cartItemId
     }
     
+    func decreaseFromCart(userId: Int, productId: Int, quantity: Int) {
+        guard let cartItemId = returnCartItemId(for: userId, productId: productId) else {
+            return
+        }
+        
+        let cartItem = get(byId: cartItemId)!
+        
+        cartItem.quantity -= quantity
+        
+        if cartItem.quantity < 1 {
+            delete(byId: cartItem.id)
+        }
+    }
+    
     func addToCart(userId: Int, productId: Int, quantity: Int) {
         guard let cartItemId = returnCartItemId(for: userId, productId: productId) else {
             let newCartItem = CartItem(userId: userId, productId: productId, quantity: quantity)

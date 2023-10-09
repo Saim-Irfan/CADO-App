@@ -113,6 +113,19 @@ extension CartVC: UITableViewDataSource {
         cell.quantityTxtField.text = String(cartItem.quantity)
         
         cell.cartItemId = cartItem.id
+        
+        let loggedInUserId = LoggedUser.getLoggedInUserId()!
+        
+        cell.decreaseBtnCallback = { cartItemId in
+            self.cartItemManager.decreaseFromCart(userId: loggedInUserId, productId: product.id, quantity: 1)
+            self.configureScreen()
+        }
+        
+        cell.addBtnCallback = { cartItemId in
+            self.cartItemManager.addToCart(userId: loggedInUserId, productId: product.id, quantity: 1)
+            self.configureScreen()
+        }
+    
         cell.deleteBtnCallback = { cartItemId in
             self.cartItemManager.delete(byId: cartItemId)
             self.configureScreen()

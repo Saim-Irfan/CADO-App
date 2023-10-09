@@ -21,6 +21,8 @@ class CartItemCell: UITableViewCell {
     
     var cartItemId: Int!
     
+    var decreaseBtnCallback: ((Int) -> ())!
+    var addBtnCallback: ((Int) -> ())!
     var deleteBtnCallback: ((Int) -> ())!
     
     override func awakeFromNib() {
@@ -28,6 +30,15 @@ class CartItemCell: UITableViewCell {
         
         
         // Initialization code
+    }
+
+    @IBAction func decreaseBtnTapped(_ sender: Any) {
+        decreaseBtnCallback(cartItemId)
+    }
+    
+    
+    @IBAction func addBtnTapped(_ sender: Any) {
+        addBtnCallback(cartItemId)
     }
     
     @IBAction func deleteBtnTapped(_ sender: UIButton) {

@@ -2273,19 +2273,36 @@
                                                                                     <rect key="frame" x="0.0" y="51" width="238" height="50"/>
                                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                                 </view>
-                                                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z61-x4-hxh">
+                                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Z61-x4-hxh">
                                                                                     <rect key="frame" x="0.0" y="101" width="238" height="44"/>
                                                                                     <subviews>
-                                                                                        <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="45P-vl-ZxL">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="95.333333333333329" height="44"/>
+                                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qD2-Fl-Fcw">
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="30.666666666666668" height="44"/>
+                                                                                            <color key="tintColor" systemColor="systemGrayColor"/>
+                                                                                            <buttonConfiguration key="configuration" style="plain" title="-"/>
+                                                                                            <connections>
+                                                                                                <action selector="decreaseBtnTapped:" destination="PNR-Hc-hE2" eventType="touchUpInside" id="1Ta-f5-EAm"/>
+                                                                                            </connections>
+                                                                                        </button>
+                                                                                        <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="45P-vl-ZxL">
+                                                                                            <rect key="frame" x="56.666666666666657" y="0.0" width="32" height="44"/>
                                                                                             <constraints>
                                                                                                 <constraint firstAttribute="height" constant="44" id="X2i-Vs-B1t"/>
                                                                                             </constraints>
                                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                             <textInputTraits key="textInputTraits"/>
                                                                                         </textField>
-                                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLf-EK-ZvQ">
-                                                                                            <rect key="frame" x="95.3333333333333" y="0.0" width="142.66666666666663" height="44"/>
+                                                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pxb-HY-Jvc">
+                                                                                            <rect key="frame" x="114.33333333333331" y="0.0" width="33" height="44"/>
+                                                                                            <color key="tintColor" systemColor="systemGrayColor"/>
+                                                                                            <state key="normal" title="Button"/>
+                                                                                            <buttonConfiguration key="configuration" style="plain" title="+"/>
+                                                                                            <connections>
+                                                                                                <action selector="addBtnTapped:" destination="PNR-Hc-hE2" eventType="touchUpInside" id="oBO-al-Au4"/>
+                                                                                            </connections>
+                                                                                        </button>
+                                                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLf-EK-ZvQ">
+                                                                                            <rect key="frame" x="173.33333333333331" y="0.0" width="64.666666666666686" height="44"/>
                                                                                             <color key="tintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                             <state key="normal" title="Button"/>
                                                                                             <buttonConfiguration key="configuration" style="plain">
@@ -2304,34 +2321,23 @@
                                                                                             </connections>
                                                                                         </button>
                                                                                     </subviews>
-                                                                                    <constraints>
-                                                                                        <constraint firstItem="45P-vl-ZxL" firstAttribute="width" secondItem="Z61-x4-hxh" secondAttribute="width" multiplier="0.4" id="MbW-Nr-FE3"/>
-                                                                                    </constraints>
                                                                                 </stackView>
                                                                             </subviews>
                                                                         </stackView>
                                                                     </subviews>
                                                                 </stackView>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.down" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1Si-dw-SQd">
-                                                                    <rect key="frame" x="240.33333333333334" y="123.3333333333333" width="20.000000000000028" height="10.000000000000028"/>
-                                                                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" constant="20" id="Ae8-Yc-W8x"/>
-                                                                        <constraint firstAttribute="height" constant="20" id="zfR-sT-flE"/>
-                                                                    </constraints>
-                                                                </imageView>
-                                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Bt9-DB-BM0" userLabel="Quantity Table View">
-                                                                    <rect key="frame" x="170" y="150" width="95.333333333333314" height="0.0"/>
+                                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Bt9-DB-BM0" userLabel="Quantity Table View">
+                                                                    <rect key="frame" x="226.66666666666666" y="150" width="31.999999999999972" height="0.0"/>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" id="xFp-uH-7Fg"/>
                                                                     </constraints>
                                                                     <prototypes>
                                                                         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="quantityCell" id="Txf-L6-jMt">
-                                                                            <rect key="frame" x="0.0" y="44.666666030883789" width="95.333333333333314" height="44"/>
+                                                                            <rect key="frame" x="0.0" y="44.666666030883789" width="31.999999999999972" height="44"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Txf-L6-jMt" id="dxv-bH-0dc">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="95.333333333333314" height="44"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="31.999999999999972" height="44"/>
                                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                             </tableViewCellContentView>
                                                                         </tableViewCell>
@@ -2341,8 +2347,6 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="trailing" secondItem="1Ch-pm-QX5" secondAttribute="trailing" id="1vu-0w-eLw"/>
                                                                 <constraint firstAttribute="bottom" secondItem="1Ch-pm-QX5" secondAttribute="bottom" id="FUh-xk-W1p"/>
-                                                                <constraint firstItem="1Si-dw-SQd" firstAttribute="centerY" secondItem="45P-vl-ZxL" secondAttribute="centerY" id="M5O-TP-viF"/>
-                                                                <constraint firstItem="1Si-dw-SQd" firstAttribute="trailing" secondItem="45P-vl-ZxL" secondAttribute="trailing" constant="-5" id="OD4-Iy-vxh"/>
                                                                 <constraint firstItem="1Ch-pm-QX5" firstAttribute="top" secondItem="MYf-cZ-Slh" secondAttribute="top" constant="5" id="ZhG-GE-cdb"/>
                                                                 <constraint firstItem="Bt9-DB-BM0" firstAttribute="leading" secondItem="45P-vl-ZxL" secondAttribute="leading" id="a8N-n4-PVy"/>
                                                                 <constraint firstItem="Bt9-DB-BM0" firstAttribute="top" secondItem="45P-vl-ZxL" secondAttribute="bottom" id="d06-eK-LbK"/>
