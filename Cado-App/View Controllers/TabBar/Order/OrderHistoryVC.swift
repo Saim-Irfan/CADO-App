@@ -30,6 +30,7 @@ class OrderHistoryVC: UIViewController {
         
         let loggedInUserId = LoggedUser.getLoggedInUserId()!
         self.orderList = orderManager.getAll(byUserId: loggedInUserId)
+        self.filteredOrderList = orderList
         
         if self.orderList.isEmpty {
             orderHistoryTblView.isHidden = true
@@ -39,7 +40,7 @@ class OrderHistoryVC: UIViewController {
             
             setupSearchBar()
             configureDatasource()
-            applySnapshot(orderList)
+            applySnapshot()
             orderHistoryTblView.reloadData()
         }
 
@@ -82,14 +83,14 @@ class OrderHistoryVC: UIViewController {
         })
     }
     
-    func applySnapshot(_ orderList: [Order]) {
+    func applySnapshot() {
         var snapshot = Snapshot()
         
         let sectionIdentifierList = Array(0..<orderList.count)
         snapshot.appendSections(sectionIdentifierList)
         
         for sectionIndex in sectionIdentifierList {
-            snapshot.appendItems([orderList[sectionIndex].id], toSection: sectionIndex)
+            snapshot.appendItems([filteredOrderList[sectionIndex].id], toSection: sectionIndex)
         }
         
         datasource.apply(snapshot)
@@ -125,14 +126,15 @@ extension OrderHistoryVC: UISearchResultsUpdating {
         }
         
         if searchText.isEmpty {
-            applySnapshot(orderList)
+            filteredOrderList = orderList
+            applySnapshot()
         }
         else {
-            let filteredFollowerList = orderList.filter {
+            filteredOrderList = orderList.filter {
                 return $0.id.description.contains(searchText.lowercased())
             }
             
-            applySnapshot(filteredFollowerList)
+            applySnapshot()
         }
     }
 }
@@ -145,7 +147,7 @@ extension OrderHistoryVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let orderDetailVC = storyboard?.instantiateViewController(withIdentifier: OrderDetailVC.storyboardIdentifier) as! OrderDetailVC
         
-        orderDetailVC.orderId = orderList[indexPath.row].id
+        orderDetailVC.orderId = filteredOrderList[indexPath.section].id
         
         navigationController?.pushViewController(orderDetailVC, animated: true)
     }
