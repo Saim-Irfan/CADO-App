@@ -565,7 +565,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9ko-kV-KBe">
-                                <rect key="frame" x="20" y="118" width="388" height="139"/>
+                                <rect key="frame" x="20" y="393.66666666666669" width="388" height="139.00000000000006"/>
                                 <subviews>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="euk-QR-fWb">
                                         <rect key="frame" x="0.0" y="0.0" width="388" height="0.0"/>
@@ -594,7 +594,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fBC-Ue-U9G">
-                                <rect key="frame" x="122.33333333333333" y="287" width="183.66666666666669" height="45.666666666666686"/>
+                                <rect key="frame" x="122.33333333333333" y="562.66666666666663" width="183.66666666666669" height="45.666666666666629"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dont have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vap-zk-6M2">
                                         <rect key="frame" x="0.0" y="0.0" width="183.66666666666666" height="20.333333333333332"/>
@@ -603,7 +603,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4H-3Y-gVq">
-                                        <rect key="frame" x="0.0" y="25.333333333333314" width="183.66666666666666" height="20.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="25.333333333333371" width="183.66666666666666" height="20.333333333333329"/>
                                         <attributedString key="attributedText">
                                             <fragment content="You can create one here">
                                                 <attributes>
@@ -616,15 +616,23 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CADO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fEq-JM-xoO">
+                                <rect key="frame" x="121.33333333333333" y="217.66666666666666" width="185.66666666666669" height="75.999999999999972"/>
+                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="64"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1fg-TM-i60"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="9ko-kV-KBe" firstAttribute="centerY" secondItem="cwk-ha-7UN" secondAttribute="centerY" id="6wR-P0-BI4"/>
                             <constraint firstItem="9ko-kV-KBe" firstAttribute="leading" secondItem="cwk-ha-7UN" secondAttribute="leading" constant="20" id="R2g-Ck-Y4Y"/>
+                            <constraint firstItem="9ko-kV-KBe" firstAttribute="top" secondItem="fEq-JM-xoO" secondAttribute="bottom" constant="100" id="XaY-lz-Qpc"/>
                             <constraint firstItem="fBC-Ue-U9G" firstAttribute="centerX" secondItem="cwk-ha-7UN" secondAttribute="centerX" id="bw0-1i-qlh"/>
                             <constraint firstAttribute="trailing" secondItem="9ko-kV-KBe" secondAttribute="trailing" constant="20" id="dwW-8X-RQA"/>
                             <constraint firstItem="fBC-Ue-U9G" firstAttribute="top" secondItem="9ko-kV-KBe" secondAttribute="bottom" constant="30" id="hUd-1H-ZSa"/>
-                            <constraint firstItem="9ko-kV-KBe" firstAttribute="top" secondItem="1fg-TM-i60" secondAttribute="top" constant="30" id="vWF-9t-14n"/>
+                            <constraint firstItem="fEq-JM-xoO" firstAttribute="centerX" secondItem="cwk-ha-7UN" secondAttribute="centerX" id="w1A-d0-X2v"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Sign In" id="nlV-fC-6ll"/>
@@ -2337,7 +2345,7 @@
                                                                             <rect key="frame" x="0.0" y="44.666666030883789" width="47.333333333333343" height="44"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Txf-L6-jMt" id="dxv-bH-0dc">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="31.999999999999972" height="44"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="47.333333333333343" height="44"/>
                                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                             </tableViewCellContentView>
                                                                         </tableViewCell>
