@@ -15,6 +15,9 @@ class CartVC: UIViewController {
     @IBOutlet var cartItemTableView: UITableView!
     @IBOutlet var tableViewHeightConstraint: NSLayoutConstraint!
     
+    @IBOutlet var giftWrapYesBtn: PrimaryButton!
+    @IBOutlet var giftWrapNoBtn: PrimaryButton!
+    
     @IBOutlet var proceedToCheckoutBtn: PrimaryButton!
     
     @IBOutlet var totalPriceLabel: UILabel!
@@ -35,6 +38,7 @@ class CartVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        giftWrapNoBtn.backgroundColor = .white
         cartItemTableView.dataSource    = self
         cartItemTableView.delegate      = self
     }
@@ -84,7 +88,15 @@ class CartVC: UIViewController {
         totalPriceLabel.text = "\(self.totalPrice) AED"
     }
     
+    @IBAction func giftWrapYesBtnTapped(_ sender: Any) {
+        giftWrapYesBtn.backgroundColor = UIColor(red: 249/255, green: 224/255, blue: 30/255, alpha: 1.0)
+        giftWrapNoBtn.backgroundColor = .white
+    }
     
+    @IBAction func giftWrapNoBtnTapped(_ sender: Any) {
+        giftWrapNoBtn.backgroundColor = UIColor(red: 249/255, green: 224/255, blue: 30/255, alpha: 1.0)
+        giftWrapYesBtn.backgroundColor = .white
+    }
     
     @IBAction func proceedToCheckoutBtnTapped(_ sender: Any) {
         let checkoutVC = storyboard?.instantiateViewController(withIdentifier: CheckoutVC.storyboardIdentifier) as! CheckoutVC

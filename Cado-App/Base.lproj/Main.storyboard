@@ -2429,11 +2429,17 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="199" height="44"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Yes"/>
+                                                        <connections>
+                                                            <action selector="giftWrapYesBtnTapped:" destination="0Fy-O6-nK9" eventType="touchUpInside" id="yXD-RS-cL2"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="84m-uO-ii3" customClass="PrimaryButton" customModule="Cado_App" customModuleProvider="target">
                                                         <rect key="frame" x="209" y="0.0" width="199" height="44"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="No"/>
+                                                        <connections>
+                                                            <action selector="giftWrapNoBtnTapped:" destination="0Fy-O6-nK9" eventType="touchUpInside" id="YcK-vo-XVQ"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -2572,6 +2578,8 @@
                     <size key="freeformSize" width="428" height="1400"/>
                     <connections>
                         <outlet property="cartItemTableView" destination="t83-py-Vh5" id="lGl-fX-hXp"/>
+                        <outlet property="giftWrapNoBtn" destination="84m-uO-ii3" id="KOT-4f-DQv"/>
+                        <outlet property="giftWrapYesBtn" destination="hAO-IX-O2b" id="Zls-wE-kaR"/>
                         <outlet property="proceedToCheckoutBtn" destination="ydS-XN-nQD" id="RgS-L3-lb6"/>
                         <outlet property="tableViewHeightConstraint" destination="8Ah-w6-wDd" id="sPG-b7-CRl"/>
                         <outlet property="totalItemLbl" destination="ku5-yF-j3n" id="iNG-Ut-MDS"/>
