@@ -12,6 +12,8 @@ extension UIImageView {
     
     
     func loadImage(url: URL) {
+        image = nil
+        
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else {
                 return
