@@ -10,11 +10,15 @@ import Foundation
 struct ProductRepository: RepositoryProtocol {
     private static var products: [Product] = [
         Product(id: 1,
-                name: "Mirzam",
-                imageUrl: "https://www.theluxediary.com/wp-content/uploads/2018/05/SmallDatesBox-e1525267997869.jpg",
-                description: "This is a good choclate. Please Enjoy :). This is a good choclate. Please Enjoy :). This is a good choclate. Please Enjoy :). This is a good choclate. Please Enjoy :). This is a good choclate. Please Enjoy :). This is a good choclate. Please Enjoy :). This is a good choclate. Please Enjoy :). This is a good choclate. Please Enjoy :). This is a good choclate. Please Enjoy :).",
-                shortDescription: "Dark Choclates Date",
-                price: 52,
+                name: "Mirzam Wooden Tray",
+                imageUrl: "https://mirzam.com/wp-content/uploads/mirzam-ramadan-mar22-e0006-3.jpg",
+                description: """
+                "A customized luxurious wooden walnut box with acrylic cover specially made for Mirzam Chocolates .
+                It’s Intricate pattern and antique finish accessories makes it an exquisite gift.
+                Our delicious dark chocolate dates are made using our dreamy bean to bar, vegan 62% and 100% dark chocolate, thick coating locally grown delicious Khalas dates; together with natural spices, nuts, and fruits.
+                """,
+                shortDescription: "Mirzam Wooden Tray: Assorted Dates",
+                price: 447,
                 quantity: 10,
                 shippingDays: 3),
         
@@ -39,6 +43,35 @@ struct ProductRepository: RepositoryProtocol {
                 """,
                 shortDescription: "Parker Jotter Originals Chrome Trim Ball Pen",
                 price: 375,
+                quantity: 100,
+                shippingDays: 1),
+        Product(id: 4,
+                name: "Istanbul Wallet",
+                imageUrl: "https://jafferjees.com/pub/media/catalog/product/cache/afe89fe21145501a9d33deb753d77fcd/1/1/1153190101_1_1.jpg",
+                description: """
+                Just like the city from which it draws its name, this wallet is traditional in appearance despite its sleek and modern design.
+                """,
+                shortDescription: "Men's Wallet",
+                price: 15,
+                quantity: 25,
+                shippingDays: 1),
+        Product(id: 5,
+                name: "BOLD Handbag",
+                imageUrl: "https://sistabag.com/cdn/shop/files/W1_1.jpg?v=1690222042&width=990",
+                description: """
+                Introducing Sistabag‘s Saddle Bag - where style meets empowerment. Our Saddle Bag celebrate the spirit of Black women with diverse design themes and inspirational quotes. Carry your pride, embrace your beauty, and make a powerful statement with Sistabag.
+
+                Product Details:
+                Made of high-quality canvas for durability and scratch resistance.
+                Features an adjustable shoulder strap allows you to customize the length.
+                Your belongings stay secure with magnetic closure outside.
+                Stay organized with 1 back slip pocket and an inner compartment/zipper closer for easily accessible items.
+                Personalize your saddle bag with your name, free of charge.
+
+                Embrace elegance, empowerment, and self-expression with Sistabag’s Saddle Bag. Shop now and carry a piece of your identity with you wherever you go.
+                """,
+                shortDescription: "I am BOLD, LOVED, STRONG, RESILIENT - Personalized Leather Handbag STB49A",
+                price: 12000,
                 quantity: 100,
                 shippingDays: 1)
     ]
