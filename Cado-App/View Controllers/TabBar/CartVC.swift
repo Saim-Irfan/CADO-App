@@ -9,7 +9,7 @@ import UIKit
 
 class CartVC: UIViewController {
     static let storyboardIdentifier = "cartVC"
-    static let tabbarIndex = 3
+    static let tabbarIndex = 2
     
     @IBOutlet var totalItemLbl: UILabel!
     @IBOutlet var cartItemTableView: UITableView!
@@ -59,7 +59,7 @@ class CartVC: UIViewController {
                 tableViewHeightConstraint.constant = 150.0
             }
             else {
-                tableViewHeightConstraint.constant = 350.0
+                tableViewHeightConstraint.constant = 300.0
             }
             
             cartItemTableView.isHidden = false
@@ -131,5 +131,9 @@ extension CartVC: UITableViewDelegate {
         let productDetailVC = storyboard?.instantiateViewController(withIdentifier: ProductDetailVC.storyboardIdentifier) as! ProductDetailVC
         productDetailVC.productId = cartItem.productId
         navigationController?.pushViewController(productDetailVC, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        150.0
     }
 }
