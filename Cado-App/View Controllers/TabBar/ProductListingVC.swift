@@ -140,7 +140,7 @@ extension ProductListingVC: UISearchResultsUpdating {
             applySnapshot()
         }
         else {
-            self.filteredProductList = filteredProductList.filter {
+            self.filteredProductList = self.productList.filter {
                 return $0.name.lowercased().contains(searchText.lowercased())
             }
             
