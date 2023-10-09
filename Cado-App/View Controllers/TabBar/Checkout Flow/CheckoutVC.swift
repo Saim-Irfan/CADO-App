@@ -34,6 +34,7 @@ class CheckoutVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         navigationItem.title = "Checkout"
         
+        
         configureRecipientAddress()
         configureAddressStackView()
     }
@@ -54,6 +55,11 @@ class CheckoutVC: UIViewController {
         let stackItemHeight = 80.0
         var mainStackViewHeight = 0.0
         
+        addressStackView.arrangedSubviews.forEach { view in
+            addressStackView.removeArrangedSubview(view)
+            view.removeFromSuperview()
+        }
+        
         if recipientAddressList.isEmpty {
             let label = UILabel.init(frame: .zero)
             label.translatesAutoresizingMaskIntoConstraints = false
@@ -64,6 +70,10 @@ class CheckoutVC: UIViewController {
             addressStackView.addArrangedSubview(label)
             
             mainStackViewHeight += 44.0
+            
+            addressStackViewHeight.constant = mainStackViewHeight
+            
+            return
         }
         
         for index in 0..<recipientAddressList.count {
