@@ -8,11 +8,7 @@
 import Foundation
 
 struct CartItemRepository: RepositoryProtocol {
-  private static var cartItems: [CartItem] = [
-        CartItem(userId: 1,
-                 productId: 1,
-                 quantity: 5)
-  ]
+  private static var cartItems: [CartItem] = []
     
     mutating func create(record: CartItem) {
         CartItemRepository.cartItems.append(record)

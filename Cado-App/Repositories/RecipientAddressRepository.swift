@@ -14,7 +14,7 @@ struct RecipientAddressRepository: RepositoryProtocol {
                          lastName:      "Ali",
                          mobileNumber:  "03102573772",
                          street:        "234 Sheikh Zayed Street",
-                         residence:     "Sheikh Zayed Residence",
+                         residence:     "Capital Center",
                          city:          "Abu Dhabi",
                          instruction:   ""),
         

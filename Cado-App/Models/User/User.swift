@@ -20,7 +20,7 @@ class User {
     let country:     String
     
     init(firstName: String, lastName: String, email: String, password: String, dob: Date, gender: Gender, country: String) {
-        self.id          = Cado_App.User.availableUserId
+        self.id          = User.availableUserId
         self.firstName   = firstName
         self.lastName    = lastName
         self.email       = email

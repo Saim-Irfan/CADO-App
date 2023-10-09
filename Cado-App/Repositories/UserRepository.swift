@@ -15,6 +15,13 @@ struct UserRepository: RepositoryProtocol {
              password: "Qwerty123456",
              dob: Date.now,
              gender: .male,
+             country: "Pakistan"),
+        User(firstName: "Saim",
+             lastName: "Irfan",
+             email: "ifan@gmail.com",
+             password: "Qwerty123456",
+             dob: Date.now,
+             gender: .male,
              country: "Pakistan")
     ]
     

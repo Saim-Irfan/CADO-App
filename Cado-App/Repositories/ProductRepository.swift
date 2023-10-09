@@ -26,6 +26,21 @@ struct ProductRepository: RepositoryProtocol {
                 price: 10,
                 quantity: 50,
                 shippingDays: 1),
+        Product(id: 3,
+                name: "Parker Jotter Pen",
+                imageUrl: "https://cdn.shopify.com/s/files/1/0740/3477/4328/files/956f-4e-st42-6gs04a14.jpg?v=1694171086&width=900",
+                description: """
+                Glossy Coloured Plastic finish with a retro touch inspires original ideas.
+                The iconic jotter design.
+                Ultra resistant plastic body.
+                Signature retractable design opens and closes with a satisfying click.
+                Fitted with Quinkflow ballpoint refill for optimal ink flow",
+                shortDescription: "A Bouqet of Flowers
+                """,
+                shortDescription: "Parker Jotter Originals Chrome Trim Ball Pen",
+                price: 375,
+                quantity: 100,
+                shippingDays: 1)
     ]
     
     mutating func create(record: Product) {
