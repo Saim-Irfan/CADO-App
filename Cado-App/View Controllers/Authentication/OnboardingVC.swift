@@ -8,6 +8,7 @@
 import UIKit
 
 class OnboardingVC: UIViewController {
+    static let storyboardIdentifier = "onboardingVC"
     
     let nameOfimagesToDisplay = ["first-image", "second-image", "third-image"]
     let titleMessages = ["Hand Delivered", "How It Works", "On-Demand Gifts"]
