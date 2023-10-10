@@ -85,7 +85,7 @@ class CheckoutVC: UIViewController {
             addressView.mainAddressLbl.text = recipientAddressList[index].residence
             addressView.secondaryAddressLbl.text = recipientAddressList[index].city
             
-            addressView.radioButtonCallback = { addressIndex in
+            addressView.tapCallback = { addressIndex in
                 
                 for addressView in self.addressStackView.arrangedSubviews {
                     (addressView as! RecipientAddressView).radioBtn.setAsDisabled()
