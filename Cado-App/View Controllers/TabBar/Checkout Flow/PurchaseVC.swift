@@ -11,8 +11,14 @@ class PurchaseVC: UIViewController {
     static let storyboardIdentifier = "purchaseVC"
     
     
+    @IBOutlet var giftCardStackView: UIStackView!
+    @IBOutlet var giftCardRadioBtn: AddressRadioButton!
+    
     @IBOutlet var paymentRadioOne: AddressRadioButton!
     @IBOutlet var paymentRadioTwo: AddressRadioButton!
+    
+    @IBOutlet var paymentStackViewOne: UIStackView!
+    @IBOutlet var paymentStackViewTwo: UIStackView!
     
     @IBOutlet var orderSummaryStackView: UIStackView!
     @IBOutlet var orderSummaryDetailHeight: NSLayoutConstraint!
@@ -37,9 +43,17 @@ class PurchaseVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let giftCardTapGesture = UITapGestureRecognizer(target: self, action: #selector(giftCardRadioTapped))
+        giftCardStackView.addGestureRecognizer(giftCardTapGesture)
+        
+        let paymentStackOneGesture = UITapGestureRecognizer(target: self, action: #selector(paymentStackOneTapped))
+        paymentStackViewOne.addGestureRecognizer(paymentStackOneGesture)
+        
+        let paymentStackTwoGesture = UITapGestureRecognizer(target: self, action: #selector(paymentStackTwoTapped))
+        paymentStackViewTwo.addGestureRecognizer(paymentStackTwoGesture)
+        
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(orderSummaryStackViewTapped))
-        
         orderSummaryStackView.isUserInteractionEnabled = true
         orderSummaryStackView.addGestureRecognizer(tapGesture)
         
@@ -101,23 +115,23 @@ class PurchaseVC: UIViewController {
     
 
     
-    @IBAction func giftCardRadioTapped(_ sender: AddressRadioButton) {
-        if sender.isChosen {
-            sender.setAsDisabled()
+    @objc func giftCardRadioTapped() {
+        if giftCardRadioBtn.isChosen {
+            giftCardRadioBtn.setAsDisabled()
         }
         else {
-            sender.setAsEnabled()
+            giftCardRadioBtn.setAsEnabled()
         }
     }
     
     
-    @IBAction func paymentRadioOneTapped(_ sender: AddressRadioButton) {
+    @objc func paymentStackOneTapped() {
         paymentRadioTwo.setAsDisabled()
         paymentRadioOne.setAsEnabled()
         completePurchaseBtn.setEnabled()
     }
     
-    @IBAction func paymentRadioTwoTapped(_ sender: AddressRadioButton) {
+    @objc func paymentStackTwoTapped() {
         paymentRadioOne.setAsDisabled()
         paymentRadioTwo.setAsEnabled()
         completePurchaseBtn.setEnabled()
