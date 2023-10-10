@@ -17,7 +17,10 @@ class WishlistTblCell: UITableViewCell {
     var productId: Int!
     var addToCartCallback: ((_ productId: Int) -> ())!
     
-
+    override func awakeFromNib() {
+        selectionStyle = .none
+    }
+    
     @IBAction func addToCartBtnTapped(_ sender: PrimaryButton) {
         addToCartCallback(productId)
     }
