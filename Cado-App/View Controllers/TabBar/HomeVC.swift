@@ -21,7 +21,7 @@ class HomeVC: UIViewController {
     private var datasource: Datasource!
     private var sectionList: [Section] = []
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         tabBarController?.navigationItem.title = "Home"
         
         let logoutBtn = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logout))
