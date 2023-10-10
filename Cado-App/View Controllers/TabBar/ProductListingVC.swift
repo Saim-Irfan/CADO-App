@@ -8,7 +8,7 @@
 import UIKit
 
 class ProductListingVC: UIViewController, UICollectionViewDelegate {
-    static let storyboardIdentifier = "productDetailVC"
+    static let storyboardIdentifier = "productListingVC"
     
     typealias Datasource = UICollectionViewDiffableDataSource<Int, Int>
     typealias Snapshot = NSDiffableDataSourceSnapshot<Int, Int>

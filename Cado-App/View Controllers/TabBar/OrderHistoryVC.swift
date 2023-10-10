@@ -8,6 +8,8 @@
 import UIKit
 
 class OrderHistoryVC: UIViewController {
+    static let storyboardIdentifier = "orderHistoryVC"
+    
     static let tabbarIndex = 4
     
     typealias Datasource = UITableViewDiffableDataSource<Int, Int>

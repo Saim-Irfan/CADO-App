@@ -8,6 +8,8 @@
 import UIKit
 
 class WishlistVC: UIViewController {
+    static let storyboardIdentifier = "wishlistVC"
+    
     @IBOutlet var browseGiftLbl: UILabel!
     
     @IBOutlet var mainView: UIView!
@@ -77,8 +79,8 @@ extension WishlistVC: UITableViewDataSource {
             
             let alert = UIAlertController(title: "Added To Cart", message: "The following product has been added to the cart", preferredStyle: .alert)
             let alertAction = UIAlertAction(title: "Ok", style: .default)
-            
             alert.addAction(alertAction)
+            
             self.present(alert, animated: true)
         }
         
