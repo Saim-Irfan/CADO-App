@@ -77,6 +77,8 @@ extension WishlistVC: UITableViewDataSource {
         cell.addToCartCallback          = { productId in
             self.cartItemManager.addToCart(userId: self.loggedInUserId, productId: productId, quantity: 1)
             
+            MainTabBarController.showCartBadge()
+            
             let alert = UIAlertController(title: "Added To Cart", message: "The following product has been added to the cart", preferredStyle: .alert)
             let alertAction = UIAlertAction(title: "Ok", style: .default)
             alert.addAction(alertAction)

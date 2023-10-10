@@ -31,6 +31,7 @@ class CartVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.navigationItem.title = "Cart"
+        tabBarItem.badgeValue = nil
         
         configureScreen()
     }
