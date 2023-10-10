@@ -3001,9 +3001,6 @@
                                                                 </constraints>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="A"/>
-                                                                <connections>
-                                                                    <action selector="giftCardRadioTapped:" destination="fWV-qZ-fSs" eventType="touchUpInside" id="f6i-QU-aMM"/>
-                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -3048,9 +3045,6 @@
                                                                         </constraints>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" title="B"/>
-                                                                        <connections>
-                                                                            <action selector="paymentRadioOneTapped:" destination="fWV-qZ-fSs" eventType="touchUpInside" id="kBf-HB-hlr"/>
-                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -3100,9 +3094,6 @@
                                                                         </constraints>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" title="B"/>
-                                                                        <connections>
-                                                                            <action selector="paymentRadioTwoTapped:" destination="fWV-qZ-fSs" eventType="touchUpInside" id="6Kq-Lz-11B"/>
-                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -3361,10 +3352,14 @@
                     </view>
                     <connections>
                         <outlet property="completePurchaseBtn" destination="unD-E0-sn9" id="TUN-Y4-rz2"/>
+                        <outlet property="giftCardRadioBtn" destination="Br0-c2-65P" id="Aoc-VB-YcQ"/>
+                        <outlet property="giftCardStackView" destination="zda-pp-sxw" id="aFA-b1-9J9"/>
                         <outlet property="orderSummaryDetailHeight" destination="3zL-gh-rnz" id="iU7-OW-aRy"/>
                         <outlet property="orderSummaryStackView" destination="Lri-2T-ldm" id="cCU-6G-bNe"/>
                         <outlet property="paymentRadioOne" destination="dmG-ix-7wv" id="Hh9-Gv-qt2"/>
                         <outlet property="paymentRadioTwo" destination="IMD-9y-SpL" id="Yzp-pe-Lba"/>
+                        <outlet property="paymentStackViewOne" destination="HdF-ap-pxx" id="a0B-nX-Res"/>
+                        <outlet property="paymentStackViewTwo" destination="j2B-9r-Tl0" id="UEw-tw-sWV"/>
                         <outlet property="totalPriceLbl" destination="Ob8-H7-wyp" id="wY9-R9-k6g"/>
                     </connections>
                 </viewController>
