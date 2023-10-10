@@ -116,15 +116,15 @@ extension ProductListingVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let collectionViewWidth = productListingClctnView.bounds.width
         
-        return CGSize(width: collectionViewWidth / 2 - 20, height: collectionViewWidth / 1.5)
+        return CGSize(width: (collectionViewWidth / 2) - 30, height: (collectionViewWidth / 1.5) - 30)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 20
+        return 30
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 20
+        return 30
     }
 }
 
