@@ -8,13 +8,16 @@
 import UIKit
 
 class RecipientAddressView: UIView {
-
+    
+    
+    @IBOutlet var mainContainerView: UIView!
+    
     @IBOutlet var mainAddressLbl: UILabel!
     @IBOutlet var secondaryAddressLbl: UILabel!
     @IBOutlet var radioBtn: AddressRadioButton!
     
     var addressIndex: Int!
-    var radioButtonCallback: ((_ addressIndex: Int) -> ())!
+    var tapCallback: ((_ addressIndex: Int) -> ())!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,11 +35,14 @@ class RecipientAddressView: UIView {
         
         viewFromXib.frame = self.bounds
         addSubview(viewFromXib)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(mainContainerTapped))
+        mainContainerView.addGestureRecognizer(tapGesture)
     }
     
 
     
-    @IBAction func radioBtnTapped(_ sender: AddressRadioButton) {
-        radioButtonCallback(addressIndex)
+    @objc func mainContainerTapped() {
+        tapCallback(addressIndex)
     }
 }

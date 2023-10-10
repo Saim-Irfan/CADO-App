@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecipientAddressView" customModule="Cado_App" customModuleProvider="target">
             <connections>
                 <outlet property="mainAddressLbl" destination="kDY-7R-tp5" id="N3Q-KN-Crb"/>
+                <outlet property="mainContainerView" destination="iN0-l3-epB" id="vVO-9g-d4s"/>
                 <outlet property="radioBtn" destination="FIM-kc-MXu" id="VOW-KC-rJj"/>
                 <outlet property="secondaryAddressLbl" destination="nnN-pC-tKw" id="8sa-bg-BEU"/>
             </connections>
@@ -37,9 +38,6 @@
                                             </constraints>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="button"/>
-                                            <connections>
-                                                <action selector="radioBtnTapped:" destination="-1" eventType="touchUpInside" id="Q0q-9Q-Ue6"/>
-                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
