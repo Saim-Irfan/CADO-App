@@ -27,6 +27,8 @@ class OnboardingVC: UIViewController {
         imgCollectionView.delegate = self
         imgCollectionView.dataSource = self
         imgCollectionView.showsHorizontalScrollIndicator = false
+        
+        pageController.addTarget(self, action: #selector(pageControlTapped), for: .valueChanged)
     }
     
     @IBAction func closeBtnTapped(_ sender: UIBarButtonItem) {
@@ -43,6 +45,13 @@ class OnboardingVC: UIViewController {
         navigationController?.navigationBar.backgroundColor = UIColor(red: 249/255, green: 224/255, blue: 30/255, alpha: 1.0)
     }
     
+    @objc func pageControlTapped() {
+        let newPageIndex = pageController.currentPage
+        let newIndexPath = IndexPath(row: newPageIndex, section: 0)
+        
+        imgCollectionView.scrollToItem(at: newIndexPath, at: .left, animated: true)
+        
+    }
     
     @IBAction func registerBtnTapped(_ sender: Any) {
         performSegue(withIdentifier: "registerSegue", sender: nil)
@@ -51,7 +60,6 @@ class OnboardingVC: UIViewController {
     @IBAction func signInBtnTapped(_ sender: Any) {
         performSegue(withIdentifier: "loginSegue", sender: nil)
     }
-    
 }
 
 extension OnboardingVC: UICollectionViewDataSource {
