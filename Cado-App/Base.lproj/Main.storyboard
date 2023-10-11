@@ -1357,6 +1357,83 @@
             </objects>
             <point key="canvasLocation" x="4263.0841121495323" y="-2165.4427645788337"/>
         </scene>
+        <!--Product Image SliderVC-->
+        <scene sceneID="7Iq-sl-wMD">
+            <objects>
+                <viewController storyboardIdentifier="productImageSliderVC" id="C5i-Ny-I42" customClass="ProductImageSliderVC" customModule="Cado_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BKl-KN-ka5">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wen-Bw-pvv">
+                                <rect key="frame" x="0.0" y="44" width="428" height="882"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="y1U-pt-Ho6">
+                                    <size key="itemSize" width="428" height="886"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageZoomCollectionViewCell" id="hBM-kb-iEv" customClass="ImageZoomCollectionViewCell" customModule="Cado_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="-2" width="428" height="886"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Iuy-9G-y55">
+                                            <rect key="frame" x="0.0" y="0.0" width="428" height="886"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hLj-t6-Tzb">
+                                                    <rect key="frame" x="0.0" y="0.0" width="428" height="886"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eQb-Pb-HfE">
+                                                            <rect key="frame" x="0.0" y="0.0" width="428" height="886"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="eQb-Pb-HfE" firstAttribute="trailing" secondItem="vfY-o4-PbD" secondAttribute="trailing" id="0Hl-AI-n8x"/>
+                                                        <constraint firstItem="eQb-Pb-HfE" firstAttribute="bottom" secondItem="vfY-o4-PbD" secondAttribute="bottom" id="Hcj-FN-Qpb"/>
+                                                        <constraint firstItem="eQb-Pb-HfE" firstAttribute="top" secondItem="vfY-o4-PbD" secondAttribute="top" id="UCy-Hn-XTF"/>
+                                                        <constraint firstItem="eQb-Pb-HfE" firstAttribute="width" secondItem="VCr-7c-FKF" secondAttribute="width" id="fCo-Vv-8Zy"/>
+                                                        <constraint firstItem="eQb-Pb-HfE" firstAttribute="leading" secondItem="vfY-o4-PbD" secondAttribute="leading" id="gk1-Kd-eKZ"/>
+                                                        <constraint firstItem="eQb-Pb-HfE" firstAttribute="height" secondItem="VCr-7c-FKF" secondAttribute="height" id="zVr-ik-o4y"/>
+                                                    </constraints>
+                                                    <viewLayoutGuide key="contentLayoutGuide" id="vfY-o4-PbD"/>
+                                                    <viewLayoutGuide key="frameLayoutGuide" id="VCr-7c-FKF"/>
+                                                </scrollView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="hLj-t6-Tzb" secondAttribute="bottom" id="6tK-mm-FZo"/>
+                                                <constraint firstAttribute="trailing" secondItem="hLj-t6-Tzb" secondAttribute="trailing" id="VWs-jv-cnn"/>
+                                                <constraint firstItem="hLj-t6-Tzb" firstAttribute="leading" secondItem="Iuy-9G-y55" secondAttribute="leading" id="vVU-oV-Kui"/>
+                                                <constraint firstItem="hLj-t6-Tzb" firstAttribute="top" secondItem="Iuy-9G-y55" secondAttribute="top" id="x9c-q7-2Cr"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="428" height="886"/>
+                                        <connections>
+                                            <outlet property="mainImageView" destination="eQb-Pb-HfE" id="OF7-Bz-Dn6"/>
+                                            <outlet property="scrollView" destination="hLj-t6-Tzb" id="leu-8a-elG"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HTS-EZ-xt9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wen-Bw-pvv" firstAttribute="top" secondItem="HTS-EZ-xt9" secondAttribute="top" id="0By-Iy-R3A"/>
+                            <constraint firstItem="wen-Bw-pvv" firstAttribute="leading" secondItem="BKl-KN-ka5" secondAttribute="leading" id="Z81-jT-NaH"/>
+                            <constraint firstAttribute="bottom" secondItem="wen-Bw-pvv" secondAttribute="bottom" id="xte-rx-gy8"/>
+                            <constraint firstAttribute="trailing" secondItem="wen-Bw-pvv" secondAttribute="trailing" id="yOF-Ed-JDP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageSliderClctionView" destination="wen-Bw-pvv" id="CQL-IM-mll"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tkw-6C-elF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5080.3738317757006" y="-2318.3585313174949"/>
+        </scene>
         <!--Search-->
         <scene sceneID="9Gf-dM-rAr">
             <objects>

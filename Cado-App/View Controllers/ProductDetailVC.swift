@@ -384,6 +384,12 @@ extension ProductDetailVC: UICollectionViewDelegate {
             let productDetailVC = storyboard?.instantiateViewController(withIdentifier: ProductDetailVC.storyboardIdentifier) as! ProductDetailVC
             productDetailVC.productId = product.id
             navigationController?.pushViewController(productDetailVC, animated: true)
+        case CollectionViewType.imgSlider.rawValue:
+            let productImageSliderVC = storyboard?.instantiateViewController(withIdentifier: ProductImageSliderVC.storyboardIdentifier) as! ProductImageSliderVC
+            
+            productImageSliderVC.imageUrlList = productImgUrlList
+            
+            navigationController?.pushViewController(productImageSliderVC, animated: true)
         default:
             return
         }
