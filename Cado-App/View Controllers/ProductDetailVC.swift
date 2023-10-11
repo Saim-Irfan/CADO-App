@@ -103,7 +103,6 @@ class ProductDetailVC: UIViewController {
         imageSliderClctionView.tag                                          = CollectionViewType.imgSlider.rawValue
         imageSliderClctionView.delegate                                     = self
         imageSliderClctionView.dataSource                                   = self
-        imageSliderClctionView.automaticallyAdjustsScrollIndicatorInsets    = true
         
         imageSliderPageControl.numberOfPages = productImgUrlList.count
         imageSliderPageControl.addTarget(self, action: #selector(handleTapOnImgSliderPageControl), for: .valueChanged)
