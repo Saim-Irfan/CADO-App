@@ -20,10 +20,13 @@ class ProductListingCVCell: UICollectionViewCell {
     }
     
     func setShadow() {
-        contentView.layer.masksToBounds = false
-        contentView.layer.shadowColor   = UIColor.black.cgColor
-        contentView.layer.shadowOpacity = 0.05
-        contentView.layer.shadowPath    = UIBezierPath(rect: bounds).cgPath
+        layer.masksToBounds = false
+        layer.shadowColor   = UIColor.black.cgColor
+        layer.shadowRadius  = 10.0
+        layer.shadowOpacity = 0.2
+        
+        layer.shouldRasterize     = true
+        layer.rasterizationScale  = UIScreen.main.scale
     }
     
 }

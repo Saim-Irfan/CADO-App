@@ -1446,47 +1446,44 @@
                                 <rect key="frame" x="10" y="49" width="408" height="877"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="s6S-SZ-80M">
-                                    <size key="itemSize" width="208" height="201"/>
+                                    <size key="itemSize" width="208" height="197"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="productListingCVCell" id="88n-zP-EMB" customClass="ProductListingCVCell" customModule="Cado_App" customModuleProvider="target">
-                                        <rect key="frame" x="100" y="0.0" width="208" height="201"/>
+                                        <rect key="frame" x="100" y="0.0" width="208" height="197"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="7ri-fp-fKi">
-                                            <rect key="frame" x="0.0" y="0.0" width="208" height="201"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="208" height="197"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7El-BD-aCK">
-                                                    <rect key="frame" x="0.0" y="0.0" width="208" height="201"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7El-BD-aCK">
+                                                    <rect key="frame" x="0.0" y="0.0" width="208" height="197"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FCP-SH-rB8">
-                                                            <rect key="frame" x="0.0" y="0.0" width="208" height="140.66666666666666"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FCP-SH-rB8">
+                                                            <rect key="frame" x="0.0" y="0.0" width="208" height="125.66666666666667"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mirzam" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0A-UJ-el2">
-                                                            <rect key="frame" x="0.0" y="140.66666666666666" width="208" height="20.333333333333343"/>
+                                                            <rect key="frame" x="0.0" y="130.66666666666666" width="208" height="20.333333333333343"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Short description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QOv-lt-VRP">
-                                                            <rect key="frame" x="0.0" y="161" width="208" height="22"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Short description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QOv-lt-VRP">
+                                                            <rect key="frame" x="0.0" y="156" width="208" height="18"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                             <color key="textColor" systemColor="systemGrayColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="52 AED" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ao8-BT-Hz1">
-                                                            <rect key="frame" x="0.0" y="183" width="208" height="18"/>
+                                                            <rect key="frame" x="0.0" y="179" width="208" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <constraints>
-                                                        <constraint firstItem="FCP-SH-rB8" firstAttribute="height" secondItem="7El-BD-aCK" secondAttribute="height" multiplier="0.7" id="D0C-wC-IKs"/>
-                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
@@ -1496,7 +1493,7 @@
                                                 <constraint firstItem="7El-BD-aCK" firstAttribute="top" secondItem="7ri-fp-fKi" secondAttribute="top" id="e4a-H4-Et4"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="208" height="201"/>
+                                        <size key="customSize" width="208" height="197"/>
                                         <connections>
                                             <outlet property="mainImgView" destination="FCP-SH-rB8" id="N12-xg-P0P"/>
                                             <outlet property="priceLbl" destination="ao8-BT-Hz1" id="AGj-OW-CQL"/>
