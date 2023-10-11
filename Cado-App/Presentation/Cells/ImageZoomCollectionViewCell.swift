@@ -15,7 +15,7 @@ class ImageZoomCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         scrollView.minimumZoomScale = 1
-        scrollView.maximumZoomScale = 4
+        scrollView.maximumZoomScale = 10
         
         scrollView.delegate = self
     }
