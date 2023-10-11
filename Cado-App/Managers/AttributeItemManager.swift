@@ -18,6 +18,14 @@ class AttributeItemManager {
         attributeItemRepository.getAll()
     }
     
+    func getAll(byAttributeId attributeId: Int) -> [AttributeItem] {
+        let attributeItemList = getAll()
+        
+        return attributeItemList.filter { attributeItem in
+            attributeItem.attributeId == attributeId
+        }
+    }
+    
     func get(byId id: Int) -> AttributeItem? {
         attributeItemRepository.get(byIdentifier: id)
     }

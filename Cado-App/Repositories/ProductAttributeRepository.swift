@@ -11,8 +11,16 @@ struct ProductAttributeRepository: RepositoryProtocol {
   private static var productAttributes: [ProductAttribute] = [
         ProductAttribute(id: 1,
                          productId: 1,
+                         name: "Size"),
+        
+        ProductAttribute(id: 2,
+                         productId: 2,
+                         name: "Type"),
+        ProductAttribute(id: 3,
+                         productId: 2,
                          name: "Size")
   ]
+    
     
     mutating func create(record: ProductAttribute) {
         ProductAttributeRepository.productAttributes.append(record)

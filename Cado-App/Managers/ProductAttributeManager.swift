@@ -18,6 +18,14 @@ class ProductAttributeManager {
         productAttributeRepository.getAll()
     }
     
+    func getAll(byProductId productId: Int) -> [ProductAttribute] {
+        let productAttributeList = productAttributeRepository.getAll()
+        
+        return productAttributeList.filter { productAttribute in
+            productAttribute.productId == productId
+        }
+    }
+    
     func get(byId id: Int) -> ProductAttribute? {
         productAttributeRepository.get(byIdentifier: id)
     }

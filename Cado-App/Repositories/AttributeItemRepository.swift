@@ -12,10 +12,33 @@ struct AttributeItemRepository: RepositoryProtocol {
         AttributeItem(id: 1,
                       attributeId: 1,
                       value: "Small"),
-        
         AttributeItem(id: 2,
                       attributeId: 1,
-                      value: "Large")
+                      value: "Medium"),
+        AttributeItem(id: 3,
+                      attributeId: 1,
+                      value: "Large"),
+        
+        
+        AttributeItem(id: 4,
+                      attributeId: 2,
+                      value: "Roses"),
+        AttributeItem(id: 5,
+                      attributeId: 2,
+                      value: "Tulips"),
+        AttributeItem(id: 6,
+                      attributeId: 2,
+                      value: "Mixed"),
+        
+        AttributeItem(id: 7,
+                      attributeId: 3,
+                      value: "Small"),
+        AttributeItem(id: 8,
+                      attributeId: 3,
+                      value: "Medium"),
+        AttributeItem(id: 9,
+                      attributeId: 3,
+                      value: "Large"),
   ]
     
     mutating func create(record: AttributeItem) {

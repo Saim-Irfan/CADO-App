@@ -17,6 +17,10 @@ class ProductDetailVC: UIViewController {
     @IBOutlet var descriptionLbl:       UILabel!
     
     
+    @IBOutlet var attributeStackView: UIStackView!
+    @IBOutlet var attributeStackViewHeight: NSLayoutConstraint!
+    
+    
     @IBOutlet var quantityTextField: UITextField!
     @IBOutlet var quantityTableView: UITableView!
     
@@ -35,14 +39,17 @@ class ProductDetailVC: UIViewController {
     
     var productId: Int!
     
-    private let productManager      = ProductManager()
-    private let cartManager         = CartItemManager()
-    private let wishlistItemManager = WishlistItemManager()
-    private let loggedInUserId = LoggedUser.getLoggedInUserId()!
+    private let productManager          = ProductManager()
+    private let cartManager             = CartItemManager()
+    private let wishlistItemManager     = WishlistItemManager()
+    private let productAttributeManager = ProductAttributeManager()
+    private let attributeItemManager    = AttributeItemManager()
     
+    private let loggedInUserId      = LoggedUser.getLoggedInUserId()!
     
-    private var product: Product!
-    private var productList: [Product] = []
+    private var product             : Product!
+    private var productList         : [Product] = []
+    private var attributeList       : [ProductAttribute] = []
     
     private var itemsPerPage = 2
     
@@ -51,8 +58,11 @@ class ProductDetailVC: UIViewController {
         
         self.productList = productManager.getInStockAvailable()
         self.product = productManager.get(byId: productId)!
+        self.attributeList = productAttributeManager.getAll(byProductId: productId)
         
         setCartBtnEnableStatus()
+        
+        configureProductAttributeStackView()
         
         mainImgView.loadImage(url: URL(string: product.imageUrl)!)
         productNameLbl.text = product.name
@@ -72,6 +82,33 @@ class ProductDetailVC: UIViewController {
         configureProductScroll()
         productScrollCollectionView.dataSource  = self
         productScrollCollectionView.delegate    = self
+    }
+    
+    func configureProductAttributeStackView() {
+        if attributeList.isEmpty {
+            return
+        }
+        
+        let stackviewItemHeight = 70.0
+        let itemSpacing = 10.0
+        var stackviewHeight = 0.0
+        for attribute in attributeList {
+            let attributeItemList = attributeItemManager.getAll(byAttributeId: attribute.id)
+            
+            let attributeView = ProductAttributeView()
+            attributeView.translatesAutoresizingMaskIntoConstraints = false
+            attributeView.heightAnchor.constraint(equalToConstant: stackviewItemHeight).isActive = true
+            
+            
+            attributeView.configure(title: attribute.name, attributeItemList: attributeItemList)
+            
+            attributeStackView.addArrangedSubview(attributeView)
+            stackviewHeight += stackviewItemHeight + itemSpacing
+        }
+        
+        
+        attributeStackView.spacing = itemSpacing
+        attributeStackViewHeight.constant = stackviewHeight
     }
     
     func configureQuantityTblView() {
