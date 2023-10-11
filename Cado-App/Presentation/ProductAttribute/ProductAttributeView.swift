@@ -43,8 +43,9 @@ class ProductAttributeView: UIView {
     
     
     func configure(title: String, attributeItemList: [AttributeItem]) {
-        attributeLbl.text = title
-        attributeSelectionTxtField.placeholder = "Select \(title)"
+        attributeLbl.text               = title
+        attributeSelectionTxtField.text = attributeItemList[0].value
+        
         
         self.attributeItemList = attributeItemList
         picker.reloadAllComponents()
