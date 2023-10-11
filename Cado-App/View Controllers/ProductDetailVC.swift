@@ -100,11 +100,10 @@ class ProductDetailVC: UIViewController {
         
         imageSliderClctionView.showsHorizontalScrollIndicator = false
         
-        imageSliderClctionView.tag          = CollectionViewType.imgSlider.rawValue
-        imageSliderClctionView.delegate     = self
-        imageSliderClctionView.dataSource   = self
-//        imageSliderClctionView.contentMode  = .center
-//        imageSliderClctionView.scrollPos
+        imageSliderClctionView.tag                                          = CollectionViewType.imgSlider.rawValue
+        imageSliderClctionView.delegate                                     = self
+        imageSliderClctionView.dataSource                                   = self
+        imageSliderClctionView.automaticallyAdjustsScrollIndicatorInsets    = true
         
         imageSliderPageControl.numberOfPages = productImgUrlList.count
         imageSliderPageControl.addTarget(self, action: #selector(handleTapOnImgSliderPageControl), for: .valueChanged)
@@ -396,8 +395,8 @@ extension ProductDetailVC: UICollectionViewDelegateFlowLayout {
         let size = imageSliderClctionView.bounds.size
         return CGSize(width: size.width, height: size.height)
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         0.0
     }
 }
