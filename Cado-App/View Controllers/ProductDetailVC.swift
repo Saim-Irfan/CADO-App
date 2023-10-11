@@ -10,7 +10,11 @@ import UIKit
 class ProductDetailVC: UIViewController {
     static let storyboardIdentifier = "productDetailVC"
     
-    @IBOutlet var mainImgView:          UIImageView!
+    
+    @IBOutlet var imageSliderClctionView: UICollectionView!
+    @IBOutlet var imageSliderPageControl: UIPageControl!
+    
+    
     @IBOutlet var productNameLbl:       UILabel!
     @IBOutlet var shortDescriptionLbl:  UILabel!
     @IBOutlet var priceLbl:             UILabel!
@@ -47,41 +51,64 @@ class ProductDetailVC: UIViewController {
     
     private let loggedInUserId      = LoggedUser.getLoggedInUserId()!
     
-    private var product             : Product!
-    private var productList         : [Product] = []
-    private var attributeList       : [ProductAttribute] = []
+    private var product                 : Product!
+    private var productImgUrlList       : [String] = []
+    private var relatedProductList      : [Product] = []
+    private var attributeList           : [ProductAttribute] = []
     
     private var itemsPerPage = 2
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.productList = productManager.getInStockAvailable()
+        self.relatedProductList = productManager.getInStockAvailable()
         self.product = productManager.get(byId: productId)!
         self.attributeList = productAttributeManager.getAll(byProductId: productId)
         
         setCartBtnEnableStatus()
         
+        configureImageSliderCollectionView()
+        
         configureProductAttributeStackView()
         
-        mainImgView.loadImage(url: URL(string: product.imageUrl)!)
         productNameLbl.text = product.name
         shortDescriptionLbl.text = product.shortDescription
         priceLbl.text = "DHS \(product.price)"
         descriptionLbl.text = product.description
         
         configureQuantityTblView()
-         
+        
         configureWishlistImage()
-                
+        
         let wishlistTapGesture = UITapGestureRecognizer(target: self, action: #selector(toggleWishlist))
         wishlistImgView.isUserInteractionEnabled = true
         wishlistImgView.addGestureRecognizer(wishlistTapGesture)
         
         configureProductScrollLayout()
         configureProductScroll()
+        productScrollCollectionView.tag         = CollectionViewType.productSlider.rawValue
         productScrollCollectionView.dataSource  = self
         productScrollCollectionView.delegate    = self
+    }
+    
+    func configureImageSliderCollectionView() {
+        productImgUrlList.append(product.imageUrl)
+        
+        product.secondaryImgUrlList.forEach { imgUrl in
+            productImgUrlList.append(imgUrl)
+        }
+        
+        imageSliderClctionView.showsHorizontalScrollIndicator = false
+        
+        imageSliderClctionView.tag          = CollectionViewType.imgSlider.rawValue
+        imageSliderClctionView.delegate     = self
+        imageSliderClctionView.dataSource   = self
+//        imageSliderClctionView.contentMode  = .center
+//        imageSliderClctionView.scrollPos
+        
+        imageSliderPageControl.numberOfPages = productImgUrlList.count
+        imageSliderPageControl.addTarget(self, action: #selector(handleTapOnImgSliderPageControl), for: .valueChanged)
+        pageControl.addTarget(self, action: #selector(handlePageControlTap), for: .valueChanged)
     }
     
     func configureProductAttributeStackView() {
@@ -146,7 +173,7 @@ class ProductDetailVC: UIViewController {
     }
     
     func configureProductScroll() {
-        let productCount = productList.count
+        let productCount = relatedProductList.count
         var totalPagesNeeded = Int(ceil(Double(productCount / itemsPerPage)))
         
         if totalPagesNeeded > 0 {
@@ -179,6 +206,16 @@ class ProductDetailVC: UIViewController {
         else {
             addToCartBtn.setEnabled()
         }
+    }
+    
+    @objc func handleTapOnImgSliderPageControl() {
+        let newPageIndex = imageSliderPageControl.currentPage
+        
+        let newPageIndexPath = IndexPath(row: newPageIndex, section: 0)
+        
+        imageSliderClctionView.isPagingEnabled = false
+        imageSliderClctionView.scrollToItem(at: newPageIndexPath, at: .centeredHorizontally, animated: true)
+        imageSliderClctionView.isPagingEnabled = true
     }
     
     @objc func toggleWishlist() {
@@ -247,7 +284,7 @@ class ProductDetailVC: UIViewController {
         let alert = UIAlertController(title: "Product Added", message: "You have added this item to cart", preferredStyle: .alert)
         let okButton = UIAlertAction(title: "Ok", style: .default)
         alert.addAction(okButton)
-
+        
         present(alert, animated: true)
     }
 }
@@ -277,36 +314,97 @@ extension ProductDetailVC: UITableViewDelegate {
 
 extension ProductDetailVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        productManager.getInStockAvailable().count
+        switch collectionView.tag {
+        case CollectionViewType.productSlider.rawValue:
+            return relatedProductList.count
+        case CollectionViewType.imgSlider.rawValue:
+            return productImgUrlList.count
+        default:
+            return 0
+        }
+        
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: InnerCell.identifier, for: indexPath) as! InnerCell
-        
-        let product = productList[indexPath.row]
-        
-        cell.titleLbl.text = product.name
-        cell.mainImgView.loadImage(url: URL(string: product.imageUrl)!)
-        
-        return cell
+        switch collectionView.tag {
+        case CollectionViewType.productSlider.rawValue:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: InnerCell.identifier, for: indexPath) as! InnerCell
+            
+            let product = relatedProductList[indexPath.row]
+            
+            cell.titleLbl.text = product.name
+            cell.mainImgView.loadImage(url: URL(string: product.imageUrl)!)
+            
+            return cell
+        case CollectionViewType.imgSlider.rawValue:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageSliderCollectionViewCell.reuseIdentifier, for: indexPath) as! ImageSliderCollectionViewCell
+            
+            let productImgUrl = productImgUrlList[indexPath.row]
+            cell.mainImgView.loadImage(url: URL(string: productImgUrl)!)
+            
+            return cell
+            
+        default:
+            return UICollectionViewCell()
+        }
     }
 }
 
 extension ProductDetailVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        let itemIndex = indexPath.row
+        switch collectionView.tag {
+        case CollectionViewType.productSlider.rawValue:
+            let itemIndex = indexPath.row
+            
+            let pageNumber = Int(ceil(Double(itemIndex / itemsPerPage)))
+            
+            pageControl.currentPage = pageNumber
+        default:
+            return
+        }
         
-        let pageNumber = Int(ceil(Double(itemIndex / itemsPerPage)))
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let visibleRect = CGRect(origin: imageSliderClctionView.contentOffset, size: imageSliderClctionView.bounds.size)
+        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
+        guard let visibleIndexPath = imageSliderClctionView.indexPathForItem(at: visiblePoint) else {
+            return
+        }
         
-        pageControl.currentPage = pageNumber
+        imageSliderPageControl.currentPage = visibleIndexPath.row
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let product = productList[indexPath.row]
         
-        
-        let productDetailVC = storyboard?.instantiateViewController(withIdentifier: ProductDetailVC.storyboardIdentifier) as! ProductDetailVC
-        productDetailVC.productId = product.id
-        navigationController?.pushViewController(productDetailVC, animated: true)
+        switch collectionView.tag {
+        case CollectionViewType.productSlider.rawValue:
+            let product = relatedProductList[indexPath.row]
+            
+            let productDetailVC = storyboard?.instantiateViewController(withIdentifier: ProductDetailVC.storyboardIdentifier) as! ProductDetailVC
+            productDetailVC.productId = product.id
+            navigationController?.pushViewController(productDetailVC, animated: true)
+        default:
+            return
+        }
     }
+}
+
+extension ProductDetailVC: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let size = imageSliderClctionView.bounds.size
+        return CGSize(width: size.width, height: size.height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        0.0
+    }
+}
+
+
+
+enum CollectionViewType: Int {
+    case imgSlider      = 0
+    case productSlider  = 1
 }
